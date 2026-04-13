@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import Link from "next/link";
 export default function HowItWorks() {
   const steps = [
@@ -62,6 +63,11 @@ export default function HowItWorks() {
             <div className="section-chip" style={{ margin:"0 auto 16px" }}>🚂 The Lesson Structure</div>
             <h2 style={{ fontSize:"clamp(24px,4vw,36px)", fontWeight:900, color:"#0C2340" }}>The 16-Step Instructional Pattern</h2>
             <p style={{ fontSize:15, color:"#5A5240", maxWidth:520, margin:"12px auto 0", lineHeight:1.7 }}>Every phoneme lesson in FastTrack Literacy™ follows this systematic, multisensory structure — designed to ensure no child is left behind.</p>
+          </div>
+
+          {/* ANATOMY IMAGE */}
+          <div style={{ marginBottom:52 }}>
+            <Image src="/images/image14.png" alt="Anatomy of a Phoneme Lesson — The 16-Step Path" width={1200} height={680} style={{ width:"100%", height:"auto", borderRadius:16, boxShadow:"0 8px 32px rgba(0,0,0,0.08)", marginBottom:40 }} />
           </div>
           <div style={{ display:"grid", gridTemplateColumns:"repeat(auto-fit,minmax(280px,1fr))", gap:16 }}>
             {steps.map(s=>(

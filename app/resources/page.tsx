@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 export default function Resources() {
   const resources = [
     { cat:"Teacher Resources", icon:"👩‍🏫", title:"Teacher's Helper / Teacher's Guide", desc:"Full instructional roadmap with difficult auditory stories, a 65-minute suggested Teacher's Page per letter, and over 640 activities. Available in Volumes 1 and 2.", tag:"blue", type:"Physical + Digital" },
@@ -63,6 +64,20 @@ export default function Resources() {
       {/* RESOURCES GRID */}
       <section className="section" style={{ background:"#FFF9F4" }}>
         <div className="container">
+          <div style={{ textAlign:"center", marginBottom:40 }}>
+            <h2 style={{ fontSize:"clamp(22px,4vw,34px)", fontWeight:900, color:"#0C2340" }}>All Resources</h2>
+          </div>
+          {/* Phonics Chart */}
+          <div className="grid-2" style={{ marginBottom:48, gap:40, alignItems:"center" }}>
+            <div>
+              <div className="section-chip">📊 Featured Resource</div>
+              <h3 style={{ fontFamily:"'Nunito',sans-serif", fontWeight:900, fontSize:24, color:"#0C2340", marginBottom:14 }}>CHEETAH® Phonics Chart</h3>
+              <p style={{ fontSize:15, color:"#5A5240", lineHeight:1.8 }}>Our comprehensive phonics reference chart — used in classrooms across Jamaica, the US, and Africa. A foundational tool for teachers and students alike, mapping all phonemes in a clear, accessible visual format.</p>
+            </div>
+            <div>
+              <Image src="/images/image12.jpg" alt="CHEETAH Phonics Chart" width={400} height={600} style={{ width:"100%", height:"auto", borderRadius:16, boxShadow:"0 8px 32px rgba(0,0,0,0.1)" }} />
+            </div>
+          </div>
           <div style={{ textAlign:"center", marginBottom:40 }}>
             <h2 style={{ fontSize:"clamp(22px,4vw,34px)", fontWeight:900, color:"#0C2340" }}>All Resources</h2>
           </div>

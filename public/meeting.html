@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>FastTrack Literacy™ — Project Meeting Slides</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;overflow:hidden;background:#FFF9F4}
+body{font-family:'DM Sans',sans-serif;color:#1a1208;-webkit-font-smoothing:antialiased}
+
+body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");pointer-events:none;z-index:999}
+
+.deck{width:100vw;height:100vh;position:relative;overflow:hidden}
+.slide{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;padding:52px 72px 88px;opacity:0;pointer-events:none;transition:opacity 0.45s ease,transform 0.45s ease;transform:translateY(24px)}
+.slide.active{opacity:1;pointer-events:all;transform:translateY(0)}
+.slide.exit{opacity:0;transform:translateY(-24px)}
+
+.bg-cream{background:#FFF9F4}
+.bg-orange{background:linear-gradient(135deg,#C04A00 0%,#F5820A 60%,#FF9F2F 100%)}
+.bg-navy{background:linear-gradient(135deg,#0C2340,#1A3A70)}
+.bg-warm{background:#FFF0E0}
+.bg-white{background:#ffffff}
+.bg-amber{background:linear-gradient(135deg,#1A3A70,#0C2340)}
+
+.slide-inner{position:relative;z-index:1;max-width:1060px;margin:0 auto;width:100%}
+.shape{position:absolute;border-radius:50%;pointer-events:none;z-index:0}
+
+.chip{display:inline-flex;align-items:center;gap:7px;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:6px 14px;border-radius:50px;margin-bottom:18px;width:fit-content}
+.chip-orange{color:#C04A00;background:#FFEAD0;border:1px solid #FFB366}
+.chip-white{color:#FFD4A0;background:rgba(255,130,10,0.15);border:1px solid rgba(255,130,10,0.3)}
+.chip-blue{color:#1A5DB5;background:#EEF4FF;border:1px solid #BFDBFE}
+.chip-green{color:#166534;background:#F0FDF4;border:1px solid #BBF7D0}
+.chip-red{color:#991B1B;background:#FEF2F2;border:1px solid #FECACA}
+.chip-amber{color:#92400E;background:#FFFBEB;border:1px solid #FDE68A}
+
+h1{font-family:'Nunito',sans-serif;font-size:clamp(38px,5.5vw,68px);font-weight:900;line-height:1.0;letter-spacing:-0.02em;margin-bottom:16px}
+h2{font-family:'Nunito',sans-serif;font-size:clamp(26px,3.5vw,46px);font-weight:900;line-height:1.05;letter-spacing:-0.02em;margin-bottom:12px}
+.lead{font-size:clamp(13px,1.3vw,15px);line-height:1.85;max-width:580px;margin-bottom:24px}
+
+.on-dark{color:white}.on-dark .lead{color:rgba(255,255,255,0.75)}
+.acc-orange{color:#F5820A}.acc-white{color:#FFD4A0}
+
+.stat-row{display:flex;gap:0;border:1px solid rgba(245,130,10,0.25);margin-bottom:28px;border-radius:12px;overflow:hidden}
+.stat{flex:1;padding:18px 20px;text-align:center;border-right:1px solid rgba(245,130,10,0.15)}
+.stat:last-child{border-right:none}
+.stat-val{font-family:'Nunito',sans-serif;font-size:clamp(20px,2.5vw,30px);font-weight:900;color:#F5820A;line-height:1}
+.stat-lbl{font-size:10px;color:rgba(26,18,8,0.45);letter-spacing:1px;text-transform:uppercase;margin-top:5px}
+.stat.dark .stat-val{color:#FFD4A0}.stat.dark .stat-lbl{color:rgba(255,255,255,0.4)}
+
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}
+
+.card{background:white;border:1px solid #EDE0D0;border-radius:14px;padding:20px}
+.card.orange-bg{background:#FFF0E0;border-color:#FFB366}
+.card.green-bg{background:#F0FDF4;border-color:#BBF7D0}
+.card.red-bg{background:#FEF2F2;border-color:#FECACA}
+.card.amber-bg{background:#FFFBEB;border-color:#FDE68A}
+.card.dark{background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.12)}
+.card-icon{font-size:22px;margin-bottom:10px;display:block}
+.card h3{font-family:'Nunito',sans-serif;font-size:14px;font-weight:800;color:#0C2340;margin-bottom:5px}
+.card.dark h3{color:white}.card p{font-size:12px;color:#5A5240;line-height:1.65}
+.card.dark p{color:rgba(255,255,255,0.6)}
+
+.row-list{border-top:1px solid rgba(26,18,8,0.07)}
+.row-item{display:flex;gap:14px;align-items:flex-start;padding:12px 0;border-bottom:1px solid rgba(26,18,8,0.06)}
+.row-item:last-child{border-bottom:none}
+.row-num{font-family:'Nunito',sans-serif;font-size:18px;font-weight:900;color:#F5820A;width:24px;flex-shrink:0;line-height:1.2}
+.row-item h4{font-size:13px;font-weight:600;color:#0C2340;margin-bottom:2px}
+.row-item p{font-size:11.5px;color:#5A5240;line-height:1.55}
+
+/* CHECKLIST */
+.checklist{display:flex;flex-direction:column;gap:10px}
+.check-item{display:flex;gap:12px;align-items:flex-start;padding:12px 16px;border-radius:10px;border:1px solid}
+.check-item.done{background:#F0FDF4;border-color:#BBF7D0}
+.check-item.pending{background:#FFFBEB;border-color:#FDE68A}
+.check-item.missing{background:#FEF2F2;border-color:#FECACA}
+.check-icon{font-size:16px;flex-shrink:0;margin-top:1px}
+.check-item h4{font-size:13px;font-weight:700;margin-bottom:2px}
+.check-item.done h4{color:#166534}
+.check-item.pending h4{color:#92400E}
+.check-item.missing h4{color:#991B1B}
+.check-item p{font-size:11.5px;color:#5A5240;line-height:1.55}
+.badge{display:inline-block;font-size:10px;font-weight:700;padding:2px 8px;border-radius:20px;margin-left:8px}
+.badge.done{background:#DCFCE7;color:#166534}
+.badge.pending{background:#FEF9C3;color:#92400E}
+.badge.missing{background:#FEE2E2;color:#991B1B}
+
+/* TIMELINE */
+.timeline{display:flex;position:relative;margin:16px 0 6px}
+.timeline::before{content:'';position:absolute;top:18px;left:2%;right:2%;height:2px;background:#EDE0D0;z-index:0}
+.t-step{flex:1;text-align:center;position:relative;z-index:1}
+.t-circle{width:36px;height:36px;border-radius:50%;background:#FFF0E0;border:2px solid #F5820A;display:flex;align-items:center;justify-content:center;margin:0 auto 9px;font-family:'Nunito',sans-serif;font-size:11px;font-weight:800;color:#C04A00}
+.t-step h4{font-size:11px;font-weight:700;color:#0C2340;margin-bottom:2px}
+.t-step p{font-size:10px;color:#5A5240}
+
+/* NAV */
+.nav-bar{position:fixed;bottom:0;left:0;right:0;z-index:200;background:rgba(255,249,244,0.97);backdrop-filter:blur(16px);border-top:1px solid #EDE0D0;display:flex;align-items:center;justify-content:space-between;padding:13px 48px}
+.nav-dots{display:flex;gap:6px}
+.ndot{width:7px;height:7px;border-radius:50%;background:#EDE0D0;cursor:pointer;transition:all 0.25s;border:none;padding:0}
+.ndot.on{background:#F5820A;width:22px;border-radius:4px}
+.nav-btn{background:white;border:1.5px solid #EDE0D0;color:#5A5240;font-size:11px;font-family:'DM Sans',sans-serif;padding:8px 18px;border-radius:50px;cursor:pointer;transition:all 0.15s;font-weight:500}
+.nav-btn:hover:not(:disabled){border-color:#F5820A;color:#F5820A}
+.nav-btn:disabled{opacity:0.25;cursor:default}
+.slide-lbl{font-size:10px;color:rgba(26,18,8,0.25);letter-spacing:1px;text-align:center;font-family:'Nunito',sans-serif;text-transform:uppercase}
+.progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,#F5820A,#FF9F2F);z-index:300;transition:width 0.4s ease}
+
+.highlight-box{background:#FFF0E0;border:1px solid #FFB366;border-left:4px solid #F5820A;border-radius:0 12px 12px 0;padding:14px 18px;margin-top:16px}
+.highlight-box p{font-size:13px;color:#0C2340;line-height:1.75;font-style:italic}
+.highlight-box.dark{background:rgba(255,130,10,0.1);border-color:rgba(255,130,10,0.3);border-left-color:#FFD4A0}
+.highlight-box.dark p{color:rgba(255,255,255,0.85)}
+
+@media(max-width:768px){
+  .slide{padding:32px 20px 88px}
+  .grid-2,.grid-3{grid-template-columns:1fr}
+  .stat-row{flex-direction:column;border-radius:0}
+  .stat{border-right:none;border-bottom:1px solid rgba(245,130,10,0.15)}
+  .timeline{flex-direction:column;gap:12px}
+  .timeline::before{display:none}
+  .t-step{text-align:left;display:flex;gap:12px;align-items:flex-start}
+  .t-circle{margin:0;flex-shrink:0}
+  .nav-bar{padding:12px 20px}
+}
+</style>
+</head>
+<body>
+<div class="progress" id="progress"></div>
+<div class="deck">
+
+  <!-- S1 — COVER -->
+  <div class="slide bg-orange on-dark active" id="s0">
+    <div class="shape" style="width:500px;height:500px;background:rgba(255,255,255,0.05);top:-120px;right:-100px;filter:blur(40px)"></div>
+    <div class="shape" style="width:300px;height:300px;background:rgba(0,0,0,0.1);bottom:-80px;left:-60px;filter:blur(40px)"></div>
+    <div class="slide-inner">
+      <div class="chip chip-white">🚂 FastTrack Literacy™ by CHEETAH® — Project Meeting</div>
+      <h1 class="on-dark">Let&apos;s build<br/>something <span class="acc-white">great</span><br/>together.</h1>
+      <p class="lead">Hi Paulette! I've reviewed everything you've shared — the Word doc, your brand, the content, and our full conversation. This deck walks through exactly what I understand, what I'll build, and what I still need from you.</p>
+      <div class="stat-row">
+        <div class="stat dark"><div class="stat-val">7</div><div class="stat-lbl">Pages to Build</div></div>
+        <div class="stat dark"><div class="stat-val">14</div><div class="stat-lbl">Real Images Ready</div></div>
+        <div class="stat dark"><div class="stat-val">10</div><div class="stat-lbl">Days to Launch</div></div>
+        <div class="stat dark"><div class="stat-val">$300</div><div class="stat-lbl">Fixed Price</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- S2 — WHAT I UNDERSTOOD -->
+  <div class="slide bg-white" id="s1">
+    <div class="slide-inner">
+      <div class="chip chip-orange">📋 What I Understood From Our Chat</div>
+      <h2>I read every message. <span style="color:#F5820A">Here's what I know.</span></h2>
+      <p class="lead" style="color:#5A5240;margin-bottom:12px">Everything I've built is based on what you've shared so far. Here's my full understanding:</p>
+      <div class="row-list">
+        <div class="row-item"><div class="row-num">01</div><div><h4>FastTrack Literacy™ will live on fasttrackliteracy.com</h4><p>You own the domain through GoDaddy. The site will also be accessible as a tab on mycheetahinc.com. I will deploy to both.</p></div></div>
+        <div class="row-item"><div class="row-num">02</div><div><h4>CHEETAH® branding throughout — not NotebookLM</h4><p>Replace all "NotebookLM" watermarks/references with CHEETAH® branding. Your colour scheme comes from mycheetahinc.com — warm orange/navy, child-friendly but professional.</p></div></div>
+        <div class="row-item"><div class="row-num">03</div><div><h4>Design inspiration: Jolly Learning — image with every section</h4><p>Each description section should have a matching image alongside it — exactly how jollylearning.co.uk presents their content. I've already implemented this.</p></div></div>
+        <div class="row-item"><div class="row-num">04</div><div><h4>Students are 1 year old — content must be structured for very young learners</h4><p>Parent-facing language. Warm, approachable, encouraging tone. No jargon. Visual-first layouts for the age group.</p></div></div>
+        <div class="row-item"><div class="row-num">05</div><div><h4>Sign-in for users + student progress dashboard</h4><p>Users (parents/teachers) need to log in to view student reading progress. The dashboard shows skill tracking per student.</p></div></div>
+        <div class="row-item"><div class="row-num">06</div><div><h4>Video section on the landing page</h4><p>A dedicated video embed section. You are working on getting a video — I'll design the section ready for it to be slotted in.</p></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- S3 — THE DEMO I BUILT -->
+  <div class="slide bg-warm" id="s2">
+    <div class="slide-inner">
+      <div class="chip chip-orange">🌐 What I Already Built</div>
+      <h2>The demo is <span style="color:#F5820A">live right now.</span></h2>
+      <p class="lead" style="color:#5A5240;margin-bottom:20px">Before this call, I built a fully working 7-page site using the content from your Word doc and all 14 images you shared. You can visit it now.</p>
+      <div class="grid-2" style="gap:20px;margin-bottom:16px">
+        <div class="card orange-bg">
+          <span class="card-icon">🌐</span>
+          <h3>Live 7-Page Demo Site</h3>
+          <p>Home, About Us, About FastTrack™, Resources, How It Works, Get Started, and Contact — all built with your real content from the Word doc.</p>
+        </div>
+        <div class="card green-bg">
+          <span class="card-icon">🖼️</span>
+          <h3>All 14 Images Included</h3>
+          <p>Every image from your Word doc is placed on the correct page — the train infographic, 5 pillars, 16-step anatomy, ecosystem diagram, your award photo, and more.</p>
+        </div>
+        <div class="card">
+          <span class="card-icon">📱</span>
+          <h3>Fully Responsive</h3>
+          <p>Works on phone, tablet, and desktop. The hamburger menu, stacked layouts, and all sections adapt perfectly.</p>
+        </div>
+        <div class="card">
+          <span class="card-icon">🚂</span>
+          <h3>Real CHEETAH® Content</h3>
+          <p>Your actual bio, the 16-step lesson pattern, all resource names, the 5 pillars, the comparison table — everything from your doc is on the site.</p>
+        </div>
+      </div>
+      <div class="highlight-box">
+        <p>⚠️ The images still have NotebookLM watermarks at the bottom — once you send the clean versions, I will replace them all. The structure is ready.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- S4 — 7 PAGES SCOPE -->
+  <div class="slide bg-white" id="s3">
+    <div class="slide-inner">
+      <div class="chip chip-blue">📄 Full Scope — 7 Pages</div>
+      <h2>What every page <span style="color:#F5820A">contains.</span></h2>
+      <div class="grid-2" style="gap:12px">
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <div class="card"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px"><span style="font-family:'Nunito',sans-serif;font-weight:900;font-size:14px;color:#0C2340">🏠 Home</span><span class="badge done">Built</span></div><p style="font-size:12px;color:#5A5240">Hero + train infographic, global need stats, who it's for, ecosystem diagram, what makes it different, testimonials, founder spotlight with award photo, CTA</p></div>
+          <div class="card"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px"><span style="font-family:'Nunito',sans-serif;font-weight:900;font-size:14px;color:#0C2340">👩‍💼 About Us</span><span class="badge done">Built</span></div><p style="font-size:12px;color:#5A5240">CHEETAH® story, what we do, Paulette's full bio + award photo, founder mission quote, stats, partner info</p></div>
+          <div class="card"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px"><span style="font-family:'Nunito',sans-serif;font-weight:900;font-size:14px;color:#0C2340">🚂 About FastTrack™</span><span class="badge done">Built</span></div><p style="font-size:12px;color:#5A5240">What it is, 5 pillars with infographic, the train experience, who it's for (5 audiences), science + engagement</p></div>
+          <div class="card"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px"><span style="font-family:'Nunito',sans-serif;font-weight:900;font-size:14px;color:#0C2340">📚 Resources</span><span class="badge done">Built</span></div><p style="font-size:12px;color:#5A5240">Ecosystem flow, resource count stats, phonics chart image, all 12 resource types listed with descriptions and type badges</p></div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <div class="card"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px"><span style="font-family:'Nunito',sans-serif;font-weight:900;font-size:14px;color:#0C2340">⚙️ How It Works</span><span class="badge done">Built</span></div><p style="font-size:12px;color:#5A5240">5 pillars section, anatomy of lesson image, all 16 steps with descriptions, comparison table FastTrack vs traditional</p></div>
+          <div class="card"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px"><span style="font-family:'Nunito',sans-serif;font-weight:900;font-size:14px;color:#0C2340">🚀 Get Started</span><span class="badge done">Built</span></div><p style="font-size:12px;color:#5A5240">Who we partner with, 4 ways to get involved, why partner with us, signup form with role selector</p></div>
+          <div class="card"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px"><span style="font-family:'Nunito',sans-serif;font-weight:900;font-size:14px;color:#0C2340">📞 Contact</span><span class="badge done">Built</span></div><p style="font-size:12px;color:#5A5240">Contact form with enquiry types, 3 office locations (Hartford, Portland, Kingston), email + phone, Book a Demo CTA</p></div>
+          <div class="card amber-bg"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px"><span style="font-family:'Nunito',sans-serif;font-weight:900;font-size:14px;color:#0C2340">🔐 Sign-In + Dashboard</span><span class="badge pending">Phase 2</span></div><p style="font-size:12px;color:#5A5240">User authentication, student progress tracking dashboard — we'll build this once I have your dashboard requirements</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- S5 — WHAT I STILL NEED -->
+  <div class="slide bg-navy on-dark" id="s4">
+    <div class="shape" style="width:400px;height:400px;background:rgba(245,130,10,0.07);top:-80px;right:-80px;filter:blur(50px)"></div>
+    <div class="slide-inner">
+      <div class="chip chip-white">📬 What I Still Need From You</div>
+      <h2 class="on-dark">Everything I&apos;m waiting <span class="acc-white">to receive.</span></h2>
+      <p class="lead" style="margin-bottom:16px">I've built everything I can with what you've shared. Here's what's still outstanding — the sooner I have these, the faster we go live.</p>
+      <div class="checklist">
+        <div class="check-item missing"><span class="check-icon">🖼️</span><div><h4>Clean images WITHOUT the NotebookLM watermark <span class="badge missing">Urgent</span></h4><p>All 14 images from the Word doc currently have a small "NotebookLM" logo at the bottom right. Please send the originals so I can replace them on every page.</p></div></div>
+        <div class="check-item missing"><span class="check-icon">📖</span><div><h4>Sample lesson / book excerpts <span class="badge missing">Needed</span></h4><p>You mentioned you are working on getting samples of the books. These will be used to build out the Resources page properly and the student progress dashboard.</p></div></div>
+        <div class="check-item missing"><span class="check-icon">🎥</span><div><h4>Educational video for the landing page <span class="badge missing">Needed</span></h4><p>You said "OK. Working on getting a video." I've designed the video section — it just needs the video file or YouTube/Vimeo link to embed.</p></div></div>
+        <div class="check-item missing"><span class="check-icon">🔐</span><div><h4>Sign-in & dashboard requirements <span class="badge missing">To Discuss</span></h4><p>You said "We will need a sign-in for users." What should the dashboard show? Student names, reading scores, which skills — tell me and I'll build it.</p></div></div>
+        <div class="check-item pending"><span class="check-icon">🏷️</span><div><h4>CHEETAH® logo file <span class="badge pending">Helpful</span></h4><p>A high-resolution CHEETAH® logo (PNG with transparent background) will replace the text logo in the navbar and footer.</p></div></div>
+        <div class="check-item done"><span class="check-icon">✅</span><div><h4>Word doc with all page content <span class="badge done">Received</span></h4><p>00 FastTrack Website Pages.docx — all content has been used to build the 7 pages including your bio, 16 steps, resources, and comparison table.</p></div></div>
+        <div class="check-item done"><span class="check-icon">✅</span><div><h4>14 images from the Word doc <span class="badge done">Received</span></h4><p>All images extracted and placed on the correct pages — train, pillars, ecosystem, anatomy of lesson, award photo, and more.</p></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- S6 — TIMELINE -->
+  <div class="slide bg-warm" id="s5">
+    <div class="slide-inner">
+      <div class="chip chip-orange">📅 Timeline</div>
+      <h2>From assets to <span style="color:#F5820A">live in 10 days.</span></h2>
+      <p class="lead" style="color:#5A5240;margin-bottom:18px">The demo is already built. Once you send the missing assets, here's exactly how the final delivery works:</p>
+      <div class="timeline">
+        <div class="t-step"><div class="t-circle">D1</div><div><h4>Assets Received</h4><p>Images, video, logo</p></div></div>
+        <div class="t-step"><div class="t-circle">D2–3</div><div><h4>Replace Assets</h4><p>Clean images, CHEETAH® branding</p></div></div>
+        <div class="t-step"><div class="t-circle">D4–6</div><div><h4>Sign-In Build</h4><p>User auth + dashboard</p></div></div>
+        <div class="t-step"><div class="t-circle">D7–8</div><div><h4>Video + Polish</h4><p>Embed video, final tweaks</p></div></div>
+        <div class="t-step"><div class="t-circle">D9</div><div><h4>Your Review</h4><p>Feedback + revisions</p></div></div>
+        <div class="t-step"><div class="t-circle">D10</div><div><h4>Go Live 🎉</h4><p>Deploy to fasttrackliteracy.com</p></div></div>
+      </div>
+      <div class="grid-3" style="margin-top:20px">
+        <div class="card"><span class="card-icon">🚀</span><h3>Fast start</h3><p>The foundation is already built. We're not starting from zero — we're finishing.</p></div>
+        <div class="card"><span class="card-icon">🔁</span><h3>2 revision rounds</h3><p>After your review, all changes are made within 24 hours. Your satisfaction is the goal.</p></div>
+        <div class="card"><span class="card-icon">🌐</span><h3>I handle deployment</h3><p>I'll deploy directly to fasttrackliteracy.com and set up the GoDaddy DNS — you don't need to know how to do it.</p></div>
+      </div>
+      <div class="highlight-box">
+        <p>The most important thing right now: <strong>send the clean images and confirm the Upwork contract</strong> — I can start replacing assets same day.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- S7 — DASHBOARD DISCUSSION -->
+  <div class="slide bg-white" id="s6">
+    <div class="slide-inner">
+      <div class="chip chip-blue">🔐 Sign-In & Dashboard — Let&apos;s Discuss</div>
+      <h2>What should the <span style="color:#F5820A">dashboard show?</span></h2>
+      <p class="lead" style="color:#5A5240;margin-bottom:16px">You said "We will need a sign-in for users." Here's my understanding — please confirm or correct me on this call:</p>
+      <div class="grid-2">
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <div class="card orange-bg"><span class="card-icon">👩‍🏫</span><h3>Teacher / Parent Login</h3><p>A teacher or parent logs in to see their child's or students' reading progress — which skills they've mastered, where they need support.</p></div>
+          <div class="card"><span class="card-icon">📊</span><h3>Progress Tracking</h3><p>Based on your 16-step system, I can build progress bars for each of the 5 pillars — Phonemic Awareness, Phonics, Fluency, Vocabulary, Comprehension.</p></div>
+          <div class="card"><span class="card-icon">🎯</span><h3>Assessment Results</h3><p>If you have existing test scores or tracking sheets from the programme, I can display those. Or we build a simple manual input system.</p></div>
+        </div>
+        <div>
+          <div style="font-family:'Nunito',sans-serif;font-weight:900;font-size:14px;color:#0C2340;margin-bottom:12px">🤔 Questions I Need You to Answer:</div>
+          <div style="display:flex;flex-direction:column;gap:10px">
+            {["Who logs in — teachers, parents, or both?","Do students have individual profiles or is it class-based?","What data do you currently track in the programme?","Should parents be able to see lesson progress from home?","Do you want a simple display or the ability to enter scores?","Is there an existing database or spreadsheet I should connect to?"].map((q,i) => `
+            <div style="display:flex;gap:10px;align-items:flex-start;padding:10px 14px;background:#FFF9F4;border:1px solid #EDE0D0;border-radius:8px;font-size:13px;color:#0C2340">
+              <span style="color:#F5820A;font-weight:800;font-size:14px">${i+1}.</span>${q}
+            </div>`).join('')}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- S8 — CTA / NEXT STEPS -->
+  <div class="slide bg-orange on-dark" id="s7">
+    <div class="shape" style="width:450px;height:450px;background:rgba(255,255,255,0.05);top:-100px;right:-80px;filter:blur(40px)"></div>
+    <div class="slide-inner">
+      <div class="chip chip-white">✅ Next Steps</div>
+      <h1 class="on-dark">The site is ready.<br/>Let&apos;s make it <span class="acc-white">yours.</span></h1>
+      <p class="lead">Everything I can build without your final assets is already done. Here are the 3 things that move us forward immediately after this call:</p>
+      <div class="grid-3" style="margin-bottom:20px">
+        <div class="card dark"><span class="card-icon">📬</span><h3>1. Send Clean Assets</h3><p>Images without watermarks, CHEETAH® logo file, and the video link or file when ready.</p></div>
+        <div class="card dark"><span class="card-icon">⚖️</span><h3>2. Accept the Upwork Contract</h3><p>Once my account verification clears (submitted today), send the offer — I start building immediately.</p></div>
+        <div class="card dark"><span class="card-icon">🔐</span><h3>3. Confirm Dashboard Needs</h3><p>Answer the 6 questions on the previous slide so I can spec out the sign-in and progress tracking system.</p></div>
+      </div>
+      <div class="highlight-box dark">
+        <p>🚂 <strong>Nation building, one letter at a time.</strong> I am genuinely excited about what we are building together for FastTrack Literacy™. Let's get this live and in front of the world.</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="nav-bar" id="navBar">
+  <button class="nav-btn" id="prevBtn" onclick="go(-1)" disabled>← Prev</button>
+  <div style="display:flex;flex-direction:column;align-items:center;gap:5px">
+    <div class="nav-dots" id="dots"></div>
+    <div class="slide-lbl" id="lbl">01 / 08</div>
+  </div>
+  <button class="nav-btn" id="nextBtn" onclick="go(1)">Next →</button>
+</div>
+
+<script>
+const total=8,slides=document.querySelectorAll('.slide');
+let cur=0;
+const dotsEl=document.getElementById('dots'),lbl=document.getElementById('lbl'),prog=document.getElementById('progress'),nb=document.getElementById('navBar');
+const darkSlides=[0,4,7];
+for(let i=0;i<total;i++){const d=document.createElement('button');d.className='ndot'+(i===0?' on':'');d.onclick=()=>goTo(i);dotsEl.appendChild(d)}
+function pad(n){return String(n).padStart(2,'0')}
+function updateUI(){
+  prog.style.width=((cur+1)/total*100)+'%';
+  lbl.textContent=pad(cur+1)+' / '+pad(total);
+  document.getElementById('prevBtn').disabled=cur===0;
+  document.getElementById('nextBtn').disabled=cur===total-1;
+  dotsEl.querySelectorAll('.ndot').forEach((d,i)=>d.className='ndot'+(i===cur?' on':''));
+  if(darkSlides.includes(cur)){
+    nb.style.background='rgba(12,35,64,0.97)';nb.style.borderTopColor='rgba(255,255,255,0.08)';
+    dotsEl.querySelectorAll('.ndot').forEach(d=>{if(!d.classList.contains('on'))d.style.background='rgba(255,255,255,0.15)';else d.style.background='#F5820A'});
+    document.querySelectorAll('.nav-btn').forEach(b=>{b.style.background='rgba(255,255,255,0.08)';b.style.borderColor='rgba(255,255,255,0.15)';b.style.color='rgba(255,255,255,0.6)'});
+    lbl.style.color='rgba(255,255,255,0.2)';
+  } else {
+    nb.style.background='rgba(255,249,244,0.97)';nb.style.borderTopColor='#EDE0D0';
+    dotsEl.querySelectorAll('.ndot').forEach(d=>{if(!d.classList.contains('on'))d.style.background='#EDE0D0';else d.style.background='#F5820A'});
+    document.querySelectorAll('.nav-btn').forEach(b=>{b.style.background='white';b.style.borderColor='#EDE0D0';b.style.color='#5A5240'});
+    lbl.style.color='rgba(26,18,8,0.25)';
+  }
+}
+function goTo(n){
+  slides[cur].classList.remove('active');slides[cur].classList.add('exit');
+  const p=cur;setTimeout(()=>slides[p].classList.remove('exit'),500);
+  cur=n;slides[cur].classList.add('active');updateUI();
+}
+function go(d){goTo(Math.max(0,Math.min(total-1,cur+d)))}
+document.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key==='ArrowDown')go(1);if(e.key==='ArrowLeft'||e.key==='ArrowUp')go(-1)});
+let tx=0;
+document.addEventListener('touchstart',e=>{tx=e.touches[0].clientX});
+document.addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-tx;if(Math.abs(dx)>50)go(dx<0?1:-1)});
+updateUI();
+</script>
+</body>
+</html>

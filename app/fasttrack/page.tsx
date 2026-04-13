@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import Link from "next/link";
 export default function FastTrackPage() {
   return (
@@ -59,11 +60,7 @@ export default function FastTrackPage() {
               </div>
             </div>
             <div style={{ background:"rgba(255,255,255,0.08)", border:"1px solid rgba(255,255,255,0.15)", borderRadius:20, padding:36, display:"flex", alignItems:"center", justifyContent:"center" }}>
-              <div style={{ textAlign:"center" }}>
-                <div style={{ fontSize:100 }}>🚂</div>
-                <div style={{ fontFamily:"'Nunito',sans-serif", fontWeight:900, fontSize:22, color:"white", marginTop:16 }}>FastTrack Literacy™</div>
-                <div style={{ fontSize:13, color:"rgba(255,255,255,0.55)", marginTop:6 }}>Nation Building — One Letter at a Time!</div>
-              </div>
+              <Image src="/images/image11.png" alt="All Aboard the FastTrack Phonics Train" width={700} height={420} style={{ width:"100%", height:"auto", borderRadius:16 }} />
             </div>
           </div>
         </div>
