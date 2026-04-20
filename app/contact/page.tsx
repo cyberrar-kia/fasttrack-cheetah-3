@@ -32,10 +32,20 @@ export default function Contact() {
               <div className="section-chip">📍 Get In Touch</div>
               <h2 style={{ fontSize:"clamp(20px,3vw,28px)", fontWeight:900, color:"#0C2340", marginBottom:24 }}>Contact CHEETAH®</h2>
               <div style={{ display:"flex", flexDirection:"column", gap:14, marginBottom:24 }}>
-                {[{icon:"📧",label:"General Enquiries",val:"info@mycheetahinc.com"},{icon:"📧",label:"Founder",val:"paulettetrowers@yahoo.com"},{icon:"📱",label:"Phone (Jamaica)",val:"876-909-6311"},{icon:"📱",label:"Phone (USA)",val:"860-781-1276"}].map(c=>(
+                {[
+                  {icon:"📧",label:"General Enquiries",val:"info@mycheetahinc.com",href:"mailto:info@mycheetahinc.com"},
+                  {icon:"📧",label:"Founder",val:"paulettetrowers@yahoo.com",href:"mailto:paulettetrowers@yahoo.com"},
+                  {icon:"📱",label:"Phone (Jamaica)",val:"876-909-6311",href:"tel:8769096311"},
+                  {icon:"📱",label:"Phone (USA)",val:"860-781-1276",href:"tel:8607811276"},
+                  {icon:"🌐",label:"Website",val:"mycheetahinc.com",href:"https://www.mycheetahinc.com"},
+                  {icon:"📸",label:"Instagram",val:"@mycheetahinc",href:"https://instagram.com/mycheetahinc"},
+                  {icon:"👍",label:"Facebook",val:"/mycheetahinc/",href:"https://facebook.com/mycheetahinc/"},
+                  {icon:"▶️",label:"YouTube",val:"Mycheetahinc",href:"https://youtube.com/@Mycheetahinc"},
+                  {icon:"💼",label:"LinkedIn",val:"Paulette Trowers-Lawrence",href:"https://linkedin.com/in/paulette-trowers-juris-doctor-65b9b818"},
+                ].map(c=>(
                   <div key={c.label} style={{ background:"white", border:"1px solid #EDE0D0", borderRadius:14, padding:18, display:"flex", gap:14, alignItems:"flex-start" }}>
                     <div style={{ fontSize:22 }}>{c.icon}</div>
-                    <div><div style={{ fontSize:11, fontWeight:700, color:"#A0927A", marginBottom:3 }}>{c.label}</div><div style={{ fontFamily:"'Nunito',sans-serif", fontWeight:800, fontSize:14, color:"#0C2340" }}>{c.val}</div></div>
+                    <div><div style={{ fontSize:11, fontWeight:700, color:"#A0927A", marginBottom:3 }}>{c.label}</div><a href={c.href} target="_blank" rel="noopener noreferrer" style={{ fontFamily:"'Nunito',sans-serif", fontWeight:800, fontSize:14, color:"#0C2340", textDecoration:"none" }}>{c.val}</a></div>
                   </div>
                 ))}
               </div>

@@ -232,7 +232,7 @@ export default function Home() {
             <Image src="/images/train-poster.png" alt="Built Around the FastTrack Train — Speeding Up Reading Successes" width={600} height={400} style={{ width:"100%", maxWidth:500, height:"auto", margin:"0 auto", display:"block" }} />
           </div>
           <h2 style={{ fontSize:"clamp(26px,4vw,42px)", fontWeight:900, color:"#0C2340", marginBottom:16 }}>Ready to Start the Literacy Journey?</h2>
-          <p style={{ fontSize:16, color:"#5A5240", lineHeight:1.75, marginBottom:36 }}>Join thousands of educators, parents, and students across Jamaica, the US, and Africa.</p>
+          
           <div className="btn-row" style={{ justifyContent:"center" }}>
             <Link href="/get-started" className="btn-orange">Get Started Free →</Link>
             <Link href="/contact" className="btn-navy">Book a Demo</Link>

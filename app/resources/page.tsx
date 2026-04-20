@@ -7,6 +7,7 @@ const FORMSPREE_QUOTE = "https://formspree.io/f/xkokolbb";
 type DrawerItem = { title: string; body: string; bullets?: string[] };
 
 const drawerContent: Record<string, DrawerItem> = {
+  "Phonics Chart — Sets 1–9": { title:"Phonics Chart — Sets 1–9", body:"The official FastTrack Literacy™ Phonics Chart covering all 9 phoneme sets plus a bonus letter sound. As provided by the Ministry of Education, Skills, Youth and Information.", bullets:["Set 1: s, short ă, m, short ĕ, p","Set 2: f, n, short ĭ, t, r","Set 3: d, short ŏ, hard g, h, k","Set 4: l, b, short ŭ, soft g, long ā","Set 5: j, long ī, or, long ō, z","Set 6: ng, w/wh, short oo, long oo, v","Set 7: ch, sh, long ē, th, y","Set 8: x, qu, oi, long ū, ar","Set 9: ow, ou, er, zh","Bonus letter sound: soft c"] },
   "Teacher's Helper / Teacher's Guide": { title:"Teacher's Helper / Teacher's Guide", body:"The Teacher's Helper provides the full instructional roadmap and difficult auditory stories. Each letter includes a 'Suggested 65-Minute Teacher's Page' to guide daily lessons. The Pupil's Helper omits steps 2, 3, and 4 to remain accessible for the child.", bullets:["Full 16-step instructional roadmap for every phoneme","Complex auditory stories and guided steps for teachers/parents","'Suggested 65-Minute Teacher's Page' per letter","Differentiated instruction — adjust, skip, or shorten lessons based on ability","Available in Volumes 1 and 2","Over 640 activities, with Sets 1–4 as supplemental digital resources"] },
   "Pupil's Workbook / Pupil's Helper": { title:"Pupil's Workbook / Pupil's Helper", body:"Streamlined version for students — simplified to remove jingles and drills that prevent overwhelm, focusing on print and sound. Available in Volumes 1, 2, and 3.", bullets:["Omits steps 2, 3, and 4 to remain child-accessible","Focus on print and sound activities","Simplified auditory stories","Hands-on activities for decoding and encoding","Available as Pupil's Workbook, Student's Workbook, or Pupil's Helper (varies by country)","Volumes 1, 2, and 3"] },
   "45 Reggae Phoneme Songs": { title:"45 One-Minute Reggae Phoneme Songs", body:"One-minute rhythmic, memorable, and fun songs — one for each phoneme. Call-and-response rhythms introduce sounds and reinforce learning. Children wake up singing them!", bullets:["45 songs — one per phoneme","One minute each — perfect for attention spans","Call-and-response rhythmic structure","Boosts memory, engagement and phoneme retention","Evidence-based: rhythmic learning improves sound discrimination","Available digitally and as audio recordings"] },
@@ -18,6 +19,9 @@ const drawerContent: Record<string, DrawerItem> = {
   "iCHEETAH™ AI-Powered Robot": { title:"iCHEETAH™ — Patent-Pending AI-Powered Robot", body:"Our patent-pending, AI-powered Smart Edutainment Robot for Kids. The Teacher's Helper and Your Child's Learning Companion. Smart devices and AI tools support student assessment and track fluency.", bullets:["Patent-pending AI-powered robot with integrated CHEETAH® content","Smart devices and AI tools support student assessment and track fluency","Voice assistant — just say iCHEETAH™","Preloaded educational apps","Sing-along with two microphones","Cast to TV for classroom activities","Inclusive design: supports children with visual impairments, speech delays, and limited motor skills"] },
   "CHEETAH® Apps": { title:"CHEETAH® Apps", body:"Digital apps for independent practice, phoneme reinforcement, and parent engagement. Available on tablets and compatible devices.", bullets:["Independent phoneme practice","Parent engagement tools","Tablet-compatible for classroom and home use","Part of the full iCHEETAH™ technology ecosystem","Combines physical books with apps and AI tools","Innovative AI tool for comprehensive learning"] },
   "National Literacy Competition Cards": { title:"National Literacy Competition Cards", body:"Cards and materials for classroom and national literacy competitions — building motivation, fluency, and confidence. Supports national literacy initiatives.", bullets:["Designed for classroom and national literacy competitions","Builds motivation, fluency, and reading confidence","Supports national literacy initiatives","Community engagement and nation-building focus","Aligned to the CHEETAH® programme scope and sequence","Reward and recognition built in"] },
+  "ANNA-WARRIOR — Reggae Phoneme Song": { title:"ANNA-WARRIOR — Reggae Phoneme Song", body:"A one-minute reggae phoneme song from the FastTrack Literacy™ collection. Rhythmic, memorable, and fun — helping children learn sounds through music.", bullets:["Call-and-response rhythmic structure","Reinforces phoneme recognition","Evidence-based: rhythmic learning improves retention","Available as audio download"] },
+  "BIG FISH-WARRIOR — Reggae Phoneme Song": { title:"BIG FISH-WARRIOR — Reggae Phoneme Song", body:"A one-minute reggae phoneme song from the FastTrack Literacy™ collection. Part of the 45 reggae phoneme songs programme.", bullets:["Call-and-response rhythmic structure","Reinforces phoneme recognition","Part of the 45 phoneme songs collection","Available as audio download"] },
+  "BLACK BIRD — Reggae Phoneme Song": { title:"BLACK BIRD — Reggae Phoneme Song", body:"A one-minute reggae phoneme song from the FastTrack Literacy™ collection. Children wake up singing these songs!", bullets:["Call-and-response rhythmic structure","Reinforces phoneme recognition","Part of the 45 phoneme songs collection","Available as audio download"] },
   "Reward Sticker Sets": { title:"Reward Sticker Sets", body:"Motivational reward stickers tied to the 16-step lesson structure. Children celebrate their progress at every milestone.", bullets:["Tied to Step 12: Assessment & Motivation in every lesson","Children self-assess and receive stickers","Parent/teacher notes included at each milestone","Builds intrinsic motivation and self-confidence","Available in sets aligned to each volume","Designed to celebrate every small win"] },
   "CHEETAH® Charts — Multisensory Reinforcement Tools": { title:"CHEETAH® Charts — Multisensory Reinforcement Tools", body:"Physical chart resources specifically designed as multisensory reinforcement tools, complementing the 27+ interactive charts with tactile and visual learning support.", bullets:["Multisensory reinforcement tools for letter-sound connections","Support phoneme recall through visual and kinaesthetic engagement","Used alongside the 27+ interactive charts in the classroom","Designed for whole-class and small-group instruction","Aligns to the 16-step instructional sequence","Available as part of the full CHEETAH® resource ecosystem"] },
   "Innovative AI Tool": { title:"Innovative AI Tool", body:"An innovative AI-powered learning tool that extends beyond the iCHEETAH™ device — integrating artificial intelligence into the literacy ecosystem to support student assessment, track fluency, and personalise learning.", bullets:["AI-powered learning and assessment capabilities","Tracks student fluency progress over time","Personalises instruction based on individual student data","Integrates with iCHEETAH™ devices and digital apps","Supports teachers with data-driven instructional decisions","Part of the full CHEETAH® technology ecosystem"] },
@@ -25,6 +29,7 @@ const drawerContent: Record<string, DrawerItem> = {
 };
 
 const resources = [
+  { cat:"Phonics", icon:"📊", title:"Phonics Chart — Sets 1–9", desc:"Official FastTrack Literacy™ Phonics Chart — 9 phoneme sets plus bonus sound, as provided by the Ministry of Education, Skills, Youth and Information.", tag:"orange", type:"PDF Download" },
   { cat:"Teacher Resources", icon:"👩‍🏫", title:"Teacher's Helper / Teacher's Guide", desc:"Full instructional roadmap with difficult auditory stories, a 65-minute suggested Teacher's Page per letter, and over 640 activities. Available in Volumes 1 and 2.", tag:"blue", type:"Physical + Digital" },
   { cat:"Student Resources", icon:"👧", title:"Pupil's Workbook / Pupil's Helper", desc:"Streamlined version for students (omitting steps 2, 3, and 4) to remain accessible for the child. Available in Volumes 1, 2, and 3.", tag:"green", type:"Physical Book" },
   { cat:"Songs & Audio", icon:"🎵", title:"45 Reggae Phoneme Songs", desc:"One-minute rhythmic, memorable, and fun songs — one for each phoneme. Children wake up singing them! Available digitally and as recordings.", tag:"orange", type:"Audio + Digital" },
@@ -36,6 +41,9 @@ const resources = [
   { cat:"Technology", icon:"🤖", title:"iCHEETAH™ AI-Powered Robot", desc:"Patent-pending AI-powered robot with integrated CHEETAH® content. Engages children in interactive literacy activities through voice and screen.", tag:"orange", type:"Hardware" },
   { cat:"Technology", icon:"📱", title:"CHEETAH® Apps", desc:"Digital apps for independent practice, phoneme reinforcement, and parent engagement. Available on tablets and compatible devices.", tag:"blue", type:"Digital App" },
   { cat:"Competition", icon:"🏆", title:"National Literacy Competition Cards", desc:"Cards and materials for classroom and national literacy competitions — building motivation, fluency, and confidence.", tag:"green", type:"Competition Resource" },
+  { cat:"Songs & Audio", icon:"🎵", title:"ANNA-WARRIOR — Reggae Phoneme Song", desc:"A sample reggae phoneme song from the FastTrack Literacy™ collection. Rhythmic, memorable, and fun.", tag:"orange", type:"Audio Sample" },
+  { cat:"Songs & Audio", icon:"🎵", title:"BIG FISH-WARRIOR — Reggae Phoneme Song", desc:"A sample reggae phoneme song from the FastTrack Literacy™ collection. Call-and-response rhythmic structure.", tag:"blue", type:"Audio Sample" },
+  { cat:"Songs & Audio", icon:"🎵", title:"BLACK BIRD — Reggae Phoneme Song", desc:"A sample reggae phoneme song from the FastTrack Literacy™ collection. Children wake up singing these!", tag:"green", type:"Audio Sample" },
   { cat:"Rewards", icon:"⭐", title:"Reward Sticker Sets", desc:"Motivational reward stickers tied to the 16-step lesson structure. Children celebrate their progress at every milestone.", tag:"orange", type:"Classroom Resource" },
   { cat:"Charts & Visual Tools", icon:"📌", title:"CHEETAH® Charts — Multisensory Reinforcement Tools", desc:"Physical chart resources designed as multisensory reinforcement tools — supporting phoneme recall through visual and kinaesthetic engagement alongside the 27+ interactive charts.", tag:"blue", type:"Physical Resource" },
   { cat:"Technology", icon:"💡", title:"Innovative AI Tool", desc:"An AI-powered learning tool that integrates artificial intelligence into the literacy ecosystem — tracking fluency, personalising learning, and supporting data-driven instruction.", tag:"orange", type:"Digital Tool" },
@@ -173,6 +181,35 @@ export default function Resources() {
                     <span style={{ color:"#F5820A", fontWeight:700, flexShrink:0 }}>✓</span>{b}
                   </div>
                 ))}
+              </div>
+            )}
+            {activeDrawer === "Phonics Chart — Sets 1–9" && (
+              <div style={{ marginBottom:20 }}>
+                <a href="/phonics-chart.pdf" target="_blank" rel="noopener noreferrer" style={{ display:"flex", alignItems:"center", gap:12, background:"#FFF9F4", border:"1px solid #EDE0D0", borderRadius:12, padding:"14px 18px", textDecoration:"none", color:"#0C2340" }}>
+                  <span style={{ fontSize:24 }}>📄</span>
+                  <div>
+                    <div style={{ fontSize:14, fontWeight:700, fontFamily:"'Nunito',sans-serif" }}>Download Phonics Chart PDF</div>
+                    <div style={{ fontSize:12, color:"#A0927A" }}>Official chart — Ministry of Education, Jamaica</div>
+                  </div>
+                  <span style={{ marginLeft:"auto", color:"#F5820A", fontWeight:700 }}>↓</span>
+                </a>
+              </div>
+            )}
+            {["ANNA-WARRIOR — Reggae Phoneme Song","BIG FISH-WARRIOR — Reggae Phoneme Song","BLACK BIRD — Reggae Phoneme Song"].includes(activeDrawer || "") && (
+              <div style={{ marginBottom:20 }}>
+                <div style={{ background:"#FFF9F4", border:"1px solid #EDE0D0", borderRadius:12, padding:"16px 18px" }}>
+                  <div style={{ fontSize:13, fontWeight:600, color:"#0C2340", marginBottom:10 }}>🎵 Listen & Download</div>
+                  <audio controls style={{ width:"100%", marginBottom:10 }} src={
+                    activeDrawer === "ANNA-WARRIOR — Reggae Phoneme Song" ? "/audio/ANNA-WARRIOR_01.mp3" :
+                    activeDrawer === "BIG FISH-WARRIOR — Reggae Phoneme Song" ? "/audio/BIG_FISH-WARRIOR_01.mp3" :
+                    "/audio/BLACK_BIRD_01.mp3"
+                  } />
+                  <a href={
+                    activeDrawer === "ANNA-WARRIOR — Reggae Phoneme Song" ? "/audio/ANNA-WARRIOR_01.mp3" :
+                    activeDrawer === "BIG FISH-WARRIOR — Reggae Phoneme Song" ? "/audio/BIG_FISH-WARRIOR_01.mp3" :
+                    "/audio/BLACK_BIRD_01.mp3"
+                  } download style={{ fontSize:12, color:"#C05A00", fontWeight:600 }}>↓ Download MP3</a>
+                </div>
               </div>
             )}
             <div style={{ background:"#FFF0E0", borderLeft:"4px solid #F5820A", padding:"14px 18px", borderRadius:"0 10px 10px 0", marginBottom:24 }}>

@@ -34,7 +34,12 @@ export default function Footer() {
             </div>
             <p style={{ fontSize:13, lineHeight:1.7, maxWidth:240, marginBottom:16 }}>Every child can read. Every child must read. — Paulette Trowers-Lawrence, JD</p>
             <div style={{ display:"flex", gap:8 }}>
-              {["f","ig","yt"].map(s=>(<div key={s} style={{ width:32, height:32, borderRadius:8, background:"rgba(255,255,255,0.08)", display:"flex", alignItems:"center", justifyContent:"center", fontSize:11, cursor:"pointer", color:"rgba(255,255,255,0.6)" }}>{s}</div>))}
+              {[
+              {label:"f",url:"https://facebook.com/mycheetahinc/"},
+              {label:"ig",url:"https://instagram.com/mycheetahinc"},
+              {label:"yt",url:"https://youtube.com/@Mycheetahinc"},
+              {label:"in",url:"https://linkedin.com/in/paulette-trowers-juris-doctor-65b9b818"},
+            ].map(s=>(<a key={s.label} href={s.url} target="_blank" rel="noopener noreferrer" style={{ width:32, height:32, borderRadius:8, background:"rgba(255,255,255,0.08)", display:"flex", alignItems:"center", justifyContent:"center", fontSize:11, cursor:"pointer", color:"rgba(255,255,255,0.6)", textDecoration:"none" }}>{s.label}</a>))}
             </div>
           </div>
           <div>

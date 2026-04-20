@@ -21,6 +21,9 @@ export default function About() {
           <div className="grid-2">
             <div>
               <div className="section-chip">🏢 Who We Are</div>
+              <div style={{ marginBottom:16 }}>
+                <Image src="/images/cheetah-logo.png" alt="CHEETAH® Toys & More, LLC" width={120} height={60} style={{ height:56, width:"auto", objectFit:"contain" }} />
+              </div>
               <h2 style={{ fontSize:"clamp(22px,3.5vw,34px)", fontWeight:900, color:"#0C2340", marginBottom:16 }}>A Global Literacy Ecosystem</h2>
               <p style={{ fontSize:15, color:"#5A5240", lineHeight:1.85, marginBottom:16 }}>CHEETAH® (Connect to Higher Education, Electronic Tools, Apps & Help) Toys & More, LLC is a global education and technology company that designs complete literacy ecosystems—combining curriculum, content, assessment, technology, and AI to improve reading outcomes at scale.</p>
               <p style={{ fontSize:15, color:"#5A5240", lineHeight:1.85, marginBottom:16 }}>Founded in the United States and Jamaica in 2014 and 2015, respectively, CHEETAH® has grown from national assessment workbooks (Primary Exit Profile) into textbooks and a comprehensive literacy system with over 90 resources. These resources are customised for markets including Jamaica, the USA, and several countries in Africa.</p>
@@ -70,7 +73,7 @@ export default function About() {
                 <p style={{ fontSize:14, fontStyle:"italic", color:"#0C2340", lineHeight:1.7 }}>"Every child can read, and every child must read." — Paulette Trowers-Lawrence, JD</p>
               </div>
               <div style={{ display:"flex", gap:12, flexWrap:"wrap" }}>
-                <button onClick={() => setFounderOpen(true)} style={{ background:"#F5820A", color:"white", border:"none", borderRadius:50, padding:"11px 24px", fontSize:14, fontWeight:800, fontFamily:"'Nunito',sans-serif", cursor:"pointer" }}>Read More →</button>
+  
                 <a href="https://mycheetahinc.com" target="_blank" rel="noopener noreferrer" className="btn-navy" style={{ textDecoration:"none" }}>Visit CHEETAH® →</a>
               </div>
             </div>
