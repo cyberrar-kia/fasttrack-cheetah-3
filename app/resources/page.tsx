@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Image from "next/image";
 
 const FORMSPREE_QUOTE = "https://formspree.io/f/xkokolbb";
@@ -22,6 +22,7 @@ const drawerContent: Record<string, DrawerItem> = {
   "ANNA-WARRIOR — Reggae Phoneme Song": { title:"ANNA-WARRIOR — Reggae Phoneme Song", body:"A one-minute reggae phoneme song from the FastTrack Literacy™ collection. Rhythmic, memorable, and fun — helping children learn sounds through music.", bullets:["Call-and-response rhythmic structure","Reinforces phoneme recognition","Evidence-based: rhythmic learning improves retention","Available as audio download"] },
   "BIG FISH-WARRIOR — Reggae Phoneme Song": { title:"BIG FISH-WARRIOR — Reggae Phoneme Song", body:"A one-minute reggae phoneme song from the FastTrack Literacy™ collection. Part of the 45 reggae phoneme songs programme.", bullets:["Call-and-response rhythmic structure","Reinforces phoneme recognition","Part of the 45 phoneme songs collection","Available as audio download"] },
   "BLACK BIRD — Reggae Phoneme Song": { title:"BLACK BIRD — Reggae Phoneme Song", body:"A one-minute reggae phoneme song from the FastTrack Literacy™ collection. Children wake up singing these songs!", bullets:["Call-and-response rhythmic structure","Reinforces phoneme recognition","Part of the 45 phoneme songs collection","Available as audio download"] },
+  "All JamDER™ & C-DER Books": { title:"All JamDER™ & C-DER Books", body:"70+ decodable readers published by CHEETAH® Purrrrrrr Publishing. JamDER™ books are culturally authentic Jamaican stories; C-DER™ books extend across the Caribbean. Both series are fully decodable, phonics-aligned, and available in sets.", bullets:["Fiction and nonfiction titles","All levels from emergent to fluent","Culturally authentic illustrations","Available individually or in sets","Compatible with the FastTrack Literacy™ programme"] },
   "Reward Sticker Sets": { title:"Reward Sticker Sets", body:"Motivational reward stickers tied to the 16-step lesson structure. Children celebrate their progress at every milestone.", bullets:["Tied to Step 12: Assessment & Motivation in every lesson","Children self-assess and receive stickers","Parent/teacher notes included at each milestone","Builds intrinsic motivation and self-confidence","Available in sets aligned to each volume","Designed to celebrate every small win"] },
   "CHEETAH® Charts — Multisensory Reinforcement Tools": { title:"CHEETAH® Charts — Multisensory Reinforcement Tools", body:"Physical chart resources specifically designed as multisensory reinforcement tools, complementing the 27+ interactive charts with tactile and visual learning support.", bullets:["Multisensory reinforcement tools for letter-sound connections","Support phoneme recall through visual and kinaesthetic engagement","Used alongside the 27+ interactive charts in the classroom","Designed for whole-class and small-group instruction","Aligns to the 16-step instructional sequence","Available as part of the full CHEETAH® resource ecosystem"] },
   "Innovative AI Tool": { title:"Innovative AI Tool", body:"An innovative AI-powered learning tool that extends beyond the iCHEETAH™ device — integrating artificial intelligence into the literacy ecosystem to support student assessment, track fluency, and personalise learning.", bullets:["AI-powered learning and assessment capabilities","Tracks student fluency progress over time","Personalises instruction based on individual student data","Integrates with iCHEETAH™ devices and digital apps","Supports teachers with data-driven instructional decisions","Part of the full CHEETAH® technology ecosystem"] },
@@ -44,6 +45,7 @@ const resources = [
   { cat:"Songs & Audio", icon:"🎵", title:"ANNA-WARRIOR — Reggae Phoneme Song", desc:"A sample reggae phoneme song from the FastTrack Literacy™ collection. Rhythmic, memorable, and fun.", tag:"orange", type:"Audio Sample" },
   { cat:"Songs & Audio", icon:"🎵", title:"BIG FISH-WARRIOR — Reggae Phoneme Song", desc:"A sample reggae phoneme song from the FastTrack Literacy™ collection. Call-and-response rhythmic structure.", tag:"blue", type:"Audio Sample" },
   { cat:"Songs & Audio", icon:"🎵", title:"BLACK BIRD — Reggae Phoneme Song", desc:"A sample reggae phoneme song from the FastTrack Literacy™ collection. Children wake up singing these!", tag:"green", type:"Audio Sample" },
+  { cat:"Books", icon:"📗", title:"All JamDER™ & C-DER Books", desc:"70+ decodable readers — JamDER™ (Jamaica) and C-DER™ (Caribbean) series. Fiction and nonfiction across all levels and cultural contexts.", tag:"green", type:"Book Collection" },
   { cat:"Rewards", icon:"⭐", title:"Reward Sticker Sets", desc:"Motivational reward stickers tied to the 16-step lesson structure. Children celebrate their progress at every milestone.", tag:"orange", type:"Classroom Resource" },
   { cat:"Charts & Visual Tools", icon:"📌", title:"CHEETAH® Charts — Multisensory Reinforcement Tools", desc:"Physical chart resources designed as multisensory reinforcement tools — supporting phoneme recall through visual and kinaesthetic engagement alongside the 27+ interactive charts.", tag:"blue", type:"Physical Resource" },
   { cat:"Technology", icon:"💡", title:"Innovative AI Tool", desc:"An AI-powered learning tool that integrates artificial intelligence into the literacy ecosystem — tracking fluency, personalising learning, and supporting data-driven instruction.", tag:"orange", type:"Digital Tool" },
@@ -54,6 +56,8 @@ const tagColors: Record<string,{bg:string,tc:string}> = { green:{bg:"#F0FDF4",tc
 
 export default function Resources() {
   const [activeDrawer, setActiveDrawer] = useState<string|null>(null);
+  const [lastClicked, setLastClicked] = useState<string|null>(null);
+  const allResourcesRef = useRef<HTMLDivElement>(null);
   const [quoteOpen, setQuoteOpen] = useState(false);
   const [quoteStatus, setQuoteStatus] = useState<"idle"|"sending"|"sent"|"error">("idle");
   const [quoteForm, setQuoteForm] = useState({ name:"", email:"", organisation:"", country:"", resources:"", message:"" });
@@ -134,13 +138,13 @@ export default function Resources() {
             <Image src="/images/jamder-books.png" alt="All JamDER and C-DER Books" width={400} height={600} style={{ width:"100%", height:"auto", borderRadius:16, boxShadow:"0 8px 32px rgba(0,0,0,0.1)" }} />
           </div>
 
-          <div style={{ textAlign:"center", marginBottom:40 }}>
+          <div ref={allResourcesRef} style={{ textAlign:"center", marginBottom:40 }}>
             <h2 style={{ fontSize:"clamp(22px,4vw,34px)", fontWeight:900, color:"#0C2340" }}>All Resources</h2>
-            <p style={{ fontSize:14, color:"#5A5240", marginTop:8 }}>Click "Learn More" on any resource for full details.</p>
+            <p style={{ fontSize:14, color:"#5A5240", marginTop:8 }}>Click "Learn More" on any resource — it will be highlighted here.</p>
           </div>
           <div className="grid-auto">
             {resources.map(r=>(
-              <div key={r.title} style={{ background:"white", border:"1px solid #EDE0D0", borderRadius:16, padding:24, display:"flex", flexDirection:"column", gap:10 }}>
+              <div key={r.title} style={{ background: lastClicked === r.title ? "#FFF0E0" : "white", border: lastClicked === r.title ? "2px solid #F5820A" : "1px solid #EDE0D0", borderRadius:16, padding:24, display:"flex", flexDirection:"column", gap:10, transition:"all 0.3s ease", boxShadow: lastClicked === r.title ? "0 4px 20px rgba(245,130,10,0.15)" : "none" }}>
                 <div style={{ display:"flex", justifyContent:"space-between", alignItems:"flex-start" }}>
                   <span style={{ background:tagColors[r.tag].bg, color:tagColors[r.tag].tc, fontSize:11, fontWeight:700, padding:"3px 10px", borderRadius:50 }}>{r.cat}</span>
                   <span style={{ fontSize:22 }}>{r.icon}</span>
@@ -149,7 +153,10 @@ export default function Resources() {
                 <p style={{ fontSize:12, color:"#5A5240", lineHeight:1.7, flex:1 }}>{r.desc}</p>
                 <div style={{ display:"flex", justifyContent:"space-between", alignItems:"center", paddingTop:8, borderTop:"1px solid #F5EEE4" }}>
                   <span style={{ fontSize:11, color:"#A0927A", fontWeight:500 }}>{r.type}</span>
-                  <button onClick={()=>setActiveDrawer(r.title)} style={{ background:"#FFF0E0", color:"#C05A00", border:"none", borderRadius:50, padding:"7px 14px", fontSize:12, fontWeight:700, cursor:"pointer" }}>Learn More →</button>
+                  <button onClick={()=>{
+                      setActiveDrawer(r.title);
+                      setLastClicked(r.title);
+                    }} style={{ background:"#FFF0E0", color:"#C05A00", border:"none", borderRadius:50, padding:"7px 14px", fontSize:12, fontWeight:700, cursor:"pointer" }}>Learn More →</button>
                 </div>
               </div>
             ))}
@@ -193,6 +200,11 @@ export default function Resources() {
                   </div>
                   <span style={{ marginLeft:"auto", color:"#F5820A", fontWeight:700 }}>↓</span>
                 </a>
+              </div>
+            )}
+            {activeDrawer === "All JamDER™ & C-DER Books" && (
+              <div style={{ marginBottom:20 }}>
+                <Image src="/images/jamder-books.png" alt="All JamDER and C-DER Books" width={600} height={400} style={{ width:"100%", height:"auto", borderRadius:12, boxShadow:"0 4px 20px rgba(0,0,0,0.1)" }} />
               </div>
             )}
             {["ANNA-WARRIOR — Reggae Phoneme Song","BIG FISH-WARRIOR — Reggae Phoneme Song","BLACK BIRD — Reggae Phoneme Song"].includes(activeDrawer || "") && (
