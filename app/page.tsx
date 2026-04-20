@@ -58,14 +58,17 @@ export default function Home() {
   return (
     <>
       {/* HERO */}
-      <section style={{ position:"relative", minHeight:"100svh", display:"flex", alignItems:"center", overflow:"hidden" }}>
+      <section style={{ position:"relative", minHeight:"100svh", display:"flex", alignItems:"center", overflow:"hidden", background:"#0C2340" }}>
         {/* Video background */}
         <video
           autoPlay
           muted
           loop
           playsInline
-          style={{ position:"absolute", inset:0, width:"100%", height:"100%", objectFit:"cover", zIndex:0 }}
+          preload="auto"
+          poster="/hero-poster.jpg"
+          disablePictureInPicture
+          style={{ position:"absolute", inset:0, width:"100%", height:"100%", objectFit:"cover", zIndex:0, display:"block" }}
         >
           <source src="/hero-video.mp4" type="video/mp4" />
         </video>
