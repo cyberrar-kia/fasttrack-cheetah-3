@@ -147,6 +147,7 @@ function FlipBook({ book }: { book: any }) {
 
 export default function Resources() {
   const [activeDrawer, setActiveDrawer] = useState<string|null>(null);
+  const [audience, setAudience] = useState<"all"|"teacher"|"parent">("all");
   const [lastClicked, setLastClicked] = useState<string|null>(null);
   const allResourcesRef = useRef<HTMLDivElement>(null);
   const [quoteOpen, setQuoteOpen] = useState(false);
@@ -172,6 +173,98 @@ export default function Resources() {
           <p style={{ fontSize:"clamp(14px,2vw,17px)", color:"rgba(255,255,255,0.8)", lineHeight:1.8 }}>Over 90 carefully designed resources spanning books, songs, technology, charts, and assessment tools — all aligned to the FastTrack Literacy™ system.</p>
         </div>
       </section>
+
+      {/* TEACHER / PARENT TOOLBAR */}
+      <div style={{ background:"white", borderBottom:"1px solid #EDE0D0", position:"sticky", top:64, zIndex:80 }}>
+        <div className="container" style={{ display:"flex", alignItems:"center", gap:0, padding:"0 clamp(16px,4vw,40px)" }}>
+          {/* Tabs */}
+          <button
+            onClick={() => setAudience("all")}
+            style={{ padding:"16px clamp(16px,3vw,28px)", fontSize:"clamp(12px,1.5vw,14px)", fontWeight:audience==="all"?800:500, color:audience==="all"?"#F5820A":"#8A7A6A", background:"none", border:"none", borderBottom:audience==="all"?"3px solid #F5820A":"3px solid transparent", cursor:"pointer", fontFamily:"'Nunito',sans-serif", whiteSpace:"nowrap", transition:"all 0.2s" }}
+          >
+            📚 All Resources
+          </button>
+          <button
+            onClick={() => setAudience("teacher")}
+            style={{ padding:"16px clamp(16px,3vw,28px)", fontSize:"clamp(12px,1.5vw,14px)", fontWeight:audience==="teacher"?800:500, color:audience==="teacher"?"#F5820A":"#8A7A6A", background:"none", border:"none", borderBottom:audience==="teacher"?"3px solid #F5820A":"3px solid transparent", cursor:"pointer", fontFamily:"'Nunito',sans-serif", whiteSpace:"nowrap", transition:"all 0.2s" }}
+          >
+            👩‍🏫 For Teachers
+          </button>
+          <button
+            onClick={() => setAudience("parent")}
+            style={{ padding:"16px clamp(16px,3vw,28px)", fontSize:"clamp(12px,1.5vw,14px)", fontWeight:audience==="parent"?800:500, color:audience==="parent"?"#F5820A":"#8A7A6A", background:"none", border:"none", borderBottom:audience==="parent"?"3px solid #F5820A":"3px solid transparent", cursor:"pointer", fontFamily:"'Nunito',sans-serif", whiteSpace:"nowrap", transition:"all 0.2s" }}
+          >
+            👨‍👩‍👧 For Parents
+          </button>
+          {/* Description */}
+          <div style={{ marginLeft:"auto", fontSize:"clamp(11px,1.3vw,13px)", color:"#8A7A6A", paddingLeft:16 }}>
+            {audience==="all" && "Showing all resources"}
+            {audience==="teacher" && "Guides, charts, and tools for educators"}
+            {audience==="parent" && "Books, songs, and guides for home learning"}
+          </div>
+        </div>
+      </div>
+
+      {/* TEACHER RESOURCES */}
+      {(audience==="teacher"||audience==="all") && (
+      <section className="section" style={{ background:"#F0FDF4", display: audience==="teacher"||audience==="all" ? "block" : "none" }}>
+        <div className="container">
+          <div style={{ marginBottom:32 }}>
+            <div className="section-chip" style={{ background:"rgba(22,163,74,0.1)", border:"1px solid rgba(22,163,74,0.25)", color:"#166534" }}>👩‍🏫 Teacher Resources</div>
+            <h2 style={{ fontFamily:"'Nunito',sans-serif", fontWeight:900, fontSize:"clamp(20px,3vw,30px)", color:"#0C2340", marginTop:8 }}>Designed for Educators</h2>
+            <p style={{ fontSize:"clamp(13px,1.5vw,15px)", color:"#8A7A6A", marginTop:6 }}>Structured lesson guides, phonics charts, assessments, and training materials to deliver FastTrack Literacy™ with confidence.</p>
+          </div>
+          <div style={{ display:"grid", gridTemplateColumns:"repeat(auto-fill,minmax(clamp(220px,26vw,280px),1fr))", gap:16 }}>
+            {[
+              { icon:"📋", title:"Teacher's Helper Vol 1 & 2", desc:"Full 16-step instructional roadmap for every phoneme. Includes auditory stories, guided steps, and a suggested 65-minute lesson plan per letter." },
+              { icon:"📊", title:"FastTrack Phonics Chart", desc:"Official Ministry of Education approved phonics chart covering all 9 phoneme sets plus a bonus letter sound. Print-ready PDF.", free:true },
+              { icon:"📝", title:"Assessment & Progress Tools", desc:"CHEETAH® Poster Fluency Tests, self-assessment checklists, and progress tracking sheets. Measurable outcomes at every stage." },
+              { icon:"🗂️", title:"27+ Interactive Charts", desc:"Multisensory reinforcement tools including phonics charts, word family charts, and classroom display resources." },
+              { icon:"🎓", title:"Teacher Training Programme", desc:"Full implementation training for classroom teachers. Train-the-trainer model for school-wide rollout. Available in-person and digitally." },
+              { icon:"🃏", title:"Phoneme Flashcard Sets", desc:"Letter-sound correspondence flashcards, sight word recognition sets, and vocabulary building cards aligned to the 16-step sequence." },
+            ].map(item => (
+              <div key={item.title} style={{ background:"white", border:"1px solid #EDE0D0", borderRadius:16, padding:"18px 20px" }}>
+                <div style={{ fontSize:28, marginBottom:10 }}>{item.icon}</div>
+                <div style={{ display:"flex", alignItems:"center", gap:8, marginBottom:6 }}>
+                  <div style={{ fontFamily:"'Nunito',sans-serif", fontWeight:800, fontSize:"clamp(13px,1.6vw,15px)", color:"#0C2340" }}>{item.title}</div>
+                  {item.free && <span style={{ background:"#DCFCE7", color:"#166534", fontSize:10, fontWeight:700, padding:"2px 8px", borderRadius:50 }}>Free</span>}
+                </div>
+                <p style={{ fontSize:"clamp(11px,1.3vw,13px)", color:"#8A7A6A", lineHeight:1.75 }}>{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+      )}
+
+      {/* PARENT RESOURCES */}
+      {(audience==="parent"||audience==="all") && (
+      <section className="section" style={{ background:"#EFF6FF" }}>
+        <div className="container">
+          <div style={{ marginBottom:32 }}>
+            <div className="section-chip" style={{ background:"rgba(59,130,246,0.1)", border:"1px solid rgba(59,130,246,0.25)", color:"#1E40AF" }}>👨‍👩‍👧 Parent Resources</div>
+            <h2 style={{ fontFamily:"'Nunito',sans-serif", fontWeight:900, fontSize:"clamp(20px,3vw,30px)", color:"#0C2340", marginTop:8 }}>Supporting Learning at Home</h2>
+            <p style={{ fontSize:"clamp(13px,1.5vw,15px)", color:"#8A7A6A", marginTop:6 }}>Books, songs, and guides designed to help parents extend literacy learning beyond the classroom.</p>
+          </div>
+          <div style={{ display:"grid", gridTemplateColumns:"repeat(auto-fill,minmax(clamp(220px,26vw,280px),1fr))", gap:16 }}>
+            {[
+              { icon:"📗", title:"Pupil's Helper Vol 1, 2 & 3", desc:"Student workbooks with phonics activities, letter-sound exercises, and early reading practice. Designed for children ages 3–8." },
+              { icon:"🎵", title:"45 Reggae Phoneme Songs", desc:"One-minute call-and-response reggae songs — one per phoneme. Children wake up singing these! Perfect for home learning." },
+              { icon:"📖", title:"JamDER™ & C-DER Books", desc:"70+ culturally authentic decodable early readers. Fiction and nonfiction across all reading levels. Ideal for reading together at home." },
+              { icon:"⭐", title:"Reward Sticker Sets", desc:"Motivational stickers tied to the 16-step lesson structure. Children celebrate their progress at every milestone." },
+              { icon:"📊", title:"Home Progress Guide", desc:"Simple parent-friendly guide to tracking your child's reading progress at home alongside the FastTrack programme." },
+              { icon:"🤖", title:"iCHEETAH™ AI Device", desc:"AI-powered reading companion for children ages 3–8. Guides phonics practice and adapts to each child's pace." },
+            ].map(item => (
+              <div key={item.title} style={{ background:"white", border:"1px solid #EDE0D0", borderRadius:16, padding:"18px 20px" }}>
+                <div style={{ fontSize:28, marginBottom:10 }}>{item.icon}</div>
+                <div style={{ fontFamily:"'Nunito',sans-serif", fontWeight:800, fontSize:"clamp(13px,1.6vw,15px)", color:"#0C2340", marginBottom:6 }}>{item.title}</div>
+                <p style={{ fontSize:"clamp(11px,1.3vw,13px)", color:"#8A7A6A", lineHeight:1.75 }}>{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+      )}
 
       <section className="section" style={{ background:"white" }}>
         <div className="container">
