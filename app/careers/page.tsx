@@ -255,13 +255,10 @@ export default function Careers() {
             </div>
 
             {/* Apply CTA */}
-            <button
-              style={{ display:"block", background:"#F5820A", color:"white", textAlign:"center", textDecoration:"none", padding:"14px 28px", borderRadius:50, fontSize:15, fontWeight:800, fontFamily:"'Nunito',sans-serif", marginBottom:12, cursor:"pointer", border:"none", width:"100%" }}
-              onClick={() => { window.location.href = "mailto:info@mycheetahinc.com?subject=Application - " + active.title; }}
-            >
-              Apply for This Role →
-            </button>
-            <p style={{ fontSize:12, color:"#A0927A", textAlign:"center" }}>Send your CV and portfolio to info@mycheetahinc.com</p>
+            <div style={{ background:"#FFF0E0", border:"1px solid #EDE0D0", borderRadius:12, padding:"14px 18px", textAlign:"center" }}>
+              <div style={{ fontSize:12, color:"#8A7A6A", marginBottom:4 }}>To apply, send your CV and portfolio to:</div>
+              <div style={{ fontFamily:"'Nunito',sans-serif", fontWeight:800, fontSize:15, color:"#0C2340" }}>info@mycheetahinc.com</div>
+            </div>
           </div>
         </div>
       )}
