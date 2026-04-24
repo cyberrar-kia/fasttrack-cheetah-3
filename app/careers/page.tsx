@@ -177,12 +177,7 @@ export default function Careers() {
                   </div>
                   <div style={{ display:"flex", alignItems:"center", gap:10, flexShrink:0, flexWrap:"wrap" }}>
                     <div style={{ fontSize:"clamp(11px,1.3vw,13px)", color:"#8A7A6A" }}>📍 {role.location}</div>
-                    <button
-                      onClick={e => { e.stopPropagation(); window.location.href=`mailto:${role.apply}?subject=Application — ${role.title}`; }}
-                      style={{ background:"white", color:"#F5820A", border:"1.5px solid #F5820A", borderRadius:50, padding:"8px 18px", fontSize:13, fontWeight:700, fontFamily:"'Nunito',sans-serif", whiteSpace:"nowrap", cursor:"pointer" }}
-                    >
-                      Apply →
-                    </button>
+
                     <div style={{ background:"#F5820A", color:"white", border:"none", borderRadius:50, padding:"8px 20px", fontSize:13, fontWeight:700, fontFamily:"'Nunito',sans-serif", whiteSpace:"nowrap", cursor:"pointer" }}>
                       {open===role.id ? "Close ✕" : "View Role →"}
                     </div>
