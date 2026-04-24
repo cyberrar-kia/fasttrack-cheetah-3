@@ -164,6 +164,56 @@ export default function Resources() {
         </div>
       </section>
 
+      {/* FLIP BOOKS */}
+      <section className="section" style={{ background:"#FFF0E0" }}>
+        <div className="container">
+          <div style={{ textAlign:"center", marginBottom:48 }}>
+            <div className="section-chip">📖 JamDER™ Digital Books</div>
+            <h2 style={{ fontFamily:"'Nunito',sans-serif", fontWeight:900, fontSize:"clamp(24px,4vw,36px)", color:"#0C2340", marginBottom:12 }}>Read Our Books Online</h2>
+            <p style={{ fontSize:"clamp(13px,1.5vw,16px)", color:"#8A7A6A", maxWidth:500, margin:"0 auto" }}>Preview the first pages of each book below. Get full access to unlock all pages.</p>
+          </div>
+          <div style={{ display:"grid", gridTemplateColumns:"repeat(auto-fill,minmax(clamp(260px,28vw,340px),1fr))", gap:20 }}>
+            {[
+              { title:"Teacher's Helper", vol:"Volume 1", url:"https://heyzine.com/flip-book/Teacher-Helper-Vol-1.html", color:"#DBEAFE" },
+              { title:"Teacher's Helper", vol:"Volume 2", url:"https://heyzine.com/flip-book/Teacher-Helper-Vol-2.html", color:"#DCFCE7" },
+              { title:"Pupil's Helper", vol:"Volume 1", url:"https://heyzine.com/flip-book/Pupil-Helper-Vol-1.html", color:"#FEF3C7" },
+              { title:"Pupil's Helper", vol:"Volume 2", url:"https://heyzine.com/flip-book/Pupil-Helper-Vol-2.html", color:"#FCE7F3" },
+              { title:"Pupil's Helper", vol:"Volume 3", url:"https://heyzine.com/flip-book/Pupil-Helper-Vol-3.html", color:"#EDE9FE" },
+              { title:"JamDER™ Reader", vol:"Special Edition", url:"https://heyzine.com/flip-book/eda08f4c87.html", color:"#FFF0E0" },
+            ].map(book => (
+              <div key={book.url} style={{ background:"white", border:"1px solid #EDE0D0", borderRadius:20, overflow:"hidden", boxShadow:"0 4px 24px rgba(0,0,0,0.06)" }}>
+                <div style={{ position:"relative", width:"100%", height:260, overflow:"hidden" }}>
+                  <iframe
+                    src={book.url}
+                    style={{ width:"200%", height:"200%", border:"none", transform:"scale(0.5)", transformOrigin:"top left", pointerEvents:"none" }}
+                    title={`${book.title} ${book.vol}`}
+                    loading="lazy"
+                  />
+                  <div style={{ position:"absolute", bottom:0, left:0, right:0, height:100, background:"linear-gradient(transparent, white)", pointerEvents:"none" }} />
+                  <div style={{ position:"absolute", bottom:0, left:0, right:0, display:"flex", flexDirection:"column", alignItems:"center", paddingBottom:12, gap:4 }}>
+                    <div style={{ fontSize:18 }}>🔒</div>
+                    <div style={{ fontSize:10, color:"#8A7A6A", letterSpacing:"0.5px" }}>Preview only</div>
+                  </div>
+                </div>
+                <div style={{ padding:"14px 18px", borderTop:"1px solid #EDE0D0" }}>
+                  <div style={{ display:"flex", justifyContent:"space-between", alignItems:"flex-start", marginBottom:12 }}>
+                    <div>
+                      <div style={{ fontFamily:"'Nunito',sans-serif", fontWeight:800, fontSize:"clamp(13px,1.7vw,15px)", color:"#0C2340" }}>{book.title}</div>
+                      <div style={{ fontSize:11, color:"#8A7A6A", marginTop:2 }}>{book.vol}</div>
+                    </div>
+                    <span style={{ background:book.color, color:"#0C2340", fontSize:10, fontWeight:700, padding:"3px 10px", borderRadius:50 }}>JamDER™</span>
+                  </div>
+                  <div style={{ display:"flex", gap:8 }}>
+                    <a href={book.url} target="_blank" rel="noopener noreferrer" style={{ flex:1, background:"#F5820A", color:"white", textAlign:"center", textDecoration:"none", padding:"10px 0", borderRadius:50, fontSize:12, fontWeight:700, fontFamily:"'Nunito',sans-serif" }}>Get Full Access →</a>
+                    <a href={book.url} target="_blank" rel="noopener noreferrer" style={{ background:"#FFF0E0", color:"#C05A00", textDecoration:"none", padding:"10px 14px", borderRadius:50, fontSize:12, fontWeight:700, fontFamily:"'Nunito',sans-serif", border:"1px solid #EDE0D0" }}>Read</a>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="section-sm" style={{ background:"linear-gradient(135deg,#0C2340,#1A3A70)", textAlign:"center" }}>
         <div className="container-xs">
           <h2 style={{ fontSize:"clamp(20px,3vw,30px)", fontWeight:900, color:"white", marginBottom:14 }}>Need Resources for Your School or Organisation?</h2>
