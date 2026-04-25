@@ -175,9 +175,10 @@ export default function Careers() {
                       <div style={{ fontSize:"clamp(12px,1.4vw,14px)", color:"#8A7A6A" }}>{role.subtitle} · {role.type}</div>
                     </div>
                   </div>
-                  <div style={{ display:"flex", alignItems:"center", gap:14, flexShrink:0 }}>
+                  <div style={{ display:"flex", alignItems:"center", gap:10, flexShrink:0, flexWrap:"wrap" }}>
                     <div style={{ fontSize:"clamp(11px,1.3vw,13px)", color:"#8A7A6A" }}>📍 {role.location}</div>
-                    <div style={{ background:"#F5820A", color:"white", border:"none", borderRadius:50, padding:"8px 20px", fontSize:13, fontWeight:700, fontFamily:"'Nunito',sans-serif", whiteSpace:"nowrap" }}>
+
+                    <div style={{ background:"#F5820A", color:"white", border:"none", borderRadius:50, padding:"8px 20px", fontSize:13, fontWeight:700, fontFamily:"'Nunito',sans-serif", whiteSpace:"nowrap", cursor:"pointer" }}>
                       {open===role.id ? "Close ✕" : "View Role →"}
                     </div>
                   </div>
@@ -254,13 +255,10 @@ export default function Careers() {
             </div>
 
             {/* Apply CTA */}
-            <a
-              href={`mailto:${active.apply}?subject=Application — ${active.title}`}
-              style={{ display:"block", background:"#F5820A", color:"white", textAlign:"center", textDecoration:"none", padding:"14px 28px", borderRadius:50, fontSize:15, fontWeight:800, fontFamily:"'Nunito',sans-serif", marginBottom:12 }}
-            >
-              Apply for This Role →
-            </a>
-            <p style={{ fontSize:12, color:"#A0927A", textAlign:"center" }}>Send your CV and portfolio to {active.apply}</p>
+            <div style={{ background:"#FFF0E0", border:"1px solid #EDE0D0", borderRadius:12, padding:"14px 18px", textAlign:"center" }}>
+              <div style={{ fontSize:12, color:"#8A7A6A", marginBottom:4 }}>To apply, send your CV and portfolio to:</div>
+              <div style={{ fontFamily:"'Nunito',sans-serif", fontWeight:800, fontSize:15, color:"#0C2340" }}>info@mycheetahinc.com</div>
+            </div>
           </div>
         </div>
       )}
