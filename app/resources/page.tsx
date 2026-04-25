@@ -34,18 +34,18 @@ const resources = [
   { cat:"Teacher Resources", icon:"👩‍🏫", title:"Teacher's Helper / Teacher's Guide", desc:"Full instructional roadmap with difficult auditory stories, a 65-minute suggested Teacher's Page per letter, and over 640 activities. Available in Volumes 1 and 2.", tag:"blue", type:"Physical + Digital" },
   { cat:"Student Resources", icon:"👧", title:"Pupil's Workbook / Pupil's Helper", desc:"Streamlined version for students (omitting steps 2, 3, and 4) to remain accessible for the child. Available in Volumes 1, 2, and 3.", tag:"green", type:"Physical Book" },
   { cat:"Songs & Audio", icon:"🎵", title:"45 Reggae Phoneme Songs", desc:"One-minute rhythmic, memorable, and fun songs — one for each phoneme. Children wake up singing them! Available digitally and as recordings.", tag:"orange", type:"Audio + Digital" },
-  { cat:"Decodable Books", icon:"📖", title:"CHEETAH® Poster Stories — Level 1", desc:"9 Level 1 decodable books for early readers just beginning to decode. Large, poster-format stories ideal for classroom shared reading.", tag:"blue", type:"Physical Book" },
-  { cat:"Decodable Books", icon:"📚", title:"CHEETAH® Decodable & Early Readers — Level 2", desc:"70+ Level 2 decodable books for building decoding and fluency. Fiction and nonfiction titles across a range of topics.", tag:"green", type:"Physical Book" },
-  { cat:"Charts & Visual Tools", icon:"📊", title:"27+ Interactive Charts", desc:"Multisensory reinforcement tools including phonics charts, word family charts, and classroom display resources.", tag:"orange", type:"Physical Resource" },
-  { cat:"Flashcards", icon:"🃏", title:"Phoneme Flashcard Sets", desc:"Visual flashcard sets for letter-sound practice, sight words, and vocabulary building. Designed for both classroom and home use.", tag:"blue", type:"Physical Resource" },
+  { cat:"Decodable Books", icon:"📖", title:"CHEETAH® Poster Stories — Level 1", desc:"9 Level 1 decodable books for early readers just beginning to decode. Large, poster-format stories ideal for classroom shared reading.", tag:"blue", type:"Physical Book", image:"/images/resources/poster-stories.png" },
+  { cat:"Decodable Books", icon:"📚", title:"CHEETAH® Decodable & Early Readers — Level 2", desc:"70+ Level 2 decodable books for building decoding and fluency. Fiction and nonfiction titles across a range of topics.", tag:"green", type:"Physical Book", image:"/images/resources/cder-books.png" },
+  { cat:"Charts & Visual Tools", icon:"📊", title:"27+ Interactive Charts", desc:"Multisensory reinforcement tools including phonics charts, word family charts, and classroom display resources.", tag:"orange", type:"Physical Resource", image:"/images/resources/interactive-charts.png" },
+  { cat:"Flashcards", icon:"🃏", title:"Phoneme Flashcard Sets", desc:"Visual flashcard sets for letter-sound practice, sight words, and vocabulary building. Designed for both classroom and home use.", tag:"blue", type:"Physical Resource", image:"/images/resources/flashcards-rhymes.png" },
   { cat:"Assessment", icon:"📋", title:"Assessment & Progress Monitoring Tools", desc:"Built-in assessment tools including CHEETAH® Poster Fluency Tests, self-assessment checklists, and progress tracking sheets.", tag:"green", type:"Assessment" },
   { cat:"Technology", icon:"🤖", title:"iCHEETAH™ AI-Powered Robot", desc:"Patent-pending AI-powered robot with integrated CHEETAH® content. Engages children in interactive literacy activities through voice and screen.", tag:"orange", type:"Hardware" },
   { cat:"Technology", icon:"📱", title:"CHEETAH® Apps", desc:"Digital apps for independent practice, phoneme reinforcement, and parent engagement. Available on tablets and compatible devices.", tag:"blue", type:"Digital App" },
-  { cat:"Competition", icon:"🏆", title:"National Literacy Competition Cards", desc:"Cards and materials for classroom and national literacy competitions — building motivation, fluency, and confidence.", tag:"green", type:"Competition Resource" },
+  { cat:"Competition", icon:"🏆", title:"National Literacy Competition Cards", desc:"Cards and materials for classroom and national literacy competitions — building motivation, fluency, and confidence.", tag:"green", type:"Competition Resource", image:"/images/resources/national-literacy-competition-2.png" },
   { cat:"Songs & Audio", icon:"🎵", title:"ANNA-WARRIOR — Reggae Phoneme Song", desc:"A sample reggae phoneme song from the FastTrack Literacy™ collection. Rhythmic, memorable, and fun.", tag:"orange", type:"Audio Sample" },
   { cat:"Songs & Audio", icon:"🎵", title:"BIG FISH-WARRIOR — Reggae Phoneme Song", desc:"A sample reggae phoneme song from the FastTrack Literacy™ collection. Call-and-response rhythmic structure.", tag:"blue", type:"Audio Sample" },
   { cat:"Songs & Audio", icon:"🎵", title:"BLACK BIRD — Reggae Phoneme Song", desc:"A sample reggae phoneme song from the FastTrack Literacy™ collection. Children wake up singing these!", tag:"green", type:"Audio Sample" },
-  { cat:"Books", icon:"📗", title:"All JamDER™ & C-DER Books", desc:"70+ decodable readers — JamDER™ (Jamaica) and C-DER™ (Caribbean) series. Fiction and nonfiction across all levels and cultural contexts.", tag:"green", type:"Book Collection" },
+  { cat:"Books", icon:"📗", title:"All JamDER™ & C-DER Books", desc:"70+ decodable readers — JamDER™ (Jamaica) and C-DER™ (Caribbean) series. Fiction and nonfiction across all levels and cultural contexts.", tag:"green", type:"Book Collection", image:"/images/resources/cder-books.png" },
   { cat:"Rewards", icon:"⭐", title:"Reward Sticker Sets", desc:"Motivational reward stickers tied to the 16-step lesson structure. Children celebrate their progress at every milestone.", tag:"orange", type:"Classroom Resource" },
   { cat:"Charts & Visual Tools", icon:"📌", title:"CHEETAH® Charts — Multisensory Reinforcement Tools", desc:"Physical chart resources designed as multisensory reinforcement tools — supporting phoneme recall through visual and kinaesthetic engagement alongside the 27+ interactive charts.", tag:"blue", type:"Physical Resource" },
   { cat:"Technology", icon:"💡", title:"Innovative AI Tool", desc:"An AI-powered learning tool that integrates artificial intelligence into the literacy ecosystem — tracking fluency, personalising learning, and supporting data-driven instruction.", tag:"orange", type:"Digital Tool" },
@@ -235,19 +235,26 @@ export default function Resources() {
           </div>
           <div className="grid-auto">
             {resources.map(r=>(
-              <div key={r.title} style={{ background: lastClicked === r.title ? "#FFF0E0" : "white", border: lastClicked === r.title ? "2px solid #F5820A" : "1px solid #EDE0D0", borderRadius:16, padding:24, display:"flex", flexDirection:"column", gap:10, transition:"all 0.3s ease", boxShadow: lastClicked === r.title ? "0 4px 20px rgba(245,130,10,0.15)" : "none" }}>
-                <div style={{ display:"flex", justifyContent:"space-between", alignItems:"flex-start" }}>
-                  <span style={{ background:tagColors[r.tag].bg, color:tagColors[r.tag].tc, fontSize:11, fontWeight:700, padding:"3px 10px", borderRadius:50 }}>{r.cat}</span>
-                  <span style={{ fontSize:22 }}>{r.icon}</span>
-                </div>
-                <h3 style={{ fontFamily:"'Nunito',sans-serif", fontWeight:800, fontSize:15, color:"#0C2340", lineHeight:1.3 }}>{r.title}</h3>
-                <p style={{ fontSize:12, color:"#5A5240", lineHeight:1.7, flex:1 }}>{r.desc}</p>
-                <div style={{ display:"flex", justifyContent:"space-between", alignItems:"center", paddingTop:8, borderTop:"1px solid #F5EEE4" }}>
-                  <span style={{ fontSize:11, color:"#A0927A", fontWeight:500 }}>{r.type}</span>
-                  <button onClick={()=>{
-                      setActiveDrawer(r.title);
-                      setLastClicked(r.title);
-                    }} style={{ background:"#FFF0E0", color:"#C05A00", border:"none", borderRadius:50, padding:"7px 14px", fontSize:12, fontWeight:700, cursor:"pointer" }}>Learn More →</button>
+              <div key={r.title} style={{ background: lastClicked === r.title ? "#FFF0E0" : "white", border: lastClicked === r.title ? "2px solid #F5820A" : "1px solid #EDE0D0", borderRadius:16, overflow:"hidden", display:"flex", flexDirection:"column", transition:"all 0.3s ease", boxShadow: lastClicked === r.title ? "0 4px 20px rgba(245,130,10,0.15)" : "none" }}>
+                {(r as any).image && (
+                  <div style={{ width:"100%", height:160, overflow:"hidden", flexShrink:0 }}>
+                    <Image src={(r as any).image} alt={r.title} width={300} height={160} style={{ width:"100%", height:160, objectFit:"cover" }} />
+                  </div>
+                )}
+                <div style={{ padding:20, display:"flex", flexDirection:"column", gap:10, flex:1 }}>
+                  <div style={{ display:"flex", justifyContent:"space-between", alignItems:"flex-start" }}>
+                    <span style={{ background:tagColors[r.tag].bg, color:tagColors[r.tag].tc, fontSize:11, fontWeight:700, padding:"3px 10px", borderRadius:50 }}>{r.cat}</span>
+                    <span style={{ fontSize:22 }}>{r.icon}</span>
+                  </div>
+                  <h3 style={{ fontFamily:"'Nunito',sans-serif", fontWeight:800, fontSize:15, color:"#0C2340", lineHeight:1.3 }}>{r.title}</h3>
+                  <p style={{ fontSize:12, color:"#5A5240", lineHeight:1.7, flex:1 }}>{r.desc}</p>
+                  <div style={{ display:"flex", justifyContent:"space-between", alignItems:"center", paddingTop:8, borderTop:"1px solid #F5EEE4" }}>
+                    <span style={{ fontSize:11, color:"#A0927A", fontWeight:500 }}>{r.type}</span>
+                    <button onClick={()=>{
+                        setActiveDrawer(r.title);
+                        setLastClicked(r.title);
+                      }} style={{ background:"#FFF0E0", color:"#C05A00", border:"none", borderRadius:50, padding:"7px 14px", fontSize:12, fontWeight:700, cursor:"pointer" }}>Learn More →</button>
+                  </div>
                 </div>
               </div>
             ))}
