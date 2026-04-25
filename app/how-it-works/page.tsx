@@ -127,21 +127,21 @@ export default function HowItWorks() {
         </div>
       </section>
 
-      <section className="section-sm" style={{ background:"#FFF0E0", textAlign:"center" }}>
-        <div className="container-xs">
-          <div className="section-chip">🐆 See It In Action</div>
-          <h2 style={{ fontFamily:"'Nunito',sans-serif", fontWeight:900, fontSize:"clamp(22px,4vw,34px)", color:"#0C2340", marginBottom:14, marginTop:12 }}>
+      <section style={{ background:"linear-gradient(135deg,#0C2340,#1A3A70)", padding:"80px 24px", textAlign:"center" }}>
+        <div className="container">
+          <div className="section-chip" style={{ background:"rgba(245,130,10,0.2)", border:"1px solid rgba(245,130,10,0.4)", color:"#FFB366" }}>🐆 See It In Action</div>
+          <h2 style={{ fontFamily:"'Nunito',sans-serif", fontWeight:900, fontSize:"clamp(24px,4vw,38px)", color:"white", marginBottom:14, marginTop:12 }}>
             Inside a CHEETAH® Lesson
           </h2>
-          <p style={{ fontSize:"clamp(13px,1.6vw,16px)", color:"#8A7A6A", lineHeight:1.8, marginBottom:32 }}>
+          <p style={{ fontSize:"clamp(13px,1.6vw,16px)", color:"rgba(255,255,255,0.75)", lineHeight:1.8, marginBottom:40, maxWidth:580, margin:"0 auto 40px" }}>
             Watch the FastTrack Literacy™ system in action — a real classroom lesson showing how the 16-step structure comes to life.
           </p>
-          <div style={{ borderRadius:20, overflow:"hidden", boxShadow:"0 12px 48px rgba(12,35,64,0.15)", maxWidth:760, margin:"0 auto" }}>
+          <div style={{ borderRadius:20, overflow:"hidden", boxShadow:"0 24px 80px rgba(0,0,0,0.5)", maxWidth:900, margin:"0 auto", border:"3px solid rgba(245,130,10,0.4)" }}>
             <video
               controls
               preload="metadata"
-              style={{ width:"100%", display:"block", background:"#0C2340" }}
-              poster="/images/five-pillars.jpg"
+              style={{ width:"100%", display:"block", background:"#0C2340", minHeight:360 }}
+              poster="/images/cheetah-lesson-poster.jpg"
             >
               <source src="/videos/inside-cheetah-lessons.mp4" type="video/mp4"/>
               Your browser does not support the video tag.
