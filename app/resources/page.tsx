@@ -299,12 +299,11 @@ export default function Resources() {
             {resources.filter(r => audience === "all" || r.audience === audience || r.audience === "both").map(r=>(
               <div key={r.title} style={{ background: lastClicked === r.title ? "#FFF0E0" : "white", border: lastClicked === r.title ? "2px solid #F5820A" : "1px solid #EDE0D0", borderRadius:16, overflow:"hidden", display:"flex", flexDirection:"column", transition:"all 0.3s ease", boxShadow: lastClicked === r.title ? "0 4px 20px rgba(245,130,10,0.15)" : "0 2px 8px rgba(0,0,0,0.04)" }}>
                 {(r as any).image ? (
-                  <div style={{ width:"100%", height:180, overflow:"hidden", flexShrink:0, background:"white", display:"flex", alignItems:"center", justifyContent:"center", borderBottom:"1px solid #EDE0D0" }}>
-                    <img src={(r as any).image} alt={r.title} style={{ width:"90%", height:"90%", objectFit:"contain", objectPosition:"center", display:"block", transition:"transform 0.4s ease", mixBlendMode:"multiply" }}
-                      onMouseEnter={e=>(e.currentTarget.style.transform="scale(1.06)")}
-                      onMouseLeave={e=>(e.currentTarget.style.transform="scale(1)")}
-                    />
-                  </div>
+                  <div style={{
+                    width:"100%", height:180, flexShrink:0,
+                    background:`white url(${(r as any).image}) center/80% no-repeat`,
+                    borderBottom:"1px solid #EDE0D0"
+                  }} />
                 ) : null}
                 <div style={{ padding:20, display:"flex", flexDirection:"column", gap:10, flex:1 }}>
                   <div style={{ display:"flex", justifyContent:"space-between", alignItems:"flex-start" }}>
