@@ -263,34 +263,6 @@ export default function Resources() {
       </section>
       )}
 
-      <section className="section" style={{ background:"white" }}>
-        <div className="container">
-          <div className="grid-2">
-            <div>
-              <div className="section-chip">🔄 The Ecosystem</div>
-              <h2 style={{ fontSize:"clamp(22px,3.5vw,34px)", fontWeight:900, color:"#0C2340", marginBottom:16 }}>A Complete Learning Flow</h2>
-              <p style={{ fontSize:15, color:"#5A5240", lineHeight:1.85, marginBottom:24 }}>The CHEETAH® Literacy Ecosystem combines educational resources, technological innovations, and extensive training — with everything flowing in a logical sequence.</p>
-              <div style={{ display:"flex", alignItems:"center", gap:0, flexWrap:"wrap", marginBottom:28 }}>
-                {["Books","Tools","Technology","Training","Review","Evaluation"].map((step,i,arr)=>(
-                  <div key={step} style={{ display:"flex", alignItems:"center" }}>
-                    <div style={{ background:i===0?"#F5820A":"#FFF0E0", color:i===0?"white":"#C05A00", fontFamily:"'Nunito',sans-serif", fontWeight:800, fontSize:12, padding:"8px 14px", borderRadius:50, whiteSpace:"nowrap" }}>{step}</div>
-                    {i<arr.length-1 && <div style={{ color:"#F5820A", fontWeight:700, margin:"0 4px", fontSize:14 }}>→</div>}
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div style={{ background:"#FFF9F4", border:"1px solid #EDE0D0", borderRadius:20, padding:28 }}>
-              <div style={{ fontFamily:"'Nunito',sans-serif", fontWeight:900, fontSize:16, color:"#0C2340", marginBottom:20 }}>📊 Resource Count</div>
-              {[{label:"Total Resources Developed",val:"1,100+",color:"#F5820A"},{label:"Educational Resources Available",val:"90+",color:"#1A5DB5"},{label:"Decodable Books",val:"70+",color:"#16A34A"},{label:"Interactive Charts",val:"27+",color:"#C05A00"},{label:"Reggae Phoneme Songs",val:"45",color:"#7C3AED"},{label:"Activities (Sets 1–9)",val:"640+",color:"#0891B2"}].map(r=>(
-                <div key={r.label} style={{ display:"flex", justifyContent:"space-between", alignItems:"center", padding:"10px 0", borderBottom:"1px solid #EDE0D0" }}>
-                  <span style={{ fontSize:13, color:"#5A5240" }}>{r.label}</span>
-                  <span style={{ fontFamily:"'Nunito',sans-serif", fontWeight:900, fontSize:18, color:r.color }}>{r.val}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
 
       <section className="section" style={{ background:"#FFF9F4" }}>
         <div className="container">

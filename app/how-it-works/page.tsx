@@ -37,9 +37,6 @@ export default function HowItWorks() {
             <div className="section-chip" style={{ margin:"0 auto 16px" }}>🔬 Science of Reading</div>
             <h2 style={{ fontSize:"clamp(24px,4vw,36px)", fontWeight:900, color:"#0C2340" }}>The 5 Pillars in Every Lesson</h2>
           </div>
-          <div style={{ marginBottom:40 }}>
-            <Image src="/images/image3.png" alt="The Five Pillars of Literacy: Building Strong Readers" width={1200} height={680} style={{ width:"100%", height:"auto", borderRadius:16, boxShadow:"0 8px 32px rgba(0,0,0,0.08)" }} />
-          </div>
           <div className="grid-auto">
             {[
               { n:"1", icon:"👂", title:"Phonemic Awareness", desc:"Hearing, identifying and manipulating sounds in spoken words." },
@@ -151,8 +148,8 @@ export default function HowItWorks() {
       </section>
 
       <section className="section-sm" style={{ background:"#FFF0E0", textAlign:"center" }}>
-        <h2 style={{ fontSize:"clamp(20px,3vw,30px)", fontWeight:900, color:"#0C2340", marginBottom:14 }}>Ready to Start the Journey?</h2>
-        <p style={{ fontSize:15, color:"#5A5240", marginBottom:28, maxWidth:440, margin:"0 auto 28px" }}>Join thousands of educators and families using FastTrack Literacy™.</p>
+        <h2 style={{ fontSize:"clamp(20px,3vw,30px)", fontWeight:900, color:"#0C2340", marginBottom:14 }}>Join thousands of educators and families using CHEETAH® resources!</h2>
+        <p style={{ fontSize:15, color:"#5A5240", marginBottom:28, maxWidth:440, margin:"0 auto 28px" }}>FastTrack Literacy™ — accelerating reading and writing success at school and at home.</p>
         <div className="btn-row" style={{ justifyContent:"center" }}>
           <Link href="/get-started" className="btn-orange">Get Started →</Link>
           <Link href="/resources" className="btn-navy">Browse Resources</Link>

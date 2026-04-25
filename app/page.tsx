@@ -122,7 +122,7 @@ export default function Home() {
               <Link href="/fasttrack" className="btn-orange">Learn More →</Link>
             </div>
             <div>
-              <Image src="/images/image3.png" alt="The Five Pillars of Literacy" width={800} height={450} style={{ width:"100%", height:"auto", borderRadius:16, boxShadow:"0 8px 32px rgba(0,0,0,0.08)" }} />
+              <Image src="/images/jamder-books.png" alt="FastTrack Literacy™ Books Collection" width={800} height={450} style={{ width:"100%", height:"auto", borderRadius:16, boxShadow:"0 8px 32px rgba(0,0,0,0.08)" }} />
             </div>
           </div>
         </div>
