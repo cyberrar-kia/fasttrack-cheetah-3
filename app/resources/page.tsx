@@ -4,13 +4,13 @@ import Image from "next/image";
 
 const FORMSPREE_QUOTE = "https://formspree.io/f/mwvanraq";
 
-type DrawerItem = { title: string; body: string; bullets?: string[] };
+type DrawerItem = { title: string; body: string; bullets?: string[]; samples?: {title:string; file:string}[] };
 
 const drawerContent: Record<string, DrawerItem> = {
   "Phonics Chart — Sets 1–9": { title:"Phonics Chart — Sets 1–9", body:"The official FastTrack Literacy™ Phonics Chart covering all 9 phoneme sets plus a bonus letter sound. As provided by the Ministry of Education, Skills, Youth and Information.", bullets:["Set 1: s, short ă, m, short ĕ, p","Set 2: f, n, short ĭ, t, r","Set 3: d, short ŏ, hard g, h, k","Set 4: l, b, short ŭ, soft g, long ā","Set 5: j, long ī, or, long ō, z","Set 6: ng, w/wh, short oo, long oo, v","Set 7: ch, sh, long ē, th, y","Set 8: x, qu, oi, long ū, ar","Set 9: ow, ou, er, zh","Bonus letter sound: soft c"] },
   "Teacher's Helper / Teacher's Guide": { title:"Teacher's Helper / Teacher's Guide", body:"The Teacher's Helper provides the full instructional roadmap and difficult auditory stories. Each letter includes a 'Suggested 65-Minute Teacher's Page' to guide daily lessons. The Pupil's Helper omits steps 2, 3, and 4 to remain accessible for the child.", bullets:["Full 16-step instructional roadmap for every phoneme","Complex auditory stories and guided steps for teachers/parents","'Suggested 65-Minute Teacher's Page' per letter","Differentiated instruction — adjust, skip, or shorten lessons based on ability","Available in Volumes 1 and 2","Over 640 activities, with Sets 1–9 as supplemental digital resources"] },
   "Pupil's Workbook / Pupil's Helper": { title:"Pupil's Workbook / Pupil's Helper", body:"Streamlined version for students — simplified to remove jingles and drills that prevent overwhelm, focusing on print and sound. Available in Volumes 1, 2, and 3.", bullets:["Omits steps 2, 3, and 4 to remain child-accessible","Focus on print and sound activities","Simplified auditory stories","Hands-on activities for decoding and encoding","Available as Pupil's Workbook, Student's Workbook, or Pupil's Helper (varies by country)","Volumes 1, 2, and 3"] },
-  "45 Reggae Phoneme Songs": { title:"45 One-Minute Reggae Phoneme Songs", body:"One-minute rhythmic, memorable, and fun songs — one for each phoneme. Call-and-response rhythms introduce sounds and reinforce learning. Children wake up singing them!", bullets:["45 songs — one per phoneme","One minute each — perfect for attention spans","Call-and-response rhythmic structure","Boosts memory, engagement and phoneme retention","Evidence-based: rhythmic learning improves sound discrimination","Available digitally and as audio recordings","Sample songs: ANNA-WARRIOR · BIG FISH-WARRIOR · BLACK BIRD"] },
+  "45 Reggae Phoneme Songs": { title:"45 One-Minute Reggae Phoneme Songs", body:"One-minute rhythmic, memorable, and fun songs — one for each phoneme. Call-and-response rhythms introduce sounds and reinforce learning. Children wake up singing them!", bullets:["45 songs — one per phoneme","One minute each — perfect for attention spans","Call-and-response rhythmic structure","Boosts memory, engagement and phoneme retention","Evidence-based: rhythmic learning improves sound discrimination","Available digitally and as audio recordings"], samples:[{title:"ANNA-WARRIOR",file:"/audio/ANNA-WARRIOR_01.mp3"},{title:"BIG FISH-WARRIOR",file:"/audio/BIG_FISH-WARRIOR_01.mp3"},{title:"BLACK BIRD",file:"/audio/BLACK_BIRD_01.mp3"}] },
   "CHEETAH® Poster Stories — Level 1": { title:"CHEETAH® Poster Stories — Level 1", body:"9 Level 1 Decodable Books for early readers just beginning to decode. Large, poster-format stories ideal for classroom shared reading.", bullets:["9 books in the Level 1 collection","Poster-format — large, clear, classroom-friendly","Aligned to the 16-step instructional sequence","Ideal for shared reading and student-led reading","C-DER® Book Integration — seamless connection to phoneme lessons","Available in JamDER™ and other localised editions"] },
   "CHEETAH® Decodable & Early Readers — Level 2": { title:"CHEETAH® Decodable & Early Readers (C-DER) — Level 2", body:"70+ Level 2 Decodable Books for building decoding and fluency. Fiction and nonfiction titles across a wide range of topics and cultural contexts.", bullets:["70+ books in the Level 2 collection","Fiction and nonfiction titles","Wide range of topics and cultural contexts","Builds decoding, fluency, and reading confidence","Published by CHEETAH® Purrrrrrr Publishing","Available as JamDER™ and C-DER™ editions"] },
   "27+ Interactive Charts": { title:"27+ Interactive Charts", body:"Multisensory reinforcement tools including phonics charts, word family charts, and classroom display resources. Standardised review and fluency testing.", bullets:["27+ charts in the collection","Phonics charts and word family charts","CHEETAH® Poster Fluency Tests — standardised review and testing","Multisensory reinforcement tools","Classroom display resources","Designed for individual and group instruction"] },
@@ -465,6 +465,21 @@ export default function Resources() {
                     <span style={{ color:"#F5820A", fontWeight:700, flexShrink:0 }}>✓</span>{b}
                   </div>
                 ))}
+              </div>
+            )}
+            {drawer.samples && (
+              <div style={{ marginBottom:24 }}>
+                <div style={{ fontFamily:"'Nunito',sans-serif", fontWeight:800, fontSize:14, color:"#0C2340", marginBottom:12 }}>🎵 Sample Songs — Listen Now</div>
+                <div style={{ display:"flex", flexDirection:"column", gap:12 }}>
+                  {drawer.samples.map(s=>(
+                    <div key={s.file} style={{ background:"#FFF9F4", border:"1px solid #EDE0D0", borderRadius:12, padding:"12px 16px" }}>
+                      <div style={{ fontFamily:"'Nunito',sans-serif", fontWeight:700, fontSize:13, color:"#0C2340", marginBottom:8 }}>{s.title}</div>
+                      <audio controls style={{ width:"100%", height:36 }}>
+                        <source src={s.file} type="audio/mp3" />
+                      </audio>
+                    </div>
+                  ))}
+                </div>
               </div>
             )}
             {activeDrawer === "Phonics Chart — Sets 1–9" && (
