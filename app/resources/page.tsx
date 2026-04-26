@@ -415,6 +415,15 @@ export default function Resources() {
                 { heading:"JamDER+™ — Special Edition", sub:"Jamaican Decodable & Early Readers", body:"A special curated collection of JamDER™ stories — culturally authentic, fully decodable, and beautifully illustrated. Celebrating Jamaican heritage through the joy of reading.", author:"CHEETAH® Purrrrrrr Publishing · Paulette Trowers, Juris Doctor" },
                 { heading:"About This Collection", sub:"Stories from Our Culture", body:"These stories are set in Jamaica and feature characters, places, and experiences that Jamaican children know and love. Every word is decodable using the FastTrack phonics sequence.", author:"fasttrackliteracy.com · mycheetahinc.com" },
               ]},
+              { title:"House Flood", vol:"C-DER Story Book", cover:"", heyZineId:"", color:"#DBEAFE", accent:"#1E40AF", pages:[
+                { heading:"House Flood", sub:"CHEETAH® Purrrrrrr Publishing", body:"A decodable early reader story from the C-DER™ collection. Fully phonics-aligned and culturally authentic.", author:"Bernadette Vidal · Paulette Trowers, JD" },
+              ]},
+              { title:"Mr. Pete Makes Friends", vol:"C-DER Story Book", cover:"/images/resources/mr-pete-makes-friends.jpg", heyZineId:"", color:"#DCFCE7", accent:"#166534", pages:[
+                { heading:"Mr. Pete Makes Friends", sub:"CHEETAH® Purrrrrrr Publishing", body:"A decodable early reader story from the C-DER™ collection. Fully phonics-aligned and culturally authentic.", author:"Bernadette Vidal · Paulette Trowers, JD" },
+              ]},
+              { title:"Meet My Family", vol:"C-DER Story Book", cover:"/images/resources/meet-my-family.jpg", heyZineId:"", color:"#FEF3C7", accent:"#92400E", pages:[
+                { heading:"Meet My Family", sub:"CHEETAH® Purrrrrrr Publishing", body:"A decodable early reader story from the C-DER™ collection. Fully phonics-aligned and culturally authentic.", author:"Bernadette Vidal · Paulette Trowers, JD" },
+              ]},
             ].map((book, bookIdx) => (
               <FlipBook key={bookIdx} book={book} />
             ))}
