@@ -424,10 +424,10 @@ export default function Resources() {
               { title:"Meet My Family", vol:"C-DER Story Book", cover:"/images/resources/meet-my-family.jpg", heyZineId:"", color:"#FEF3C7", accent:"#92400E", pages:[
                 { heading:"Meet My Family", sub:"CHEETAH® Purrrrrrr Publishing", body:"A decodable early reader story from the C-DER™ collection. Fully phonics-aligned and culturally authentic.", author:"Bernadette Vidal · Paulette Trowers, JD" },
               ]},
-              { title:"Grade 6 PEP Mathematics Workbook", vol:"Workbook", cover:"", heyZineId:"", color:"#EDE9FE", accent:"#5B21B6", pages:[
+              { title:"Grade 6 PEP Mathematics Workbook", vol:"Workbook", cover:"/images/resources/pep-math-workbook.png", heyZineId:"", color:"#EDE9FE", accent:"#5B21B6", pages:[
                 { heading:"Grade 6 PEP Mathematics Workbook", sub:"CHEETAH® Publishing", body:"A comprehensive mathematics workbook with answers and explanations. Designed to prepare Grade 6 students for PEP examinations.", author:"A Team of Educators · CHEETAH® Purrrrrrr Publishing" },
               ]},
-              { title:"FastTrack Lesson Framework", vol:"Teacher Reference", cover:"", heyZineId:"", color:"#F0FDF4", accent:"#166534", pages:[
+              { title:"FastTrack Lesson Framework", vol:"Teacher Reference", cover:"/images/resources/fasttrack-lesson-framework.png", heyZineId:"", color:"#F0FDF4", accent:"#166534", pages:[
                 { heading:"FastTrack Literacy™ Lesson Framework", sub:"1-Hour Lesson Framework Overview", body:"The complete suggested timetable and instructional flow for delivering FastTrack Literacy™ lessons. Essential reference for all CHEETAH® educators.", author:"CHEETAH® FastTrack Literacy™ · Paulette Trowers, JD" },
               ]},
             ].map((book, bookIdx) => (
