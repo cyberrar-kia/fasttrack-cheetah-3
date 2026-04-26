@@ -66,20 +66,22 @@ function FlipBook({ book }: { book: any }) {
         {page === 0 && (
           <div style={{ minHeight:320, display:"flex", flexDirection:"column" }}>
             {/* Cover image */}
-            <div style={{ flex:1, background:book.color, display:"flex", alignItems:"center", justifyContent:"center", padding:16, position:"relative", minHeight:240 }}>
-              <img
-                src={book.cover}
-                alt={`${book.title} ${book.vol} cover`}
-                style={{ maxWidth:"100%", maxHeight:220, objectFit:"contain", borderRadius:8, boxShadow:"0 8px 32px rgba(0,0,0,0.18)" }}
-                onError={(e)=>{
-                  const img = e.target as HTMLImageElement;
-                  img.style.display="none";
-                  const fallback = img.nextElementSibling as HTMLElement;
-                  if(fallback) fallback.style.display="flex";
-                }}
-              />
-              {/* Fallback if cover doesn't load */}
-              <div style={{ display:"none", flexDirection:"column", alignItems:"center", justifyContent:"center", gap:8, width:"100%" }}>
+            <div style={{ flex:1, background:book.color, display:"flex", alignItems:"center", justifyContent:"center", padding:0, position:"relative", minHeight:240, overflow:"hidden" }}>
+              {book.cover ? (
+                <img
+                  src={book.cover}
+                  alt={`${book.title} ${book.vol} cover`}
+                  style={{ width:"100%", height:"100%", minHeight:240, objectFit:"cover", objectPosition:"center top", display:"block" }}
+                  onError={(e)=>{
+                    const img = e.target as HTMLImageElement;
+                    img.style.display="none";
+                    const fallback = img.nextElementSibling as HTMLElement;
+                    if(fallback) fallback.style.display="flex";
+                  }}
+                />
+              ) : null}
+              {/* Fallback if no cover or cover doesn't load */}
+              <div style={{ display:book.cover?"none":"flex", flexDirection:"column", alignItems:"center", justifyContent:"center", gap:8, width:"100%", minHeight:240 }}>
                 <div style={{ fontSize:48 }}>📗</div>
                 <div style={{ fontFamily:"'Nunito',sans-serif", fontWeight:900, fontSize:16, color:"#0C2340", textAlign:"center" }}>{book.title}</div>
                 <div style={{ fontSize:12, color:"#8A7A6A" }}>{book.vol}</div>
