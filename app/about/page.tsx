@@ -45,12 +45,12 @@ export default function About() {
       <section className="section" style={{ background:"#FFF9F4" }}>
         <div className="container">
           <div style={{ textAlign:"center", marginBottom:32 }}>
-            <div className="section-chip" style={{ margin:"0 auto 16px" }}>🌍 Global Framework</div>
-            <h2 style={{ fontSize:"clamp(22px,3.5vw,34px)", fontWeight:900, color:"#0C2340", marginBottom:12 }}>The CHEETAH® Literacy Ecosystem</h2>
-            <p style={{ fontSize:15, color:"#5A5240", maxWidth:560, margin:"0 auto", lineHeight:1.7 }}>A comprehensive framework designed to improve reading skills through five primary pillars — combining educational resources, technological innovations, and extensive training.</p>
+            <div className="section-chip" style={{ margin:"0 auto 16px" }}>📚 What is FastTrack Literacy™</div>
+            <h2 style={{ fontSize:"clamp(22px,3.5vw,34px)", fontWeight:900, color:"#0C2340", marginBottom:12 }}>A Complete Literacy System</h2>
+            <p style={{ fontSize:15, color:"#5A5240", maxWidth:560, margin:"0 auto", lineHeight:1.7 }}>A comprehensive, Science of Reading–aligned system combining decodable books, reggae-inspired phoneme songs, AI-powered technology, flashcards, and structured learning tools.</p>
           </div>
-          <Image src="/images/image1.png" alt="The CHEETAH® Literacy Ecosystem: A Global Framework for Reading" width={1400} height={800} style={{ width:"100%", height:"auto", borderRadius:16, boxShadow:"0 8px 32px rgba(0,0,0,0.08)" }} />
-          <p style={{ textAlign:"center", marginTop:20, fontSize:14, color:"#5A5240", lineHeight:1.7 }}>Founded by <strong>Paulette Trowers-Lawrence, JD</strong>, CHEETAH® is driven by one mission: <strong>every child can read, and every child must read.</strong></p>
+          <Image src="/images/jamder-books.png" alt="FastTrack Literacy™ — JamDER and C-DER Books Collection" width={1400} height={800} style={{ width:"100%", height:"auto", borderRadius:16, boxShadow:"0 8px 32px rgba(0,0,0,0.08)" }} />
+          <p style={{ textAlign:"center", marginTop:20, fontSize:14, color:"#5A5240", lineHeight:1.7 }}>Founded by <strong>Paulette Trowers-Lawrence, JD</strong>, CHEETAH® is driven by one mission: <strong>every child can learn to read and write, and every child must be given the resources to succeed.</strong></p>
         </div>
       </section>
 
@@ -84,7 +84,7 @@ export default function About() {
       <section className="section" style={{ background:"linear-gradient(135deg,#0C2340,#1A3A70)" }}>
         <div className="container">
           <div className="grid-auto">
-            {[["2014/15","Founded in USA & Jamaica"],["90+","Educational Resources"],["1,100+","Total Resources Developed"],["770M+","People globally lacking literacy"],["37%","US 4th graders below basic reading"],["3","Countries Served"]].map(([n,l])=>(
+            {[["2014/15","Founded in USA & Jamaica"],["90+","Educational Resources"],["1,100+","Total Resources Developed"],["770M+","People globally lacking literacy"],["5","Countries Served"]].map(([n,l])=>(
               <div key={l} style={{ background:"rgba(255,255,255,0.08)", border:"1px solid rgba(255,255,255,0.12)", borderRadius:16, padding:24, textAlign:"center" }}>
                 <div style={{ fontFamily:"'Nunito',sans-serif", fontSize:28, fontWeight:900, color:"#F5820A" }}>{n}</div>
                 <div style={{ fontSize:12, color:"rgba(255,255,255,0.6)", marginTop:6 }}>{l}</div>
@@ -115,7 +115,7 @@ export default function About() {
                 <div key={item.b} style={{ background:"#FFF9F4", border:"1px solid #EDE0D0", borderRadius:10, padding:"12px 16px", fontSize:13, color:"#5A5240", lineHeight:1.7 }}><strong style={{ color:"#0C2340" }}>{item.b}</strong>{item.r}</div>
               ))}
             </div>
-            <Image src="/images/image1.png" alt="The CHEETAH® Literacy Ecosystem" width={800} height={450} style={{ width:"100%", height:"auto", borderRadius:12, marginBottom:20 }} />
+            <Image src="/images/jamder-books.png" alt="FastTrack Literacy™ Books Collection" width={800} height={450} style={{ width:"100%", height:"auto", borderRadius:12, marginBottom:20 }} />
             <p style={{ fontSize:14, color:"#5A5240", lineHeight:1.85, marginBottom:16 }}>Founded by <strong>Paulette Trowers-Lawrence, JD</strong>, CHEETAH® is driven by one mission: <strong>every child can read, and every child must read.</strong></p>
             <div style={{ background:"#FFF0E0", borderLeft:"4px solid #F5820A", padding:"14px 18px", borderRadius:"0 10px 10px 0", marginBottom:24 }}>
               <p style={{ fontSize:13, color:"#0C2340" }}><strong>Learn more:</strong> <a href="https://mycheetahinc.com" target="_blank" rel="noopener noreferrer" style={{ color:"#C05A00" }}>mycheetahinc.com</a></p>

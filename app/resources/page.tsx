@@ -8,7 +8,7 @@ type DrawerItem = { title: string; body: string; bullets?: string[] };
 
 const drawerContent: Record<string, DrawerItem> = {
   "Phonics Chart — Sets 1–9": { title:"Phonics Chart — Sets 1–9", body:"The official FastTrack Literacy™ Phonics Chart covering all 9 phoneme sets plus a bonus letter sound. As provided by the Ministry of Education, Skills, Youth and Information.", bullets:["Set 1: s, short ă, m, short ĕ, p","Set 2: f, n, short ĭ, t, r","Set 3: d, short ŏ, hard g, h, k","Set 4: l, b, short ŭ, soft g, long ā","Set 5: j, long ī, or, long ō, z","Set 6: ng, w/wh, short oo, long oo, v","Set 7: ch, sh, long ē, th, y","Set 8: x, qu, oi, long ū, ar","Set 9: ow, ou, er, zh","Bonus letter sound: soft c"] },
-  "Teacher's Helper / Teacher's Guide": { title:"Teacher's Helper / Teacher's Guide", body:"The Teacher's Helper provides the full instructional roadmap and difficult auditory stories. Each letter includes a 'Suggested 65-Minute Teacher's Page' to guide daily lessons. The Pupil's Helper omits steps 2, 3, and 4 to remain accessible for the child.", bullets:["Full 16-step instructional roadmap for every phoneme","Complex auditory stories and guided steps for teachers/parents","'Suggested 65-Minute Teacher's Page' per letter","Differentiated instruction — adjust, skip, or shorten lessons based on ability","Available in Volumes 1 and 2","Over 640 activities, with Sets 1–4 as supplemental digital resources"] },
+  "Teacher's Helper / Teacher's Guide": { title:"Teacher's Helper / Teacher's Guide", body:"The Teacher's Helper provides the full instructional roadmap and difficult auditory stories. Each letter includes a 'Suggested 65-Minute Teacher's Page' to guide daily lessons. The Pupil's Helper omits steps 2, 3, and 4 to remain accessible for the child.", bullets:["Full 16-step instructional roadmap for every phoneme","Complex auditory stories and guided steps for teachers/parents","'Suggested 65-Minute Teacher's Page' per letter","Differentiated instruction — adjust, skip, or shorten lessons based on ability","Available in Volumes 1 and 2","Over 640 activities, with Sets 1–9 as supplemental digital resources"] },
   "Pupil's Workbook / Pupil's Helper": { title:"Pupil's Workbook / Pupil's Helper", body:"Streamlined version for students — simplified to remove jingles and drills that prevent overwhelm, focusing on print and sound. Available in Volumes 1, 2, and 3.", bullets:["Omits steps 2, 3, and 4 to remain child-accessible","Focus on print and sound activities","Simplified auditory stories","Hands-on activities for decoding and encoding","Available as Pupil's Workbook, Student's Workbook, or Pupil's Helper (varies by country)","Volumes 1, 2, and 3"] },
   "45 Reggae Phoneme Songs": { title:"45 One-Minute Reggae Phoneme Songs", body:"One-minute rhythmic, memorable, and fun songs — one for each phoneme. Call-and-response rhythms introduce sounds and reinforce learning. Children wake up singing them!", bullets:["45 songs — one per phoneme","One minute each — perfect for attention spans","Call-and-response rhythmic structure","Boosts memory, engagement and phoneme retention","Evidence-based: rhythmic learning improves sound discrimination","Available digitally and as audio recordings"] },
   "CHEETAH® Poster Stories — Level 1": { title:"CHEETAH® Poster Stories — Level 1", body:"9 Level 1 Decodable Books for early readers just beginning to decode. Large, poster-format stories ideal for classroom shared reading.", bullets:["9 books in the Level 1 collection","Poster-format — large, clear, classroom-friendly","Aligned to the 16-step instructional sequence","Ideal for shared reading and student-led reading","C-DER® Book Integration — seamless connection to phoneme lessons","Available in JamDER™ and other localised editions"] },
@@ -30,24 +30,24 @@ const drawerContent: Record<string, DrawerItem> = {
 };
 
 const resources = [
-  { cat:"Phonics", icon:"📊", audience:"both", title:"Phonics Chart — Sets 1–9", desc:"Official FastTrack Literacy™ Phonics Chart — 9 phoneme sets plus bonus sound, as provided by the Ministry of Education, Skills, Youth and Information.", tag:"orange", type:"PDF Download" },
-  { cat:"Teacher Resources", icon:"👩‍🏫", audience:"teacher", title:"Teacher's Helper / Teacher's Guide", desc:"Full instructional roadmap with difficult auditory stories, a 65-minute suggested Teacher's Page per letter, and over 640 activities. Available in Volumes 1 and 2.", tag:"blue", type:"Physical + Digital" },
-  { cat:"Student Resources", icon:"👧", audience:"parent", title:"Pupil's Workbook / Pupil's Helper", desc:"Streamlined version for students (omitting steps 2, 3, and 4) to remain accessible for the child. Available in Volumes 1, 2, and 3.", tag:"green", type:"Physical Book" },
+  { cat:"Phonics", icon:"📊", audience:"both", image:"/images/resources/phonics-charts.jpg", title:"Phonics Chart — Sets 1–9", desc:"Official FastTrack Literacy™ Phonics Chart — 9 phoneme sets plus bonus sound, as provided by the Ministry of Education, Skills, Youth and Information.", tag:"orange", type:"PDF Download" },
+  { cat:"Teacher Resources", icon:"👩‍🏫", audience:"teacher", image:"/images/resources/teachers-helper-combined.jpg", title:"Teacher's Helper / Teacher's Guide", desc:"Full instructional roadmap with difficult auditory stories, a 65-minute suggested Teacher's Page per letter, and over 640 activities. Available in Volumes 1 and 2.", tag:"blue", type:"Physical + Digital" },
+  { cat:"Student Resources", icon:"👧", audience:"parent", image:"/images/resources/pupils-helper-vol1.jpg", title:"Pupil's Workbook / Pupil's Helper", desc:"Streamlined version for students (omitting steps 2, 3, and 4) to remain accessible for the child. Available in Volumes 1, 2, and 3.", tag:"green", type:"Physical Book" },
   { cat:"Songs & Audio", icon:"🎵", audience:"both", title:"45 Reggae Phoneme Songs", desc:"One-minute rhythmic, memorable, and fun songs — one for each phoneme. Children wake up singing them! Available digitally and as recordings.", tag:"orange", type:"Audio + Digital" },
-  { cat:"Decodable Books", icon:"📖", audience:"parent", title:"CHEETAH® Poster Stories — Level 1", desc:"9 Level 1 decodable books for early readers just beginning to decode. Large, poster-format stories ideal for classroom shared reading.", tag:"blue", type:"Physical Book" },
-  { cat:"Decodable Books", icon:"📚", audience:"parent", title:"CHEETAH® Decodable & Early Readers — Level 2", desc:"70+ Level 2 decodable books for building decoding and fluency. Fiction and nonfiction titles across a range of topics.", tag:"green", type:"Physical Book" },
-  { cat:"Charts & Visual Tools", icon:"📊", audience:"teacher", title:"27+ Interactive Charts", desc:"Multisensory reinforcement tools including phonics charts, word family charts, and classroom display resources.", tag:"orange", type:"Physical Resource" },
-  { cat:"Flashcards", icon:"🃏", audience:"teacher", title:"Phoneme Flashcard Sets", desc:"Visual flashcard sets for letter-sound practice, sight words, and vocabulary building. Designed for both classroom and home use.", tag:"blue", type:"Physical Resource" },
+  { cat:"Decodable Books", icon:"📖", audience:"parent", image:"/images/resources/poster-stories.jpg", title:"CHEETAH® Poster Stories — Level 1", desc:"9 Level 1 decodable books for early readers just beginning to decode. Large, poster-format stories ideal for classroom shared reading.", tag:"blue", type:"Physical Book" },
+  { cat:"Decodable Books", icon:"📚", audience:"parent", image:"/images/resources/cder-books.jpg", title:"CHEETAH® Decodable & Early Readers — Level 2", desc:"70+ Level 2 decodable books for building decoding and fluency. Fiction and nonfiction titles across a range of topics.", tag:"green", type:"Physical Book" },
+  { cat:"Charts & Visual Tools", icon:"📊", audience:"teacher", image:"/images/resources/phonics-charts.jpg", title:"27+ Interactive Charts", desc:"Multisensory reinforcement tools including phonics charts, word family charts, and classroom display resources.", tag:"orange", type:"Physical Resource" },
+  { cat:"Flashcards", icon:"🃏", audience:"teacher", image:"/images/resources/flashcards-rhymes.jpg", title:"Phoneme Flashcard Sets", desc:"Visual flashcard sets for letter-sound practice, sight words, and vocabulary building. Designed for both classroom and home use.", tag:"blue", type:"Physical Resource" },
   { cat:"Assessment", icon:"📋", audience:"teacher", title:"Assessment & Progress Monitoring Tools", desc:"Built-in assessment tools including CHEETAH® Poster Fluency Tests, self-assessment checklists, and progress tracking sheets.", tag:"green", type:"Assessment" },
-  { cat:"Technology", icon:"🤖", audience:"both", title:"iCHEETAH™ AI-Powered Robot", desc:"Patent-pending AI-powered robot with integrated CHEETAH® content. Engages children in interactive literacy activities through voice and screen.", tag:"orange", type:"Hardware" },
-  { cat:"Technology", icon:"📱", audience:"both", title:"CHEETAH® Apps", desc:"Digital apps for independent practice, phoneme reinforcement, and parent engagement. Available on tablets and compatible devices.", tag:"blue", type:"Digital App" },
-  { cat:"Competition", icon:"🏆", audience:"teacher", title:"National Literacy Competition Cards", desc:"Cards and materials for classroom and national literacy competitions — building motivation, fluency, and confidence.", tag:"green", type:"Competition Resource" },
+  { cat:"Technology", icon:"🤖", audience:"both", image:"/images/icheetah-frontal.png", title:"iCHEETAH™ AI-Powered Robot", desc:"Patent-pending AI-powered robot with integrated CHEETAH® content. Engages children in interactive literacy activities through voice and screen.", tag:"orange", type:"Hardware" },
+  { cat:"Technology", icon:"📱", audience:"both", image:"/images/resources/cheetah-app.jpg", title:"CHEETAH® Apps", desc:"Digital apps for independent practice, phoneme reinforcement, and parent engagement. Available on tablets and compatible devices.", tag:"blue", type:"Digital App" },
+  { cat:"Competition", icon:"🏆", audience:"both", image:"/images/resources/national-literacy-competition.jpg", title:"National Literacy Competition Cards", desc:"Cards and materials for classroom and national literacy competitions — building motivation, fluency, and confidence.", tag:"green", type:"Competition Resource" },
   { cat:"Songs & Audio", icon:"🎵", audience:"both", title:"ANNA-WARRIOR — Reggae Phoneme Song", desc:"A sample reggae phoneme song from the FastTrack Literacy™ collection. Rhythmic, memorable, and fun.", tag:"orange", type:"Audio Sample" },
   { cat:"Songs & Audio", icon:"🎵", audience:"both", title:"BIG FISH-WARRIOR — Reggae Phoneme Song", desc:"A sample reggae phoneme song from the FastTrack Literacy™ collection. Call-and-response rhythmic structure.", tag:"blue", type:"Audio Sample" },
   { cat:"Songs & Audio", icon:"🎵", audience:"both", title:"BLACK BIRD — Reggae Phoneme Song", desc:"A sample reggae phoneme song from the FastTrack Literacy™ collection. Children wake up singing these!", tag:"green", type:"Audio Sample" },
-  { cat:"Books", icon:"📗", audience:"parent", title:"All JamDER™ & C-DER Books", desc:"70+ decodable readers — JamDER™ (Jamaica) and C-DER™ (Caribbean) series. Fiction and nonfiction across all levels and cultural contexts.", tag:"green", type:"Book Collection" },
-  { cat:"Rewards", icon:"⭐", audience:"both", title:"Reward Sticker Sets", desc:"Motivational reward stickers tied to the 16-step lesson structure. Children celebrate their progress at every milestone.", tag:"orange", type:"Classroom Resource" },
-  { cat:"Charts & Visual Tools", icon:"📌", audience:"teacher", title:"CHEETAH® Charts — Multisensory Reinforcement Tools", desc:"Physical chart resources designed as multisensory reinforcement tools — supporting phoneme recall through visual and kinaesthetic engagement alongside the 27+ interactive charts.", tag:"blue", type:"Physical Resource" },
+  { cat:"Books", icon:"📗", audience:"both", image:"/images/resources/cder-books.jpg", title:"All JamDER™ & C-DER Books", desc:"70+ decodable readers — JamDER™ (Jamaica) and C-DER™ (Caribbean) series. Fiction and nonfiction across all levels and cultural contexts.", tag:"green", type:"Book Collection" },
+  { cat:"Rewards", icon:"⭐", audience:"both", title:"Reward Sticker Sets", desc:"Motivational reward stickers tied to the 16-step lesson structure. Children celebrate their progress at every milestone.", tag:"orange", type:"Classroom Resource", contactUs:true },
+  { cat:"Charts & Visual Tools", icon:"📌", audience:"teacher", image:"/images/resources/interactive-charts.png", title:"CHEETAH® Charts — Multisensory Reinforcement Tools", desc:"Physical chart resources designed as multisensory reinforcement tools — supporting phoneme recall through visual and kinaesthetic engagement alongside the 27+ interactive charts.", tag:"blue", type:"Physical Resource" },
   { cat:"Technology", icon:"💡", audience:"teacher", title:"Innovative AI Tool", desc:"An AI-powered learning tool that integrates artificial intelligence into the literacy ecosystem — tracking fluency, personalising learning, and supporting data-driven instruction.", tag:"orange", type:"Digital Tool" },
   { cat:"Training", icon:"🎓", audience:"teacher", title:"Teacher Training", desc:"Comprehensive teacher training including 'train-the-trainer' programmes and intensive Transformation Weeks — equipping educators to implement FastTrack Literacy™ with confidence.", tag:"green", type:"Professional Development" },
 ];
@@ -66,20 +66,22 @@ function FlipBook({ book }: { book: any }) {
         {page === 0 && (
           <div style={{ minHeight:320, display:"flex", flexDirection:"column" }}>
             {/* Cover image */}
-            <div style={{ flex:1, background:book.color, display:"flex", alignItems:"center", justifyContent:"center", padding:16, position:"relative", minHeight:240 }}>
-              <img
-                src={book.cover}
-                alt={`${book.title} ${book.vol} cover`}
-                style={{ maxWidth:"100%", maxHeight:220, objectFit:"contain", borderRadius:8, boxShadow:"0 8px 32px rgba(0,0,0,0.18)" }}
-                onError={(e)=>{
-                  const img = e.target as HTMLImageElement;
-                  img.style.display="none";
-                  const fallback = img.nextElementSibling as HTMLElement;
-                  if(fallback) fallback.style.display="flex";
-                }}
-              />
-              {/* Fallback if cover doesn't load */}
-              <div style={{ display:"none", flexDirection:"column", alignItems:"center", justifyContent:"center", gap:8, width:"100%" }}>
+            <div style={{ background:book.color, position:"relative", height:280, overflow:"hidden" }}>
+              {book.cover ? (
+                <img
+                  src={book.cover}
+                  alt={`${book.title} ${book.vol} cover`}
+                  style={{ width:"100%", height:"100%", objectFit:"cover", objectPosition:"center center", display:"block" }}
+                  onError={(e)=>{
+                    const img = e.target as HTMLImageElement;
+                    img.style.display="none";
+                    const fallback = img.nextElementSibling as HTMLElement;
+                    if(fallback) fallback.style.display="flex";
+                  }}
+                />
+              ) : null}
+              {/* Fallback if no cover or cover doesn't load */}
+              <div style={{ display:book.cover?"none":"flex", flexDirection:"column", alignItems:"center", justifyContent:"center", gap:8, width:"100%", height:"100%", position:"absolute", top:0, left:0, background:book.color }}>
                 <div style={{ fontSize:48 }}>📗</div>
                 <div style={{ fontFamily:"'Nunito',sans-serif", fontWeight:900, fontSize:16, color:"#0C2340", textAlign:"center" }}>{book.title}</div>
                 <div style={{ fontSize:12, color:"#8A7A6A" }}>{book.vol}</div>
@@ -196,12 +198,6 @@ export default function Resources() {
           >
             👨‍👩‍👧 For Parents
           </button>
-          {/* Description */}
-          <div style={{ marginLeft:"auto", fontSize:"clamp(11px,1.3vw,13px)", color:"#8A7A6A", paddingLeft:16 }}>
-            {audience==="all" && "Showing all resources"}
-            {audience==="teacher" && "Guides, charts, and tools for educators"}
-            {audience==="parent" && "Books, songs, and guides for home learning"}
-          </div>
         </div>
       </div>
 
@@ -216,20 +212,27 @@ export default function Resources() {
           </div>
           <div style={{ display:"grid", gridTemplateColumns:"repeat(auto-fill,minmax(clamp(220px,26vw,280px),1fr))", gap:16 }}>
             {[
-              { icon:"📋", title:"Teacher's Helper Vol 1 & 2", desc:"Full 16-step instructional roadmap for every phoneme. Includes auditory stories, guided steps, and a suggested 65-minute lesson plan per letter." },
-              { icon:"📊", title:"FastTrack Phonics Chart", desc:"Official Ministry of Education approved phonics chart covering all 9 phoneme sets plus a bonus letter sound. Print-ready PDF.", free:true },
+              { icon:"📋", image:"/images/resources/teachers-helper-combined.jpg", title:"Teacher's Helper Vol 1 & 2", desc:"Full 16-step instructional roadmap for every phoneme. Includes auditory stories, guided steps, and a suggested 65-minute lesson plan per letter." },
+              { icon:"📊", image:"/images/resources/phonics-charts.jpg", title:"FastTrack Phonics Chart", desc:"Official Ministry of Education approved phonics chart covering all 9 phoneme sets plus a bonus letter sound. Print-ready PDF.", free:true },
               { icon:"📝", title:"Assessment & Progress Tools", desc:"CHEETAH® Poster Fluency Tests, self-assessment checklists, and progress tracking sheets. Measurable outcomes at every stage." },
-              { icon:"🗂️", title:"27+ Interactive Charts", desc:"Multisensory reinforcement tools including phonics charts, word family charts, and classroom display resources." },
+              { icon:"🗂️", image:"/images/resources/phonics-charts.jpg", title:"27+ Interactive Charts", desc:"Multisensory reinforcement tools including phonics charts, word family charts, and classroom display resources." },
               { icon:"🎓", title:"Teacher Training Programme", desc:"Full implementation training for classroom teachers. Train-the-trainer model for school-wide rollout. Available in-person and digitally." },
-              { icon:"🃏", title:"Phoneme Flashcard Sets", desc:"Letter-sound correspondence flashcards, sight word recognition sets, and vocabulary building cards aligned to the 16-step sequence." },
+              { icon:"🃏", image:"/images/resources/flashcards-rhymes.jpg", title:"Phoneme Flashcard Sets", desc:"Letter-sound correspondence flashcards, sight word recognition sets, and vocabulary building cards aligned to the 16-step sequence." },
             ].map(item => (
-              <div key={item.title} style={{ background:"white", border:"1px solid #EDE0D0", borderRadius:16, padding:"18px 20px" }}>
-                <div style={{ fontSize:28, marginBottom:10 }}>{item.icon}</div>
-                <div style={{ display:"flex", alignItems:"center", gap:8, marginBottom:6 }}>
-                  <div style={{ fontFamily:"'Nunito',sans-serif", fontWeight:800, fontSize:"clamp(13px,1.6vw,15px)", color:"#0C2340" }}>{item.title}</div>
-                  {item.free && <span style={{ background:"#DCFCE7", color:"#166534", fontSize:10, fontWeight:700, padding:"2px 8px", borderRadius:50 }}>Free</span>}
+              <div key={item.title} style={{ background:"white", border:"1px solid #EDE0D0", borderRadius:16, overflow:"hidden" }}>
+                {(item as any).image && (
+                  <div style={{ width:"100%", height:140, background:"white", display:"flex", alignItems:"center", justifyContent:"center", borderBottom:"1px solid #EDE0D0", padding:10, boxSizing:"border-box" }}>
+                    <img src={(item as any).image} alt={item.title} style={{ maxWidth:"100%", maxHeight:"100%", objectFit:"contain" }} />
+                  </div>
+                )}
+                <div style={{ padding:"16px 20px" }}>
+                  {!(item as any).image && <div style={{ fontSize:28, marginBottom:10 }}>{item.icon}</div>}
+                  <div style={{ display:"flex", alignItems:"center", gap:8, marginBottom:6 }}>
+                    <div style={{ fontFamily:"'Nunito',sans-serif", fontWeight:800, fontSize:"clamp(13px,1.6vw,15px)", color:"#0C2340" }}>{item.title}</div>
+                    {item.free && <span style={{ background:"#DCFCE7", color:"#166534", fontSize:10, fontWeight:700, padding:"2px 8px", borderRadius:50 }}>Free</span>}
+                  </div>
+                  <p style={{ fontSize:"clamp(11px,1.3vw,13px)", color:"#8A7A6A", lineHeight:1.75 }}>{item.desc}</p>
                 </div>
-                <p style={{ fontSize:"clamp(11px,1.3vw,13px)", color:"#8A7A6A", lineHeight:1.75 }}>{item.desc}</p>
               </div>
             ))}
           </div>
@@ -248,17 +251,27 @@ export default function Resources() {
           </div>
           <div style={{ display:"grid", gridTemplateColumns:"repeat(auto-fill,minmax(clamp(220px,26vw,280px),1fr))", gap:16 }}>
             {[
-              { icon:"📗", title:"Pupil's Helper Vol 1, 2 & 3", desc:"Student workbooks with phonics activities, letter-sound exercises, and early reading practice. Designed for children ages 3–8." },
+              { icon:"📗", image:"/images/resources/pupils-helper-combined.jpg", title:"Pupil's Helper Vol 1, 2 & 3", desc:"Student workbooks with phonics activities, letter-sound exercises, and early reading practice. Designed for children ages 3–8." },
               { icon:"🎵", title:"45 Reggae Phoneme Songs", desc:"One-minute call-and-response reggae songs — one per phoneme. Children wake up singing these! Perfect for home learning." },
-              { icon:"📖", title:"JamDER™ & C-DER Books", desc:"70+ culturally authentic decodable early readers. Fiction and nonfiction across all reading levels. Ideal for reading together at home." },
-              { icon:"⭐", title:"Reward Sticker Sets", desc:"Motivational stickers tied to the 16-step lesson structure. Children celebrate their progress at every milestone." },
-              { icon:"📊", title:"Home Progress Guide", desc:"Simple parent-friendly guide to tracking your child's reading progress at home alongside the FastTrack programme." },
-              { icon:"🤖", title:"iCHEETAH™ AI Device", desc:"AI-powered reading companion for children ages 3–8. Guides phonics practice and adapts to each child's pace." },
+              { icon:"📖", image:"/images/resources/cder-books.jpg", title:"JamDER™ & C-DER Books", desc:"70+ culturally authentic decodable early readers. Fiction and nonfiction across all reading levels. Ideal for reading together at home." },
+              { icon:"⭐", title:"Reward Sticker Sets", desc:"Motivational stickers tied to the 16-step lesson structure. Children celebrate their progress at every milestone.", contactUs:true },
+              { icon:"📊", title:"Home Progress Guide", desc:"Simple parent-friendly guide to tracking your child's reading progress at home alongside the FastTrack programme.", contactUs:true },
+              { icon:"🤖", image:"/images/icheetah-frontal.png", title:"iCHEETAH™ AI Device", desc:"AI-powered reading companion for children ages 3–8. Guides phonics practice and adapts to each child's pace." },
             ].map(item => (
-              <div key={item.title} style={{ background:"white", border:"1px solid #EDE0D0", borderRadius:16, padding:"18px 20px" }}>
-                <div style={{ fontSize:28, marginBottom:10 }}>{item.icon}</div>
-                <div style={{ fontFamily:"'Nunito',sans-serif", fontWeight:800, fontSize:"clamp(13px,1.6vw,15px)", color:"#0C2340", marginBottom:6 }}>{item.title}</div>
-                <p style={{ fontSize:"clamp(11px,1.3vw,13px)", color:"#8A7A6A", lineHeight:1.75 }}>{item.desc}</p>
+              <div key={item.title} style={{ background:"white", border:"1px solid #EDE0D0", borderRadius:16, overflow:"hidden" }}>
+                {(item as any).image && (
+                  <div style={{ width:"100%", height:140, background:"white", display:"flex", alignItems:"center", justifyContent:"center", borderBottom:"1px solid #EDE0D0", padding:10, boxSizing:"border-box" }}>
+                    <img src={(item as any).image} alt={item.title} style={{ maxWidth:"100%", maxHeight:"100%", objectFit:"contain" }} />
+                  </div>
+                )}
+                <div style={{ padding:"16px 20px" }}>
+                  {!(item as any).image && <div style={{ fontSize:28, marginBottom:10 }}>{item.icon}</div>}
+                  <div style={{ fontFamily:"'Nunito',sans-serif", fontWeight:800, fontSize:"clamp(13px,1.6vw,15px)", color:"#0C2340", marginBottom:6 }}>{item.title}</div>
+                  <p style={{ fontSize:"clamp(11px,1.3vw,13px)", color:"#8A7A6A", lineHeight:1.75, marginBottom:(item as any).contactUs ? 12 : 0 }}>{item.desc}</p>
+                  {(item as any).contactUs && (
+                    <a href="/contact" style={{ display:"inline-block", background:"#0C2340", color:"white", fontSize:12, fontWeight:700, padding:"7px 16px", borderRadius:50, textDecoration:"none", fontFamily:"'Nunito',sans-serif" }}>Contact Us →</a>
+                  )}
+                </div>
               </div>
             ))}
           </div>
@@ -266,34 +279,6 @@ export default function Resources() {
       </section>
       )}
 
-      <section className="section" style={{ background:"white" }}>
-        <div className="container">
-          <div className="grid-2">
-            <div>
-              <div className="section-chip">🔄 The Ecosystem</div>
-              <h2 style={{ fontSize:"clamp(22px,3.5vw,34px)", fontWeight:900, color:"#0C2340", marginBottom:16 }}>A Complete Learning Flow</h2>
-              <p style={{ fontSize:15, color:"#5A5240", lineHeight:1.85, marginBottom:24 }}>The CHEETAH® Literacy Ecosystem combines educational resources, technological innovations, and extensive training — with everything flowing in a logical sequence.</p>
-              <div style={{ display:"flex", alignItems:"center", gap:0, flexWrap:"wrap", marginBottom:28 }}>
-                {["Books","Tools","Technology","Training","Review","Evaluation"].map((step,i,arr)=>(
-                  <div key={step} style={{ display:"flex", alignItems:"center" }}>
-                    <div style={{ background:i===0?"#F5820A":"#FFF0E0", color:i===0?"white":"#C05A00", fontFamily:"'Nunito',sans-serif", fontWeight:800, fontSize:12, padding:"8px 14px", borderRadius:50, whiteSpace:"nowrap" }}>{step}</div>
-                    {i<arr.length-1 && <div style={{ color:"#F5820A", fontWeight:700, margin:"0 4px", fontSize:14 }}>→</div>}
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div style={{ background:"#FFF9F4", border:"1px solid #EDE0D0", borderRadius:20, padding:28 }}>
-              <div style={{ fontFamily:"'Nunito',sans-serif", fontWeight:900, fontSize:16, color:"#0C2340", marginBottom:20 }}>📊 Resource Count</div>
-              {[{label:"Total Resources Developed",val:"1,100+",color:"#F5820A"},{label:"Educational Resources Available",val:"90+",color:"#1A5DB5"},{label:"Decodable Books",val:"70+",color:"#16A34A"},{label:"Interactive Charts",val:"27+",color:"#C05A00"},{label:"Reggae Phoneme Songs",val:"45",color:"#7C3AED"},{label:"Activities (Sets 1–4)",val:"640+",color:"#0891B2"}].map(r=>(
-                <div key={r.label} style={{ display:"flex", justifyContent:"space-between", alignItems:"center", padding:"10px 0", borderBottom:"1px solid #EDE0D0" }}>
-                  <span style={{ fontSize:13, color:"#5A5240" }}>{r.label}</span>
-                  <span style={{ fontFamily:"'Nunito',sans-serif", fontWeight:900, fontSize:18, color:r.color }}>{r.val}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
 
       <section className="section" style={{ background:"#FFF9F4" }}>
         <div className="container">
@@ -328,19 +313,30 @@ export default function Resources() {
           </div>
           <div className="grid-auto">
             {resources.filter(r => audience === "all" || r.audience === audience || r.audience === "both").map(r=>(
-              <div key={r.title} style={{ background: lastClicked === r.title ? "#FFF0E0" : "white", border: lastClicked === r.title ? "2px solid #F5820A" : "1px solid #EDE0D0", borderRadius:16, padding:24, display:"flex", flexDirection:"column", gap:10, transition:"all 0.3s ease", boxShadow: lastClicked === r.title ? "0 4px 20px rgba(245,130,10,0.15)" : "none" }}>
-                <div style={{ display:"flex", justifyContent:"space-between", alignItems:"flex-start" }}>
-                  <span style={{ background:tagColors[r.tag].bg, color:tagColors[r.tag].tc, fontSize:11, fontWeight:700, padding:"3px 10px", borderRadius:50 }}>{r.cat}</span>
-                  <span style={{ fontSize:22 }}>{r.icon}</span>
-                </div>
-                <h3 style={{ fontFamily:"'Nunito',sans-serif", fontWeight:800, fontSize:15, color:"#0C2340", lineHeight:1.3 }}>{r.title}</h3>
-                <p style={{ fontSize:12, color:"#5A5240", lineHeight:1.7, flex:1 }}>{r.desc}</p>
-                <div style={{ display:"flex", justifyContent:"space-between", alignItems:"center", paddingTop:8, borderTop:"1px solid #F5EEE4" }}>
-                  <span style={{ fontSize:11, color:"#A0927A", fontWeight:500 }}>{r.type}</span>
-                  <button onClick={()=>{
-                      setActiveDrawer(r.title);
-                      setLastClicked(r.title);
-                    }} style={{ background:"#FFF0E0", color:"#C05A00", border:"none", borderRadius:50, padding:"7px 14px", fontSize:12, fontWeight:700, cursor:"pointer" }}>Learn More →</button>
+              <div key={r.title} style={{ background: lastClicked === r.title ? "#FFF0E0" : "white", border: lastClicked === r.title ? "2px solid #F5820A" : "1px solid #EDE0D0", borderRadius:16, overflow:"hidden", display:"flex", flexDirection:"column", transition:"all 0.3s ease", boxShadow: lastClicked === r.title ? "0 4px 20px rgba(245,130,10,0.15)" : "0 2px 8px rgba(0,0,0,0.04)" }}>
+                {(r as any).image && (
+                  <div style={{ width:"100%", height:180, background:"white", display:"flex", alignItems:"center", justifyContent:"center", borderBottom:"1px solid #EDE0D0", padding:12, boxSizing:"border-box" }}>
+                    <img src={(r as any).image} alt={r.title} style={{ maxWidth:"100%", maxHeight:"100%", objectFit:"contain", display:"block" }} />
+                  </div>
+                )}
+                <div style={{ padding:20, display:"flex", flexDirection:"column", gap:10, flex:1 }}>
+                  <div style={{ display:"flex", justifyContent:"space-between", alignItems:"flex-start" }}>
+                    <span style={{ background:tagColors[r.tag].bg, color:tagColors[r.tag].tc, fontSize:11, fontWeight:700, padding:"3px 10px", borderRadius:50 }}>{r.cat}</span>
+                    {!(r as any).image && <span style={{ fontSize:22 }}>{r.icon}</span>}
+                  </div>
+                  <h3 style={{ fontFamily:"'Nunito',sans-serif", fontWeight:800, fontSize:15, color:"#0C2340", lineHeight:1.3 }}>{r.title}</h3>
+                  <p style={{ fontSize:12, color:"#5A5240", lineHeight:1.7, flex:1 }}>{r.desc}</p>
+                  <div style={{ display:"flex", justifyContent:"space-between", alignItems:"center", paddingTop:8, borderTop:"1px solid #F5EEE4" }}>
+                    <span style={{ fontSize:11, color:"#A0927A", fontWeight:500 }}>{r.type}</span>
+                    {(r as any).contactUs ? (
+                      <a href="/contact" style={{ background:"#0C2340", color:"white", border:"none", borderRadius:50, padding:"7px 14px", fontSize:12, fontWeight:700, cursor:"pointer", textDecoration:"none", fontFamily:"'Nunito',sans-serif" }}>Contact Us →</a>
+                    ) : (
+                      <button onClick={()=>{
+                          setActiveDrawer(r.title);
+                          setLastClicked(r.title);
+                        }} style={{ background:"#FFF0E0", color:"#C05A00", border:"none", borderRadius:50, padding:"7px 14px", fontSize:12, fontWeight:700, cursor:"pointer" }}>Learn More →</button>
+                    )}
+                  </div>
                 </div>
               </div>
             ))}
@@ -397,29 +393,49 @@ export default function Resources() {
           </div>
           <div style={{ display:"grid", gridTemplateColumns:"repeat(auto-fill,minmax(clamp(260px,28vw,340px),1fr))", gap:24 }}>
             {[
-              { title:"Teacher's Helper", vol:"Volume 1", cover:"https://heyzine.com/api1/thumb?pdf=0a66e4e5a7&page=0", color:"#DBEAFE", accent:"#1E40AF", pages:[
+              { title:"Teacher's Helper", vol:"Volume 1", cover:"/images/resources/teachers-helper-vol1.webp", color:"#DBEAFE", accent:"#1E40AF", pages:[
                 { heading:"JamDER+™ — Jamaican Decodable & Early Readers", sub:"Teacher's Helper · Volume 1", body:"This resource provides structured lesson plans and teaching guides aligned to the FastTrack Literacy™ programme. Designed for classroom teachers and early literacy educators.", author:"Paulette Trowers, Juris Doctor · Kristina Jaz · Iain Taylor" },
                 { heading:"How to Use This Book", sub:"Teacher's Guide", body:"Each lesson follows the 16-step FastTrack structured format. Begin with the phoneme song, proceed through decoding activities, and close with the reading of the decodable text.", author:"Early Literacy Tool · CHEETAH® Purrrrrrr Publishing" },
               ]},
-              { title:"Teacher's Helper", vol:"Volume 2", cover:"https://heyzine.com/api1/thumb?pdf=01cc4943e4&page=0", color:"#DCFCE7", accent:"#166534", pages:[
+              { title:"Teacher's Helper", vol:"Volume 2", cover:"/images/resources/teachers-helper-vol2.jpg", color:"#DCFCE7", accent:"#166534", pages:[
                 { heading:"JamDER+™ — Jamaican Decodable & Early Readers", sub:"Teacher's Helper · Volume 2", body:"A continuation of the teacher's instructional guide series. Covers phoneme sets 4–6 with extended lesson activities, assessment tools, and differentiation strategies.", author:"Paulette Trowers, Juris Doctor · Kristina Jaz · Iain Taylor" },
                 { heading:"Phoneme Set Overview", sub:"Sets 4 — 6", body:"Set 4: l, b, short ŭ, soft g, long ā · Set 5: j, long ī, or, long ō, z · Set 6: ng, w/wh, short oo, long oo, v. Each set includes song activities and decodable text practice.", author:"Early Literacy Tool · Ministry of Education Aligned" },
               ]},
-              { title:"Pupil's Helper", vol:"Volume 1", cover:"https://heyzine.com/api1/thumb?pdf=c3b25db878&page=0", color:"#FEF3C7", accent:"#92400E", pages:[
+              { title:"Pupil's Helper", vol:"Volume 1", cover:"/images/resources/pupils-helper-vol1.jpg", color:"#FEF3C7", accent:"#92400E", pages:[
                 { heading:"JamDER+™ — Jamaican Decodable & Early Readers", sub:"Pupil's Helper · Volume 1", body:"A student workbook filled with phonics activities, letter-sound exercises, and early reading practice. Designed for children ages 3–6 beginning their literacy journey.", author:"Paulette Trowers, Juris Doctor · Kristina Jaz" },
                 { heading:"Welcome, Young Reader!", sub:"A Message to Students", body:"This book is for you! Every page will help you learn new sounds and words. You are going to be a great reader. Let's begin!", author:"CHEETAH® Purrrrrrr Publishing · fasttrackliteracy.com" },
               ]},
-              { title:"Pupil's Helper", vol:"Volume 2", cover:"https://heyzine.com/api1/thumb?pdf=16a9bc1676&page=0", color:"#FCE7F3", accent:"#9D174D", pages:[
+              { title:"Pupil's Helper", vol:"Volume 2", cover:"/images/resources/pupils-helper-vol2.jpg", color:"#FCE7F3", accent:"#9D174D", pages:[
                 { heading:"JamDER+™ — Jamaican Decodable & Early Readers", sub:"Pupil's Helper · Volume 2", body:"Building on Volume 1, this workbook introduces more complex phoneme combinations through engaging activities, rhymes, and culturally relevant Jamaican stories.", author:"Paulette Trowers, Juris Doctor · Kristina Jaz" },
                 { heading:"What You Will Learn", sub:"Phoneme Sets 4 — 6", body:"In this volume you will practise blending longer words, reading short sentences, and recognising tricky high-frequency words. Keep going — you are doing amazing!", author:"CHEETAH® Purrrrrrr Publishing · fasttrackliteracy.com" },
               ]},
-              { title:"Pupil's Helper", vol:"Volume 3", cover:"https://heyzine.com/api1/thumb?pdf=639bcdbb20&page=0", color:"#EDE9FE", accent:"#5B21B6", pages:[
+              { title:"Pupil's Helper", vol:"Volume 3", cover:"/images/resources/pupils-helper-vol3.jpg", color:"#EDE9FE", accent:"#5B21B6", pages:[
                 { heading:"JamDER+™ — Jamaican Decodable & Early Readers", sub:"Pupil's Helper · Volume 3", body:"The third volume in the Pupil's Helper series. Focuses on vowel digraphs, blends, and reading fluency through structured decodable passages and comprehension activities.", author:"Paulette Trowers, Juris Doctor · Kristina Jaz" },
                 { heading:"You're Almost There!", sub:"Advanced Phoneme Practice", body:"This volume covers the final phoneme sets — including digraphs, diphthongs, and longer word patterns. You are reading real sentences and short stories now. Well done!", author:"CHEETAH® Purrrrrrr Publishing · fasttrackliteracy.com" },
               ]},
-              { title:"JamDER™ Reader", vol:"Special Edition", cover:"https://heyzine.com/api1/thumb?pdf=eda08f4c87&page=0", color:"#FFF0E0", accent:"#C05A00", pages:[
+              { title:"JamDER™ Reader", vol:"Special Edition", cover:"/images/resources/cder-books.jpg", color:"#FFF0E0", accent:"#C05A00", pages:[
                 { heading:"JamDER+™ — Special Edition", sub:"Jamaican Decodable & Early Readers", body:"A special curated collection of JamDER™ stories — culturally authentic, fully decodable, and beautifully illustrated. Celebrating Jamaican heritage through the joy of reading.", author:"CHEETAH® Purrrrrrr Publishing · Paulette Trowers, Juris Doctor" },
                 { heading:"About This Collection", sub:"Stories from Our Culture", body:"These stories are set in Jamaica and feature characters, places, and experiences that Jamaican children know and love. Every word is decodable using the FastTrack phonics sequence.", author:"fasttrackliteracy.com · mycheetahinc.com" },
+              ]},
+              { title:"House Flood", vol:"C-DER Story Book", cover:"/images/resources/house-flood.png", heyZineId:"", color:"#DBEAFE", accent:"#1E40AF", pages:[
+                { heading:"House Flood", sub:"CHEETAH® Purrrrrrr Publishing", body:"A decodable early reader story from the C-DER™ collection. Fully phonics-aligned and culturally authentic.", author:"Bernadette Vidal · Paulette Trowers, JD" },
+                { heading:"About This Book", sub:"Decodable & Early Reader", body:"House Flood is fully decodable and aligned to the FastTrack Literacy™ phonics sequence — building fluency and confidence through culturally authentic storytelling.", author:"CHEETAH® Purrrrrrr Publishing · fasttrackliteracy.com" },
+              ]},
+              { title:"Mr. Pete Makes Friends", vol:"C-DER Story Book", cover:"/images/resources/mr-pete-makes-friends.png", heyZineId:"", color:"#DCFCE7", accent:"#166534", pages:[
+                { heading:"Mr. Pete Makes Friends", sub:"CHEETAH® Purrrrrrr Publishing", body:"A decodable early reader story from the C-DER™ collection. Fully phonics-aligned and culturally authentic.", author:"Bernadette Vidal · Paulette Trowers, JD" },
+                { heading:"About This Book", sub:"Decodable & Early Reader", body:"Mr. Pete Makes Friends is fully decodable and aligned to the FastTrack Literacy™ phonics sequence — helping children build confidence through stories they love.", author:"CHEETAH® Purrrrrrr Publishing · fasttrackliteracy.com" },
+              ]},
+              { title:"Meet My Family", vol:"C-DER Story Book", cover:"/images/resources/meet-my-family.png", heyZineId:"", color:"#FEF3C7", accent:"#92400E", pages:[
+                { heading:"Meet My Family", sub:"CHEETAH® Purrrrrrr Publishing", body:"A decodable early reader story from the C-DER™ collection. Fully phonics-aligned and culturally authentic.", author:"Bernadette Vidal · Paulette Trowers, JD" },
+                { heading:"About This Book", sub:"Decodable & Early Reader", body:"Meet My Family is a fully decodable story aligned to the FastTrack Literacy™ phonics sequence — building reading confidence through relatable, culturally rich narratives.", author:"CHEETAH® Purrrrrrr Publishing · fasttrackliteracy.com" },
+              ]},
+              { title:"Grade 6 PEP Mathematics Workbook", vol:"Workbook", cover:"/images/resources/pep-math-workbook.png", heyZineId:"", color:"#EDE9FE", accent:"#5B21B6", pages:[
+                { heading:"Grade 6 PEP Mathematics Workbook", sub:"CHEETAH® Publishing", body:"A comprehensive mathematics workbook with answers and explanations. Designed to prepare Grade 6 students for PEP examinations.", author:"A Team of Educators · CHEETAH® Purrrrrrr Publishing" },
+                { heading:"What's Inside", sub:"Answers & Explanations", body:"This workbook provides detailed step-by-step answers to support independent study, classroom instruction, and exam preparation at the Grade 6 level.", author:"CHEETAH® Purrrrrrr Publishing · mycheetahinc.com" },
+              ]},
+              { title:"FastTrack Lesson Framework", vol:"Teacher Reference", cover:"/images/resources/fasttrack-lesson-framework.png", heyZineId:"", color:"#F0FDF4", accent:"#166534", pages:[
+                { heading:"FastTrack Literacy™ Lesson Framework", sub:"1-Hour Lesson Framework Overview", body:"The complete suggested timetable and instructional flow for delivering FastTrack Literacy™ lessons. Essential reference for all CHEETAH® educators.", author:"CHEETAH® FastTrack Literacy™ · Paulette Trowers, JD" },
+                { heading:"For Teacher Training Manual", sub:"Final Approved Version", body:"This framework outlines the 16-step instructional sequence within a structured 1-hour lesson — covering daily review, phonics drill, blending, fluency practice, and assessment.", author:"CHEETAH® FastTrack Literacy™ · fasttrackliteracy.com" },
               ]},
             ].map((book, bookIdx) => (
               <FlipBook key={bookIdx} book={book} />

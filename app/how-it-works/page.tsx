@@ -37,9 +37,6 @@ export default function HowItWorks() {
             <div className="section-chip" style={{ margin:"0 auto 16px" }}>🔬 Science of Reading</div>
             <h2 style={{ fontSize:"clamp(24px,4vw,36px)", fontWeight:900, color:"#0C2340" }}>The 5 Pillars in Every Lesson</h2>
           </div>
-          <div style={{ marginBottom:40 }}>
-            <Image src="/images/image3.png" alt="The Five Pillars of Literacy: Building Strong Readers" width={1200} height={680} style={{ width:"100%", height:"auto", borderRadius:16, boxShadow:"0 8px 32px rgba(0,0,0,0.08)" }} />
-          </div>
           <div className="grid-auto">
             {[
               { n:"1", icon:"👂", title:"Phonemic Awareness", desc:"Hearing, identifying and manipulating sounds in spoken words." },
@@ -127,9 +124,32 @@ export default function HowItWorks() {
         </div>
       </section>
 
+      <section style={{ background:"linear-gradient(135deg,#0C2340,#1A3A70)", padding:"80px 24px", textAlign:"center" }}>
+        <div className="container">
+          <div className="section-chip" style={{ background:"rgba(245,130,10,0.2)", border:"1px solid rgba(245,130,10,0.4)", color:"#FFB366" }}>🐆 See It In Action</div>
+          <h2 style={{ fontFamily:"'Nunito',sans-serif", fontWeight:900, fontSize:"clamp(24px,4vw,38px)", color:"white", marginBottom:14, marginTop:12 }}>
+            Inside a CHEETAH® Lesson
+          </h2>
+          <p style={{ fontSize:"clamp(13px,1.6vw,16px)", color:"rgba(255,255,255,0.75)", lineHeight:1.8, marginBottom:40, maxWidth:580, margin:"0 auto 40px" }}>
+            Watch the FastTrack Literacy™ system in action — a real classroom lesson showing how the 16-step structure comes to life.
+          </p>
+          <div style={{ borderRadius:20, overflow:"hidden", boxShadow:"0 24px 80px rgba(0,0,0,0.5)", maxWidth:900, margin:"0 auto", border:"3px solid rgba(245,130,10,0.4)" }}>
+            <video
+              controls
+              preload="metadata"
+              style={{ width:"100%", display:"block", background:"#0C2340", minHeight:360 }}
+              poster="/images/cheetah-lesson-poster.jpg"
+            >
+              <source src="/videos/inside-cheetah-lessons.mp4" type="video/mp4"/>
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+      </section>
+
       <section className="section-sm" style={{ background:"#FFF0E0", textAlign:"center" }}>
-        <h2 style={{ fontSize:"clamp(20px,3vw,30px)", fontWeight:900, color:"#0C2340", marginBottom:14 }}>Ready to Start the Journey?</h2>
-        <p style={{ fontSize:15, color:"#5A5240", marginBottom:28, maxWidth:440, margin:"0 auto 28px" }}>Join thousands of educators and families using FastTrack Literacy™.</p>
+        <h2 style={{ fontSize:"clamp(20px,3vw,30px)", fontWeight:900, color:"#0C2340", marginBottom:14 }}>Join thousands of educators and families using CHEETAH® resources!</h2>
+        <p style={{ fontSize:15, color:"#5A5240", marginBottom:28, maxWidth:440, margin:"0 auto 28px" }}>FastTrack Literacy™ — accelerating reading and writing success at school and at home.</p>
         <div className="btn-row" style={{ justifyContent:"center" }}>
           <Link href="/get-started" className="btn-orange">Get Started →</Link>
           <Link href="/resources" className="btn-navy">Browse Resources</Link>

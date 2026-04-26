@@ -42,8 +42,8 @@ function AnimatedStats() {
       {[
         { value: `${n90}+`, label: "Educational Resources" },
         { value: `${n1100.toLocaleString()}+`, label: "Resources Developed" },
-        { value: `${n3}`, label: "Countries Served" },
-        { value: "Ages 3–8", label: "Primary Focus" },
+        { value: "5", label: "Countries Served" },
+        { value: "Ages 3–8", label: "Early Learning" },
       ].map(({ value, label }) => (
         <div key={label}>
           <div style={{ fontFamily:"'Nunito',sans-serif", fontSize:22, fontWeight:900, color:"#F5820A", minWidth:60 }}>{value}</div>
@@ -82,8 +82,13 @@ export default function Home() {
           <div className="grid-2">
             <div>
               <div style={{ display:"inline-flex", alignItems:"center", gap:8, marginBottom:20, background:"rgba(245,130,10,0.15)", border:"1px solid rgba(245,130,10,0.3)", padding:"6px 16px", borderRadius:50, fontSize:12, fontWeight:700, color:"#FFB366" }}>🚂 FastTrack Literacy™ by CHEETAH®</div>
-              <h1 style={{ fontSize:"clamp(34px,5vw,56px)", fontWeight:900, color:"white", marginBottom:20, lineHeight:1.08 }}>Every Child Can Read.<br/><span style={{ color:"#F5820A" }}>Every Child Must Read.</span></h1>
-              <p style={{ fontSize:"clamp(15px,2vw,17px)", color:"rgba(255,255,255,0.85)", lineHeight:1.8, marginBottom:36, maxWidth:500 }}>FastTrack Literacy™ is a structured, evidence-based reading program for children ages 3–8. Built on the Science of Reading — combining reggae-inspired phoneme songs, decodable books, and AI technology.</p>
+              <h1 style={{ fontSize:"clamp(28px,4.5vw,52px)", fontWeight:900, color:"white", marginBottom:20, lineHeight:1.15 }}>
+                Every Child Can Learn to Read and Write.<br/>
+                <span style={{ color:"#F5820A" }}>Every Child Must Learn to Read and Write.</span><br/>
+                <span style={{ fontSize:"clamp(22px,3.5vw,40px)" }}>Every Child Must Be Given the Resources to Succeed.</span>
+              </h1>
+              <p style={{ fontSize:"clamp(14px,1.8vw,16px)", color:"rgba(255,255,255,0.85)", lineHeight:1.8, marginBottom:16, maxWidth:560 }}>FastTrack Literacy™ is a structured, Science of Reading–aligned system designed to accelerate reading and writing success.</p>
+              <p style={{ fontSize:"clamp(13px,1.6vw,15px)", color:"rgba(255,255,255,0.75)", lineHeight:1.8, marginBottom:36, maxWidth:560 }}>We combine reggae-inspired phoneme songs, decodable books, AI-powered technology, flashcards, and structured learning tools to educate, inspire, and deliver measurable results at school and at home.</p>
               <div className="btn-row">
                 <Link href="/get-started" className="btn-orange">Get Started Free →</Link>
                 <Link href="/how-it-works" className="btn-white">How It Works</Link>
@@ -100,7 +105,7 @@ export default function Home() {
         <div className="container" style={{ textAlign:"center" }}>
           <p style={{ fontSize:11, fontWeight:700, letterSpacing:"1.5px", textTransform:"uppercase", color:"#A0927A", marginBottom:16 }}>Serving educators & families in</p>
           <div style={{ display:"flex", justifyContent:"center", alignItems:"center", gap:"clamp(16px,4vw,48px)", flexWrap:"wrap" }}>
-            {["🇯🇲 Jamaica","🇺🇸 United States","🌍 Africa","🏝️ Caribbean"].map(c=>(<span key={c} style={{ fontFamily:"'Nunito',sans-serif", fontWeight:800, fontSize:14, color:"#C4B08A" }}>{c}</span>))}
+            {["🇯🇲 Jamaica","🇺🇸 United States","🇬🇭 Ghana","🇺🇬 Uganda","🏝️ Caribbean"].map(c=>(<span key={c} style={{ fontFamily:"'Nunito',sans-serif", fontWeight:800, fontSize:14, color:"#C4B08A" }}>{c}</span>))}
           </div>
         </div>
       </section>
@@ -117,7 +122,7 @@ export default function Home() {
               <Link href="/fasttrack" className="btn-orange">Learn More →</Link>
             </div>
             <div>
-              <Image src="/images/image3.png" alt="The Five Pillars of Literacy" width={800} height={450} style={{ width:"100%", height:"auto", borderRadius:16, boxShadow:"0 8px 32px rgba(0,0,0,0.08)" }} />
+              <Image src="/images/jamder-books.png" alt="FastTrack Literacy™ Books Collection" width={800} height={450} style={{ width:"100%", height:"auto", borderRadius:16, boxShadow:"0 8px 32px rgba(0,0,0,0.08)" }} />
             </div>
           </div>
         </div>
@@ -205,7 +210,7 @@ export default function Home() {
         <div className="container">
           <div style={{ textAlign:"center", marginBottom:48 }}>
             <h2 style={{ fontSize:"clamp(24px,4vw,36px)", fontWeight:900, color:"white" }}>What Educators Are Saying</h2>
-            <p style={{ fontSize:15, color:"rgba(255,255,255,0.6)", marginTop:10 }}>Real results from classrooms across Jamaica, the US, and Africa</p>
+            <p style={{ fontSize:15, color:"rgba(255,255,255,0.6)", marginTop:10 }}>Real results from classrooms across Jamaica, the US, and Ghana & Uganda</p>
           </div>
           <div className="grid-auto">
             {[{q:"FastTrack Literacy™ transformed our classroom. Children who struggled to recognise letters are now reading decodable books independently after just 10 weeks.",n:"Miss Thompson",r:"Year 1 Teacher, Kingston, Jamaica"},{q:"The reggae phoneme songs are magical. My students wake up singing them — and that repetition is exactly what builds phonemic awareness.",n:"Mrs. Davis",r:"Literacy Coach, Hartford, CT"},{q:"As a parent, the home support guides made it easy to continue the learning at home. My daughter moved two reading levels in one term.",n:"Natalie B.",r:"Parent, Portmore, Jamaica"}].map(t=>(

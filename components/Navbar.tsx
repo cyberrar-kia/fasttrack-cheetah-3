@@ -21,7 +21,7 @@ export default function Navbar() {
     <nav style={{ position:"sticky", top:0, zIndex:100, background:"rgba(12,35,64,0.97)", backdropFilter:"blur(12px)", borderBottom:"1px solid rgba(255,255,255,0.08)" }}>
       <div style={{ maxWidth:1200, margin:"0 auto", padding:"0 20px", height:68, display:"flex", alignItems:"center", justifyContent:"space-between" }}>
         <Link href="/" style={{ textDecoration:"none", display:"flex", alignItems:"center", gap:10, flexShrink:0 }}>
-          <Image src="/images/fasttrack-literacy-logo.png" alt="FastTrack Literacy Program" width={220} height={70} style={{ height:56, width:"auto", objectFit:"contain" }} />
+          <Image src="/images/fasttrack-literacy-logo.png" alt="FastTrack Literacy Program" width={280} height={90} style={{ height:60, width:"auto", objectFit:"contain" }} />
         </Link>
         <div style={{ display:"flex", alignItems:"center", gap:2 }} className="nav-desktop">
           {links.map(l=>{
