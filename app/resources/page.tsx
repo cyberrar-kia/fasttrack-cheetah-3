@@ -107,13 +107,13 @@ function FlipBook({ book }: { book: any }) {
             <div style={{ marginTop:16, paddingTop:12, borderTop:"1px solid rgba(0,0,0,0.08)", fontSize:10, color:"rgba(0,0,0,0.4)", lineHeight:1.6 }}>{book.pages[1].author}</div>
           </div>
         )}
-        {/* PAGE 3 — LOCKED */}
+        {/* PAGE 3 — READ ONLINE */}
         {page === 2 && (
           <div style={{ minHeight:320, display:"flex", flexDirection:"column", alignItems:"center", justifyContent:"center", gap:12, padding:32, textAlign:"center" }}>
-            <div style={{ width:56, height:56, borderRadius:"50%", background:"rgba(12,35,64,0.08)", display:"flex", alignItems:"center", justifyContent:"center", fontSize:28 }}>🔒</div>
-            <div style={{ fontFamily:"'Nunito',sans-serif", fontWeight:900, fontSize:16, color:"#0C2340" }}>Full Access Required</div>
-            <div style={{ fontSize:13, color:"#8A7A6A", lineHeight:1.7, maxWidth:220 }}>Get full access to read all pages of {book.title} — {book.vol}</div>
-            <a href="/get-started" style={{ background:"#F5820A", color:"white", textDecoration:"none", padding:"11px 24px", borderRadius:50, fontSize:13, fontWeight:700, fontFamily:"'Nunito',sans-serif", marginTop:4 }}>Get Full Access →</a>
+            <div style={{ width:56, height:56, borderRadius:"50%", background:"rgba(245,130,10,0.1)", display:"flex", alignItems:"center", justifyContent:"center", fontSize:28 }}>📖</div>
+            <div style={{ fontFamily:"'Nunito',sans-serif", fontWeight:900, fontSize:16, color:"#0C2340" }}>Read the Full Book Online</div>
+            <div style={{ fontSize:13, color:"#8A7A6A", lineHeight:1.7, maxWidth:220 }}>Access the full collection of CHEETAH® books at mycheetahinc.com</div>
+            <a href="https://mycheetahinc.com" target="_blank" rel="noopener noreferrer" style={{ background:"#F5820A", color:"white", textDecoration:"none", padding:"11px 24px", borderRadius:50, fontSize:13, fontWeight:700, fontFamily:"'Nunito',sans-serif", marginTop:4 }}>Read Online →</a>
           </div>
         )}
         {/* Page indicator dots */}
@@ -136,7 +136,7 @@ function FlipBook({ book }: { book: any }) {
         <div style={{ display:"flex", gap:8 }}>
           <button onClick={()=>setPage(p=>Math.max(0,p-1))} disabled={page===0} style={{ background:"#F5EEE4", border:"none", borderRadius:50, padding:"8px 14px", fontSize:12, cursor:page===0?"not-allowed":"pointer", color:page===0?"#C8B89A":"#5A5240", fontWeight:600, fontFamily:"'Nunito',sans-serif" }}>← Prev</button>
           <button onClick={()=>setPage(p=>Math.min(2,p+1))} disabled={page===2} style={{ flex:1, background: page===2?"#EDE0D0":"#F5820A", border:"none", borderRadius:50, padding:"8px 14px", fontSize:12, cursor:page===2?"not-allowed":"pointer", color:page===2?"#8A7A6A":"white", fontWeight:700, fontFamily:"'Nunito',sans-serif" }}>
-            {page===1?"View Access Page →":"Next Page →"}
+            {page===1?"Read Online →":"Next Page →"}
           </button>
         </div>
       </div>
@@ -290,7 +290,10 @@ export default function Resources() {
                 ))}
               </div>
             </div>
-            <Image src="/images/icheetah-frontal.png" alt="iCHEETAH™ Robot" width={400} height={500} style={{ width:"100%", height:"auto", borderRadius:16, boxShadow:"0 8px 32px rgba(0,0,0,0.1)" }} />
+            <div style={{ display:"flex", flexDirection:"column", gap:16 }}>
+              <Image src="/images/girl-with-icheetah.png" alt="Child hugging iCHEETAH™ Robot" width={400} height={500} style={{ width:"100%", height:"auto", borderRadius:16, boxShadow:"0 8px 32px rgba(0,0,0,0.1)" }} />
+              <Image src="/images/icheetah-frontal.png" alt="iCHEETAH™ Robot" width={400} height={300} style={{ width:"100%", height:"auto", borderRadius:16, boxShadow:"0 8px 32px rgba(0,0,0,0.1)" }} />
+            </div>
           </div>
           <div style={{ marginBottom:48 }}>
             <Image src="/images/icheetah-features.png" alt="iCHEETAH Features" width={1200} height={600} style={{ width:"100%", height:"auto", borderRadius:16, boxShadow:"0 8px 32px rgba(0,0,0,0.08)" }} />
