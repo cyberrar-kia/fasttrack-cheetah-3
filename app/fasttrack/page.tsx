@@ -12,6 +12,7 @@ export default function FastTrackPage() {
     <>
       <section className="section" style={{ background:"linear-gradient(135deg,#0C2340,#1A3A70)", padding:"80px 24px 60px", textAlign:"center" }}>
         <div className="container-sm">
+
           <div style={{ display:"inline-flex", background:"rgba(245,130,10,0.15)", border:"1px solid rgba(245,130,10,0.3)", color:"#FFB366", fontSize:11, fontWeight:700, letterSpacing:"1px", textTransform:"uppercase", padding:"6px 14px", borderRadius:50, marginBottom:20 }}>🚂 The Program</div>
           <h1 style={{ fontSize:"clamp(28px,5vw,48px)", fontWeight:900, color:"white", marginBottom:20 }}>About FastTrack Literacy<span style={{ color:"#F5820A" }}>™</span></h1>
           <p style={{ fontSize:"clamp(14px,2vw,17px)", color:"rgba(255,255,255,0.8)", lineHeight:1.8 }}>A structured early reading program grounded in the Science of Reading — combining phonics, music, storytelling, and AI technology to build confident, independent readers.</p>
@@ -19,29 +20,30 @@ export default function FastTrackPage() {
       </section>
 
       {/* WHAT IS IT */}
-      <section className="section" style={{ background:"white" }}>
+      <section className="section" style={{ background:"white" }} id="what-is">
         <div className="container">
           <div className="grid-2">
             <div>
               <div className="section-chip">🚂 A Literacy Journey</div>
-              <h2 style={{ fontSize:"clamp(22px,3.5vw,34px)", fontWeight:900, color:"#0C2340", marginBottom:16 }}>What is FastTrack Literacy©?</h2>
-              <p style={{ fontSize:15, color:"#5A5240", lineHeight:1.85, marginBottom:16 }}>FastTrack Phonics™ is a structured early reading program that teaches children how letters sound, connect, and form words.</p>
-              <p style={{ fontSize:15, color:"#5A5240", lineHeight:1.85, marginBottom:16 }}>It is grounded in the <strong>evidence-based Science of Reading</strong>, integrating the five pillars of <strong>phonemic awareness, phonics, fluency, vocabulary, and comprehension</strong> to build strong, confident readers, especially during the formative years.</p>
-              <p style={{ fontSize:15, color:"#5A5240", lineHeight:1.85, marginBottom:24 }}>Children are not just learners — they become active participants in their reading journey through <strong>child-led learning and guided practice</strong>.</p>
+              <h2 style={{ fontSize:"clamp(22px,3.5vw,34px)", fontWeight:900, color:"#0C2340", marginBottom:16 }}>What is FastTrack Literacy™?</h2>
+              <p style={{ fontSize:15, color:"#5A5240", lineHeight:1.85, marginBottom:16 }}>FastTrack Literacy™ is a structured early reading programme that teaches children how letters sound, connect, and form words.</p>
+              <p style={{ fontSize:15, color:"#5A5240", lineHeight:1.85, marginBottom:16 }}>Grounded in the <strong>evidence-based Science of Reading</strong>, it integrates the five pillars of <strong>phonemic awareness, phonics, fluency, vocabulary, and comprehension</strong> to build strong, confident readers, particularly during the formative years.</p>
+              <p style={{ fontSize:15, color:"#5A5240", lineHeight:1.85, marginBottom:16 }}>FastTrack Literacy™ is supported by an extensive suite of <strong>over 90 integrated resources</strong>, including more than 70 decodable books, flashcards, songs and movement activities, structured lesson materials, and AI-enhanced supervised learning tools. Content is delivered through CHEETAH's proprietary digital media, including the iCHEETAH™ device and branded tablets, creating a seamless blend of curriculum, technology, and assessment.</p>
+              <p style={{ fontSize:15, color:"#5A5240", lineHeight:1.85, marginBottom:24 }}>Children are not just learners — they become <strong>active participants</strong> in their reading journey through child-led learning and guided practice.</p>
             </div>
             <div>
-              <Image src="/images/image3.png" alt="The Five Pillars of Literacy: Building Strong Readers" width={900} height={500} style={{ width:"100%", height:"auto", borderRadius:16, boxShadow:"0 8px 32px rgba(0,0,0,0.08)" }} />
+              <Image src="/images/fasttrack-vision.png" alt="Building a Literate Nation: The Vision and Legacy of FastTrack Literacy" width={900} height={500} style={{ width:"100%", height:"auto", borderRadius:16, boxShadow:"0 8px 32px rgba(0,0,0,0.08)" }} />
             </div>
           </div>
         </div>
       </section>
 
       {/* WHY IT MATTERS */}
-      <section className="section" style={{ background:"#FFF9F4" }}>
+      <section className="section" style={{ background:"#FFF9F4" }} id="why-matters">
         <div className="container">
           <div style={{ textAlign:"center", marginBottom:32 }}>
             <div className="section-chip" style={{ margin:"0 auto 16px" }}>📊 A Global Need</div>
-            <h2 style={{ fontSize:"clamp(22px,4vw,36px)", fontWeight:900, color:"#0C2340", marginBottom:12 }}>Why It Matters</h2>
+            <h2 style={{ fontSize:"clamp(22px,4vw,36px)", fontWeight:900, color:"#0C2340", marginBottom:12 }}>Why the Programme Matters</h2>
           </div>
           <div className="grid-2" style={{ alignItems:"center" }}>
             <div>
@@ -61,12 +63,12 @@ export default function FastTrackPage() {
       </section>
 
       {/* WHO IS IT FOR */}
-      <section className="section" style={{ background:"white" }}>
+      <section id="who-for" className="section" style={{ background:"white" }}>
         <div className="container">
           <div className="grid-2" style={{ alignItems:"center" }}>
             <div>
-              <div className="section-chip">👧 Who Is the Program For</div>
-              <h2 style={{ fontSize:"clamp(22px,3.5vw,34px)", fontWeight:900, color:"#0C2340", marginBottom:16 }}>Designed for Ages 3–8 and Their Families</h2>
+              <div className="section-chip">👧 Who is the Programme For</div>
+              <h2 style={{ fontSize:"clamp(22px,3.5vw,34px)", fontWeight:900, color:"#0C2340", marginBottom:16 }}>Who is the Programme For?</h2>
               <p style={{ fontSize:15, color:"#5A5240", lineHeight:1.85, marginBottom:16 }}>Primarily designed for children ages 3–8 and their families because reading success starts early and grows at home.</p>
               <p style={{ fontSize:15, color:"#5A5240", lineHeight:1.85, marginBottom:24 }}><strong>FastTrack Literacy©</strong> is adaptive and can be used across a wide range of age groups, supporting learners at different reading levels. It is also a great resource for educators and parents.</p>
               <button onClick={() => setWhoOpen(true)} style={{ background:"#F5820A", color:"white", border:"none", borderRadius:50, padding:"11px 24px", fontSize:14, fontWeight:800, fontFamily:"'Nunito',sans-serif", cursor:"pointer" }}>Read More →</button>
@@ -79,7 +81,7 @@ export default function FastTrackPage() {
       </section>
 
       {/* WHAT MAKES IT DIFFERENT */}
-      <section className="section" style={{ background:"#FFF9F4" }}>
+      <section className="section" style={{ background:"#FFF9F4" }} id="what-makes">
         <div className="container">
           <div className="grid-2" style={{ alignItems:"center" }}>
             <div>
@@ -116,6 +118,88 @@ export default function FastTrackPage() {
             ))}
           </div>
           <Image src="/images/image11.png" alt="All Aboard the FastTrack Phonics© Train!" width={1400} height={600} style={{ width:"100%", height:"auto", borderRadius:16, boxShadow:"0 8px 32px rgba(0,0,0,0.3)" }} />
+        </div>
+      </section>
+
+      {/* COMPARISON TABLE — moved from How It Works */}
+      <section className="section" style={{ background:"white" }} id="comparison">
+        <div className="container">
+          <div style={{ textAlign:"center", marginBottom:40 }}>
+            <div className="section-chip" style={{ margin:"0 auto 16px" }}>🚀 What Makes Us Different</div>
+            <h2 style={{ fontSize:"clamp(22px,4vw,34px)", fontWeight:900, color:"#0C2340" }}>FastTrack Literacy™ vs. Traditional Instruction</h2>
+          </div>
+          <div style={{ overflowX:"auto" }}>
+            <table style={{ width:"100%", borderCollapse:"collapse", fontSize:13 }}>
+              <thead>
+                <tr>
+                  <th style={{ background:"#0C2340", color:"white", padding:"14px 18px", textAlign:"left", fontFamily:"'Nunito',sans-serif", fontSize:13 }}>Area</th>
+                  <th style={{ background:"#F5820A", color:"white", padding:"14px 18px", textAlign:"left", fontFamily:"'Nunito',sans-serif", fontSize:13 }}>FastTrack Literacy™</th>
+                  <th style={{ background:"#5A5240", color:"white", padding:"14px 18px", textAlign:"left", fontFamily:"'Nunito',sans-serif", fontSize:13 }}>Traditional</th>
+                </tr>
+              </thead>
+              <tbody>
+                {[
+                  ["Approach","Holistic literacy system: reading, writing & comprehension","Isolated skill drills"],
+                  ["Instruction","Explicit, systematic, sequential (Science of Reading)","Often implicit and incidental"],
+                  ["Learning Model","Multisensory, child-led, guided practice","Teacher-directed only"],
+                  ["Core Skills","Phonemic awareness, phonics, fluency, vocabulary, comprehension","Limited to phonics only"],
+                  ["Reading + Writing","Strong focus on both decoding (reading) and encoding (writing)","Often reading only"],
+                  ["Engagement","Reggae songs, rhythm, storytelling, visual supports","Worksheets and repetition"],
+                  ["Cultural Relevance","Culturally responsive (JamDER™, global editions)","Generic Western content"],
+                  ["Curriculum Fit","Aligned with national curriculum standards and classroom instruction","Often standalone"],
+                  ["Technology","iCHEETAH™ AI robot, tablets, apps, digital tools","Limited or none"],
+                  ["Home Connection","Active family involvement built into the system","School only"],
+                  ["Assessment","Built-in progress monitoring and measurable outcomes","End-of-term testing"],
+                  ["Student Impact","Builds confident, independent readers who can apply and teach others","Passive learners"],
+                  ["Extended Impact","Supports national literacy initiatives, competitions, and community engagement","Classroom only"],
+                ].map(([area,ft,trad],i)=>(
+                  <tr key={area} style={{ background:i%2===0?"#FFF9F4":"white" }}>
+                    <td style={{ padding:"12px 18px", fontWeight:600, color:"#0C2340", borderBottom:"1px solid #EDE0D0" }}>{area}</td>
+                    <td style={{ padding:"12px 18px", color:"#5A5240", borderBottom:"1px solid #EDE0D0" }}>✓ {ft}</td>
+                    <td style={{ padding:"12px 18px", color:"#A0927A", borderBottom:"1px solid #EDE0D0" }}>✗ {trad}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      {/* THE BRAND EXPERIENCE — THE FASTTRACK LITERACY TRAIN */}
+      <section id="brand-experience" className="section" style={{ background:"#FFF0E0" }}>
+        <div className="container">
+          <div style={{ textAlign:"center", marginBottom:40 }}>
+            <div className="section-chip" style={{ margin:"0 auto 16px" }}>🚂 The Brand Experience</div>
+            <h2 style={{ fontSize:"clamp(22px,4vw,36px)", fontWeight:900, color:"#0C2340", marginBottom:12 }}>The FastTrack Literacy™ Train</h2>
+            <p style={{ fontSize:15, color:"#5A5240", maxWidth:560, margin:"0 auto 32px", lineHeight:1.7 }}>The Train is the heart of the FastTrack Literacy™ brand — a symbol of momentum, structure, and the journey every child takes from their first sound to confident, independent reading.</p>
+          </div>
+          <Image src="/images/train-poster.png" alt="The FastTrack Literacy™ Train — Speeding Reading and Writing Success" width={1200} height={600} style={{ width:"100%", height:"auto", borderRadius:16, boxShadow:"0 8px 32px rgba(0,0,0,0.08)" }} />
+        </div>
+      </section>
+
+      {/* WHY CHOOSE FASTTRACK LITERACY */}
+      <section className="section" style={{ background:"white" }} id="why-choose">
+        <div className="container">
+          <div style={{ textAlign:"center", marginBottom:40 }}>
+            <div className="section-chip" style={{ margin:"0 auto 16px" }}>✅ Why Choose FastTrack Literacy™?</div>
+            <h2 style={{ fontSize:"clamp(22px,4vw,36px)", fontWeight:900, color:"#0C2340" }}>Why Choose FastTrack Literacy™?</h2>
+          </div>
+          <div style={{ maxWidth:700, margin:"0 auto", display:"flex", flexDirection:"column", gap:14 }}>
+            {[
+              "Culturally responsive content",
+              "Multi-modal instruction and content delivery",
+              "Full literacy ecosystem, not just books",
+              "90+ integrated literacy resources across the ecosystem",
+              "Strong home–school integration",
+              "AI-enabled and hardware-integrated learning",
+              "Scalable for national rollout as a literacy infrastructure model",
+            ].map((item, i) => (
+              <div key={i} style={{ display:"flex", alignItems:"flex-start", gap:14, background:"#FFF9F4", border:"1px solid #EDE0D0", borderRadius:12, padding:"16px 20px" }}>
+                <div style={{ width:28, height:28, borderRadius:"50%", background:"#F5820A", display:"flex", alignItems:"center", justifyContent:"center", flexShrink:0, fontSize:14, color:"white", fontWeight:900 }}>✓</div>
+                <p style={{ fontSize:15, color:"#0C2340", fontWeight:600, margin:0, lineHeight:1.6 }}>{item}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 

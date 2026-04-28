@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import { useState } from "react";
 
 const FORMSPREE_CONTACT = "https://formspree.io/f/mwvanraq";
@@ -19,6 +20,7 @@ export default function Contact() {
     <>
       <section className="section" style={{ background:"linear-gradient(135deg,#0C2340,#1A3A70)", padding:"80px 24px 60px", textAlign:"center" }}>
         <div className="container-sm">
+
           <div style={{ display:"inline-flex", background:"rgba(245,130,10,0.15)", border:"1px solid rgba(245,130,10,0.3)", color:"#FFB366", fontSize:11, fontWeight:700, letterSpacing:"1px", textTransform:"uppercase", padding:"6px 14px", borderRadius:50, marginBottom:20 }}>Contact Us</div>
           <h1 style={{ fontSize:"clamp(28px,5vw,46px)", fontWeight:900, color:"white", marginBottom:18 }}>Let's Build <span style={{ color:"#F5820A" }}>Together</span></h1>
           <p style={{ fontSize:"clamp(14px,2vw,17px)", color:"rgba(255,255,255,0.8)", lineHeight:1.8 }}>Whether you want to adopt the programme, book a demo, or explore a partnership — our team is here.</p>
@@ -42,6 +44,7 @@ export default function Contact() {
                   {icon:"👍",label:"Facebook",val:"/mycheetahinc/",href:"https://facebook.com/mycheetahinc/"},
                   {icon:"▶️",label:"YouTube",val:"Mycheetahinc",href:"https://youtube.com/@Mycheetahinc"},
                   {icon:"💼",label:"LinkedIn",val:"Paulette Trowers-Lawrence",href:"https://linkedin.com/in/paulette-trowers-juris-doctor-65b9b818"},
+                  {icon:"🎵",label:"TikTok",val:"@officialmycheetahinc",href:"https://tiktok.com/@officialmycheetahinc"},
                 ].map(c=>(
                   <div key={c.label} style={{ background:"white", border:"1px solid #EDE0D0", borderRadius:14, padding:18, display:"flex", gap:14, alignItems:"flex-start" }}>
                     <div style={{ fontSize:22 }}>{c.icon}</div>
@@ -56,7 +59,7 @@ export default function Contact() {
             </div>
             <div style={{ background:"white", border:"1px solid #EDE0D0", borderRadius:20, padding:"clamp(20px,4vw,36px)" }}>
               <h3 style={{ fontFamily:"'Nunito',sans-serif", fontWeight:900, fontSize:20, color:"#0C2340", marginBottom:6 }}>Send a Message</h3>
-              <p style={{ fontSize:13, color:"#5A5240", marginBottom:24 }}>We respond to all enquiries within 1 business day.</p>
+              <p style={{ fontSize:13, color:"#5A5240", marginBottom:24 }}>Fill in the form below and our team will be in touch.</p>
               {status==="sent" ? (
                 <div style={{ textAlign:"center", padding:"40px 20px" }}>
                   <div style={{ fontSize:48, marginBottom:16 }}>✅</div>

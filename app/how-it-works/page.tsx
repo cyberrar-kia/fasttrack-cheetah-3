@@ -24,14 +24,39 @@ export default function HowItWorks() {
     <>
       <section className="section" style={{ background:"linear-gradient(135deg,#0C2340,#1A3A70)", padding:"80px 24px 60px", textAlign:"center" }}>
         <div className="container-sm">
+
           <div style={{ display:"inline-flex", background:"rgba(245,130,10,0.15)", border:"1px solid rgba(245,130,10,0.3)", color:"#FFB366", fontSize:11, fontWeight:700, letterSpacing:"1px", textTransform:"uppercase", padding:"6px 14px", borderRadius:50, marginBottom:20 }}>The Method</div>
           <h1 style={{ fontSize:"clamp(28px,5vw,48px)", fontWeight:900, color:"white", marginBottom:20 }}>How FastTrack Literacy™ <span style={{ color:"#F5820A" }}>Works</span></h1>
           <p style={{ fontSize:"clamp(14px,2vw,17px)", color:"rgba(255,255,255,0.8)", lineHeight:1.8 }}>Every lesson follows a systematic <strong style={{ color:"#F5820A" }}>16-step instructional pattern</strong> designed to ensure reading success through structured, multisensory engagement.</p>
         </div>
       </section>
 
+      {/* VIDEO — moved to top */}
+      <section id="video" style={{ background:"linear-gradient(135deg,#0C2340,#1A3A70)", padding:"60px 24px", textAlign:"center" }}>
+        <div className="container">
+          <div className="section-chip" style={{ background:"rgba(245,130,10,0.2)", border:"1px solid rgba(245,130,10,0.4)", color:"#FFB366" }}>🐆 See It In Action</div>
+          <h2 style={{ fontFamily:"'Nunito',sans-serif", fontWeight:900, fontSize:"clamp(24px,4vw,38px)", color:"white", marginBottom:14, marginTop:12 }}>
+            Inside a FastTrack Literacy™ Lesson
+          </h2>
+          <p style={{ fontSize:"clamp(13px,1.6vw,16px)", color:"rgba(255,255,255,0.75)", lineHeight:1.8, marginBottom:40, maxWidth:580, margin:"0 auto 40px" }}>
+            Watch the FastTrack Literacy™ system in action — a real classroom lesson showing how the 16-step structure comes to life.
+          </p>
+          <div style={{ borderRadius:20, overflow:"hidden", boxShadow:"0 24px 80px rgba(0,0,0,0.5)", maxWidth:900, margin:"0 auto", border:"3px solid rgba(245,130,10,0.4)" }}>
+            <video
+              controls
+              preload="metadata"
+              style={{ width:"100%", display:"block", background:"#0C2340", minHeight:360 }}
+              poster="/images/cheetah-lesson-poster.jpg"
+            >
+              <source src="/videos/inside-cheetah-lessons.mp4" type="video/mp4"/>
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+      </section>
+
       {/* THE 5 PILLARS */}
-      <section className="section" style={{ background:"white" }}>
+      <section className="section" style={{ background:"white" }} id="pillars">
         <div className="container">
           <div style={{ textAlign:"center", marginBottom:48 }}>
             <div className="section-chip" style={{ margin:"0 auto 16px" }}>🔬 Science of Reading</div>
@@ -56,16 +81,14 @@ export default function HowItWorks() {
         </div>
       </section>
 
-      {/* 16 STEPS */}
-      <section className="section" style={{ background:"#FFF9F4" }}>
+      {/* 16 STEPS + ANATOMY */}
+      <section className="section" style={{ background:"#FFF9F4" }} id="anatomy">
         <div className="container">
           <div style={{ textAlign:"center", marginBottom:52 }}>
             <div className="section-chip" style={{ margin:"0 auto 16px" }}>🚂 The Lesson Structure</div>
-            <h2 style={{ fontSize:"clamp(24px,4vw,36px)", fontWeight:900, color:"#0C2340" }}>The 16-Step Instructional Pattern</h2>
+            <h2 style={{ fontSize:"clamp(24px,4vw,36px)", fontWeight:900, color:"#0C2340" }}>Anatomy of a Phoneme Lesson</h2>
             <p style={{ fontSize:15, color:"#5A5240", maxWidth:520, margin:"12px auto 0", lineHeight:1.7 }}>Every phoneme lesson in FastTrack Literacy™ follows this systematic, multisensory structure — designed to ensure no child is left behind.</p>
           </div>
-
-          {/* ANATOMY IMAGE */}
           <div style={{ marginBottom:52 }}>
             <Image src="/images/image14.png" alt="Anatomy of a Phoneme Lesson — The 16-Step Path" width={1200} height={680} style={{ width:"100%", height:"auto", borderRadius:16, boxShadow:"0 8px 32px rgba(0,0,0,0.08)", marginBottom:40 }} />
           </div>
@@ -76,73 +99,6 @@ export default function HowItWorks() {
                 <div><h4 style={{ fontFamily:"'Nunito',sans-serif", fontWeight:800, fontSize:14, color:"#0C2340", marginBottom:4 }}>{s.title}</h4><p style={{ fontSize:12, color:"#5A5240", lineHeight:1.65 }}>{s.desc}</p></div>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* COMPARISON TABLE */}
-      <section className="section" style={{ background:"white" }}>
-        <div className="container">
-          <div style={{ textAlign:"center", marginBottom:40 }}>
-            <div className="section-chip" style={{ margin:"0 auto 16px" }}>🚀 What Makes Us Different</div>
-            <h2 style={{ fontSize:"clamp(22px,4vw,34px)", fontWeight:900, color:"#0C2340" }}>FastTrack Literacy™ vs Traditional Instruction</h2>
-          </div>
-          <div style={{ overflowX:"auto" }}>
-            <table style={{ width:"100%", borderCollapse:"collapse", fontSize:13 }}>
-              <thead>
-                <tr>
-                  <th style={{ background:"#0C2340", color:"white", padding:"14px 18px", textAlign:"left", fontFamily:"'Nunito',sans-serif", fontSize:13 }}>Area</th>
-                  <th style={{ background:"#F5820A", color:"white", padding:"14px 18px", textAlign:"left", fontFamily:"'Nunito',sans-serif", fontSize:13 }}>FastTrack Literacy™</th>
-                  <th style={{ background:"#5A5240", color:"white", padding:"14px 18px", textAlign:"left", fontFamily:"'Nunito',sans-serif", fontSize:13 }}>Traditional</th>
-                </tr>
-              </thead>
-              <tbody>
-                {[
-                  ["Approach","Holistic literacy system: reading, writing & comprehension","Isolated skill drills"],
-                  ["Instruction","Explicit, systematic, sequential (Science of Reading)","Often implicit and incidental"],
-                  ["Learning Model","Multisensory, child-led, guided practice","Teacher-directed only"],
-                  ["Core Skills","Phonemic awareness, phonics, fluency, vocabulary, comprehension","Limited to phonics only"],
-                  ["Reading + Writing","Strong focus on both decoding (reading) and encoding (writing)","Often reading only"],
-                  ["Engagement","Reggae songs, rhythm, storytelling, visual supports","Worksheets and repetition"],
-                  ["Cultural Relevance","Culturally responsive (JamDER™, global editions)","Generic Western content"],
-                  ["Curriculum Fit","Aligned with national curriculum standards and classroom instruction","Often standalone"],
-                  ["Technology","iCHEETAH™ AI robot, tablets, apps, digital tools","Limited or none"],
-                  ["Home Connection","Active family involvement built into the system","School only"],
-                  ["Assessment","Built-in progress monitoring and measurable outcomes","End-of-term testing"],
-                  ["Student Impact","Builds confident, independent readers who can apply and teach others","Passive learners"],
-                  ["Extended Impact","Supports national literacy initiatives, competitions, and community engagement","Classroom only"],
-                ].map(([area,ft,trad],i)=>(
-                  <tr key={area} style={{ background:i%2===0?"#FFF9F4":"white" }}>
-                    <td style={{ padding:"12px 18px", fontWeight:600, color:"#0C2340", borderBottom:"1px solid #EDE0D0" }}>{area}</td>
-                    <td style={{ padding:"12px 18px", color:"#5A5240", borderBottom:"1px solid #EDE0D0" }}>✓ {ft}</td>
-                    <td style={{ padding:"12px 18px", color:"#A0927A", borderBottom:"1px solid #EDE0D0" }}>✗ {trad}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </section>
-
-      <section style={{ background:"linear-gradient(135deg,#0C2340,#1A3A70)", padding:"80px 24px", textAlign:"center" }}>
-        <div className="container">
-          <div className="section-chip" style={{ background:"rgba(245,130,10,0.2)", border:"1px solid rgba(245,130,10,0.4)", color:"#FFB366" }}>🐆 See It In Action</div>
-          <h2 style={{ fontFamily:"'Nunito',sans-serif", fontWeight:900, fontSize:"clamp(24px,4vw,38px)", color:"white", marginBottom:14, marginTop:12 }}>
-            Inside a CHEETAH® Lesson
-          </h2>
-          <p style={{ fontSize:"clamp(13px,1.6vw,16px)", color:"rgba(255,255,255,0.75)", lineHeight:1.8, marginBottom:40, maxWidth:580, margin:"0 auto 40px" }}>
-            Watch the FastTrack Literacy™ system in action — a real classroom lesson showing how the 16-step structure comes to life.
-          </p>
-          <div style={{ borderRadius:20, overflow:"hidden", boxShadow:"0 24px 80px rgba(0,0,0,0.5)", maxWidth:900, margin:"0 auto", border:"3px solid rgba(245,130,10,0.4)" }}>
-            <video
-              controls
-              preload="metadata"
-              style={{ width:"100%", display:"block", background:"#0C2340", minHeight:360 }}
-              poster="/images/cheetah-lesson-poster.jpg"
-            >
-              <source src="/videos/inside-cheetah-lessons.mp4" type="video/mp4"/>
-              Your browser does not support the video tag.
-            </video>
           </div>
         </div>
       </section>

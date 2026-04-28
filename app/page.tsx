@@ -38,12 +38,12 @@ function AnimatedStats() {
   }, []);
 
   return (
-    <div ref={ref} style={{ display:"flex", gap:"clamp(20px,3vw,36px)", marginTop:40, flexWrap:"wrap" }}>
+    <div ref={ref} style={{ display:"flex", gap:"clamp(20px,3vw,36px)", marginTop:40, flexWrap:"wrap", justifyContent:"center" }}>
       {[
         { value: `${n90}+`, label: "Educational Resources" },
         { value: `${n1100.toLocaleString()}+`, label: "Resources Developed" },
         { value: "5", label: "Countries Served" },
-        { value: "Ages 3–8", label: "Early Learning" },
+        { value: "3+", label: "Early Learning" },
       ].map(({ value, label }) => (
         <div key={label}>
           <div style={{ fontFamily:"'Nunito',sans-serif", fontSize:22, fontWeight:900, color:"#F5820A", minWidth:60 }}>{value}</div>
@@ -73,7 +73,7 @@ export default function Home() {
           <source src="/hero-video.mp4" type="video/mp4" />
         </video>
         {/* Dark overlay so text stays readable */}
-        <div style={{ position:"absolute", inset:0, background:"linear-gradient(135deg, rgba(12,35,64,0.82) 0%, rgba(12,35,64,0.65) 50%, rgba(12,35,64,0.75) 100%)", zIndex:1 }} />
+        <div style={{ position:"absolute", inset:0, background:"linear-gradient(135deg, rgba(12,35,64,0.82) 0%, rgba(12,35,64,0.65) 50%, rgba(12,35,64,0.75) 100%)", zIndex:1, pointerEvents:"none" }} />
         {/* Orange accent glow */}
         <div style={{ position:"absolute", top:-100, right:-100, width:500, height:500, borderRadius:"50%", background:"rgba(245,130,10,0.08)", pointerEvents:"none", zIndex:1 }} />
 
@@ -82,13 +82,11 @@ export default function Home() {
           <div className="grid-2">
             <div>
               <div style={{ display:"inline-flex", alignItems:"center", gap:8, marginBottom:20, background:"rgba(245,130,10,0.15)", border:"1px solid rgba(245,130,10,0.3)", padding:"6px 16px", borderRadius:50, fontSize:12, fontWeight:700, color:"#FFB366" }}>🚂 FastTrack Literacy™ by CHEETAH®</div>
-              <h1 style={{ fontSize:"clamp(28px,4.5vw,52px)", fontWeight:900, color:"white", marginBottom:20, lineHeight:1.15 }}>
-                Every Child Can Learn to Read and Write.<br/>
-                <span style={{ color:"#F5820A" }}>Every Child Must Learn to Read and Write.</span><br/>
-                <span style={{ fontSize:"clamp(22px,3.5vw,40px)" }}>Every Child Must Be Given the Resources to Succeed.</span>
+              <h1 style={{ fontSize:"clamp(28px,4.5vw,52px)", fontWeight:900, color:"white", marginBottom:16, lineHeight:1.15 }}>
+                Accelerating the ability to read, write, understand, and apply information.
               </h1>
-              <p style={{ fontSize:"clamp(14px,1.8vw,16px)", color:"rgba(255,255,255,0.85)", lineHeight:1.8, marginBottom:16, maxWidth:560 }}>FastTrack Literacy™ is a structured, Science of Reading–aligned system designed to accelerate reading and writing success.</p>
-              <p style={{ fontSize:"clamp(13px,1.6vw,15px)", color:"rgba(255,255,255,0.75)", lineHeight:1.8, marginBottom:36, maxWidth:560 }}>We combine reggae-inspired phoneme songs, decodable books, AI-powered technology, flashcards, and structured learning tools to educate, inspire, and deliver measurable results at school and at home.</p>
+              <p style={{ fontSize:"clamp(18px,2.5vw,24px)", fontWeight:700, color:"#F5820A", marginBottom:10, lineHeight:1.3 }}>Literacy Can't Wait</p>
+              <p style={{ fontSize:"clamp(14px,1.8vw,17px)", color:"rgba(255,255,255,0.85)", lineHeight:1.8, marginBottom:36, maxWidth:560 }}>Every child deserves the resources, opportunities, and support to succeed.</p>
               <div className="btn-row">
                 <Link href="/get-started" className="btn-orange">Get Started Free →</Link>
                 <Link href="/how-it-works" className="btn-white">How It Works</Link>
@@ -105,7 +103,7 @@ export default function Home() {
         <div className="container" style={{ textAlign:"center" }}>
           <p style={{ fontSize:11, fontWeight:700, letterSpacing:"1.5px", textTransform:"uppercase", color:"#A0927A", marginBottom:16 }}>Serving educators & families in</p>
           <div style={{ display:"flex", justifyContent:"center", alignItems:"center", gap:"clamp(16px,4vw,48px)", flexWrap:"wrap" }}>
-            {["🇯🇲 Jamaica","🇺🇸 United States","🇬🇭 Ghana","🇺🇬 Uganda","🏝️ Caribbean"].map(c=>(<span key={c} style={{ fontFamily:"'Nunito',sans-serif", fontWeight:800, fontSize:14, color:"#C4B08A" }}>{c}</span>))}
+            {["🇯🇲 Jamaica","🇺🇸 United States","🇰🇪 Kenya","🇺🇬 Uganda","🏝️ Caribbean","🌍 Other Countries Pending"].map(c=>(<span key={c} style={{ fontFamily:"'Nunito',sans-serif", fontWeight:800, fontSize:14, color:"#C4B08A" }}>{c}</span>))}
           </div>
         </div>
       </section>
@@ -117,7 +115,7 @@ export default function Home() {
             <div>
               <div className="section-chip">🚂 A Literacy Journey</div>
               <h2 style={{ fontSize:"clamp(26px,4vw,40px)", fontWeight:900, color:"#0C2340", marginBottom:16 }}>What is FastTrack Literacy™?</h2>
-              <p style={{ fontSize:15, color:"#5A5240", lineHeight:1.85, marginBottom:18 }}>FastTrack Phonics™ is a structured early reading program that teaches children how letters sound, connect, and form words. It is grounded in the <strong>Science of Reading</strong>, integrating the five pillars of phonemic awareness, phonics, fluency, vocabulary, and comprehension.</p>
+              <p style={{ fontSize:15, color:"#5A5240", lineHeight:1.85, marginBottom:18 }}>FastTrack Literacy™ is a structured early reading programme with <strong>90+ integrated resources</strong> that teaches children how letters sound, connect, and form words. Grounded in the <strong>Science of Reading</strong>, it integrates the five pillars of phonemic awareness, phonics, fluency, vocabulary, and comprehension.</p>
               <p style={{ fontSize:15, color:"#5A5240", lineHeight:1.85, marginBottom:28 }}>Children are not just learners — they become active participants in their reading journey through child-led learning and guided practice, powered by reggae-inspired songs and storytelling.</p>
               <Link href="/fasttrack" className="btn-orange">Learn More →</Link>
             </div>
@@ -151,8 +149,8 @@ export default function Home() {
           <div className="grid-2">
             <div>
               <div className="section-chip">👧 Who Is It For</div>
-              <h2 style={{ fontSize:"clamp(24px,3.5vw,36px)", fontWeight:900, color:"#0C2340", marginBottom:16 }}>Designed for Ages 3–8 and Their Families</h2>
-              <p style={{ fontSize:15, color:"#5A5240", lineHeight:1.85, marginBottom:16 }}>Primarily designed for children ages 3–8 and their families because reading success starts early and grows at home. FastTrack Literacy™ is adaptive and can be used across a wide range of age groups, supporting learners at different reading levels.</p>
+              <h2 style={{ fontSize:"clamp(24px,3.5vw,36px)", fontWeight:900, color:"#0C2340", marginBottom:16 }}>Designed for Ages 5+ and Their Families</h2>
+              <p style={{ fontSize:15, color:"#5A5240", lineHeight:1.85, marginBottom:16 }}>Primarily designed for children ages 5+ and their families because reading success starts early and grows at home. FastTrack Literacy™ is adaptive and can be used across a wide range of age groups, supporting learners at different reading levels.</p>
               <p style={{ fontSize:15, color:"#5A5240", lineHeight:1.85, marginBottom:24 }}>FastTrack Literacy™ is also a great resource for educators and parents. CHEETAH® is empowering young readers and their families!</p>
               <div style={{ display:"flex", flexDirection:"column", gap:10 }}>
                 {[{icon:"👶",l:"Early Learners (Ages 3–5) — Phonemic awareness & early phonics"},{icon:"👧",l:"Primary Students (Ages 5–8) — Full programme with progress tracking"},{icon:"👩‍🏫",l:"Classroom Teachers — Complete instructional package"},{icon:"👨‍👩‍👧",l:"Parents — Home support guides & family engagement"}].map(f=>(
@@ -170,15 +168,18 @@ export default function Home() {
         </div>
       </section>
 
-      {/* THE ECOSYSTEM — with image */}
+      {/* ABOUT US — ECOSYSTEM TEASER */}
       <section className="section" style={{ background:"white" }}>
         <div className="container">
-          <div style={{ textAlign:"center", marginBottom:40 }}>
-            <div className="section-chip" style={{ margin:"0 auto 16px" }}>🌍 Global Framework</div>
-            <h2 style={{ fontSize:"clamp(24px,4vw,38px)", fontWeight:900, color:"#0C2340" }}>The CHEETAH® Literacy Ecosystem</h2>
-            <p style={{ fontSize:15, color:"#5A5240", maxWidth:560, margin:"12px auto 0", lineHeight:1.7 }}>A comprehensive framework combining educational resources, technological innovations, and extensive training to improve reading outcomes at scale.</p>
+          <div style={{ textAlign:"center", marginBottom:32 }}>
+            <div className="section-chip" style={{ margin:"0 auto 16px" }}>🌍 About Us</div>
+            <h2 style={{ fontSize:"clamp(22px,4vw,36px)", fontWeight:900, color:"#0C2340", marginBottom:12 }}>The CHEETAH® Literacy Ecosystem</h2>
+            <p style={{ fontSize:15, color:"#5A5240", maxWidth:560, margin:"0 auto 28px", lineHeight:1.7 }}>A comprehensive global framework combining curriculum, technology, and training to improve reading outcomes at scale — across Kenya, Uganda, Jamaica, the USA, and beyond.</p>
           </div>
-          <Image src="/images/image13.png" alt="The CHEETAH Literacy Ecosystem — A Global Framework" width={1200} height={680} style={{ width:"100%", height:"auto", borderRadius:16, boxShadow:"0 8px 32px rgba(0,0,0,0.08)" }} />
+          <Image src="/images/image13.png" alt="The CHEETAH® Literacy Ecosystem — A Global Framework" width={1200} height={680} style={{ width:"100%", height:"auto", borderRadius:16, boxShadow:"0 8px 32px rgba(0,0,0,0.08)", marginBottom:32 }} />
+          <div style={{ textAlign:"center" }}>
+            <Link href="/about" className="btn-orange">Learn More — About Us →</Link>
+          </div>
         </div>
       </section>
 
@@ -210,10 +211,10 @@ export default function Home() {
         <div className="container">
           <div style={{ textAlign:"center", marginBottom:48 }}>
             <h2 style={{ fontSize:"clamp(24px,4vw,36px)", fontWeight:900, color:"white" }}>What Educators Are Saying</h2>
-            <p style={{ fontSize:15, color:"rgba(255,255,255,0.6)", marginTop:10 }}>Real results from classrooms across Jamaica, the US, and Ghana & Uganda</p>
+            <p style={{ fontSize:15, color:"rgba(255,255,255,0.6)", marginTop:10 }}>Real results from classrooms across Jamaica, the US, and beyond</p>
           </div>
           <div className="grid-auto">
-            {[{q:"FastTrack Literacy™ transformed our classroom. Children who struggled to recognise letters are now reading decodable books independently after just 10 weeks.",n:"Miss Thompson",r:"Year 1 Teacher, Kingston, Jamaica"},{q:"The reggae phoneme songs are magical. My students wake up singing them — and that repetition is exactly what builds phonemic awareness.",n:"Mrs. Davis",r:"Literacy Coach, Hartford, CT"},{q:"As a parent, the home support guides made it easy to continue the learning at home. My daughter moved two reading levels in one term.",n:"Natalie B.",r:"Parent, Portmore, Jamaica"}].map(t=>(
+            {[{q:"The iCHEETAH® has been a great motivator in my classroom. I use it as an incentive to keep students focused on their work, and they look forward to engaging with the educational games and apps.",n:"Ms. Hunter",r:"Grade 1 Teacher, Jamaica"},{q:"I had the opportunity to review CHEETAH® resources prior to their public release. I am encouraged to see FastTrack Literacy™ being thoughtfully adapted for Jamaica and other countries. These are the kinds of tools I would have valued in my own classroom.",n:"Dr. Clarke",r:"Past College President, Jamaica"},{q:"My son enjoys the decodable books and is building confidence with high-frequency words. He is more willing to read on his own.",n:"Miss Miller",r:"Literacy Coach, Florida, USA"}].map(t=>(
               <div key={t.n} style={{ background:"rgba(255,255,255,0.08)", border:"1px solid rgba(255,255,255,0.12)", borderRadius:20, padding:28 }}>
                 <div style={{ color:"#F5820A", fontSize:18, marginBottom:14 }}>★★★★★</div>
                 <p style={{ fontSize:14, color:"rgba(255,255,255,0.9)", lineHeight:1.8, marginBottom:20, fontStyle:"italic" }}>"{t.q}"</p>
@@ -235,11 +236,8 @@ export default function Home() {
             <div>
               <div className="section-chip">🌟 Our Founder</div>
               <h2 style={{ fontSize:"clamp(24px,3.5vw,36px)", fontWeight:900, color:"#0C2340", marginBottom:16 }}>Paulette Trowers-Lawrence, JD</h2>
-              <p style={{ fontSize:15, color:"#5A5240", lineHeight:1.85, marginBottom:16 }}>A global literacy leader, author, entrepreneur, and education innovator committed to improving reading outcomes for children worldwide. Recipient of the <strong>USA Presidential Lifetime Achievement Award (2024)</strong> and an <strong>Honorary Doctorate of Humanitarianism</strong>.</p>
-              <p style={{ fontSize:15, color:"#5A5240", lineHeight:1.85, marginBottom:16 }}>With over <strong>30 years</strong> of corporate and business experience, she has led the development of more than <strong>1,100 educational resources</strong>, integrating curriculum, technology, and AI to support learning across diverse environments.</p>
-              <div style={{ background:"#FFF0E0", borderLeft:"4px solid #F5820A", padding:"16px 20px", borderRadius:"0 12px 12px 0", marginBottom:24 }}>
-                <p style={{ fontSize:14, fontStyle:"italic", color:"#0C2340", lineHeight:1.7 }}>"Every child can read, and every child must read."</p>
-              </div>
+              <p style={{ fontSize:15, color:"#5A5240", lineHeight:1.85, marginBottom:16 }}>A trained USA lawyer, global literacy leader, author, entrepreneur, and education innovator committed to improving reading outcomes for children worldwide. Recipient of the <strong>USA Presidential Lifetime Achievement Award (2024)</strong> and an <strong>Honorary Doctorate of Humanitarianism</strong>.</p>
+              <p style={{ fontSize:15, color:"#5A5240", lineHeight:1.85, marginBottom:24 }}>With over <strong>30 years</strong> of corporate and business experience, she has led the development of more than <strong>1,100 educational resources</strong>, integrating curriculum, technology, and AI to support learning across diverse environments.</p>
               <Link href="/about" className="btn-orange">Read Her Full Story →</Link>
             </div>
           </div>

@@ -53,7 +53,10 @@ export default function Footer() {
           </div>
           <div>
             <h4 style={{ color:"white", fontSize:14, fontWeight:700, marginBottom:14, fontFamily:"'Nunito',sans-serif" }}>Stay Connected</h4>
-            <p style={{ fontSize:13, marginBottom:14 }}>Get literacy tips and updates delivered to your inbox.</p>
+            <p style={{ fontSize:13, marginBottom:14 }}>Get expert literacy tips, free resources, and exclusive updates to help your child succeed.</p>
+            <div style={{ marginBottom:14 }}>
+              <a href="/images/welcome-letter.png" download style={{ display:"inline-flex", alignItems:"center", gap:8, background:"rgba(245,130,10,0.15)", border:"1px solid rgba(245,130,10,0.3)", color:"#FFB366", fontSize:12, fontWeight:700, padding:"8px 14px", borderRadius:50, textDecoration:"none" }}>🎁 Download Free Welcome Letter</a>
+            </div>
             {status === "sent" ? (
               <div style={{ background:"rgba(255,255,255,0.08)", border:"1px solid rgba(255,255,255,0.15)", borderRadius:50, padding:"10px 18px", fontSize:13, color:"#4ADE80" }}>
                 ✓ You're subscribed!

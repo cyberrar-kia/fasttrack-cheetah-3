@@ -30,10 +30,10 @@ const drawerContent: Record<string, DrawerItem> = {
 };
 
 const resources = [
-  { cat:"Phonics", icon:"📊", audience:"both", image:"/images/resources/phonics-charts.jpg", title:"Phonics Chart — Sets 1–9", desc:"Official FastTrack Literacy™ Phonics Chart — 9 phoneme sets plus bonus sound, as provided by the Ministry of Education, Skills, Youth and Information.", tag:"orange", type:"PDF Download" },
+  { cat:"Phonics", icon:"📊", audience:"both", image:"/images/resources/phonics-chart-preview.jpg", title:"Phonics Chart — Sets 1–9", desc:"Official FastTrack Literacy™ Phonics Chart — 9 phoneme sets plus bonus sound, as provided by the Ministry of Education, Skills, Youth and Information.", tag:"orange", type:"PDF Download", downloadUrl:"/phonics-chart.pdf" },
   { cat:"Teacher Resources", icon:"👩‍🏫", audience:"teacher", image:"/images/resources/teachers-helper-combined.jpg", title:"Teacher's Helper / Teacher's Guide", desc:"Full instructional roadmap with difficult auditory stories, a 65-minute suggested Teacher's Page per letter, and over 640 activities. Available in Volumes 1 and 2.", tag:"blue", type:"Physical + Digital" },
   { cat:"Student Resources", icon:"👧", audience:"parent", image:"/images/resources/pupils-helper-vol1.jpg", title:"Pupil's Workbook / Pupil's Helper", desc:"Streamlined version for students (omitting steps 2, 3, and 4) to remain accessible for the child. Available in Volumes 1, 2, and 3.", tag:"green", type:"Physical Book" },
-  { cat:"Songs & Audio", icon:"🎵", audience:"both", title:"45 Reggae Phoneme Songs", desc:"One-minute rhythmic, memorable, and fun songs — one for each phoneme. Children wake up singing them! Sample songs include ANNA-WARRIOR, BIG FISH-WARRIOR, and BLACK BIRD. Full list coming soon.", tag:"orange", type:"Audio + Digital" },
+  { cat:"Songs & Audio", icon:"🎵", audience:"both", title:"45 Reggae Phoneme Songs", desc:"One-minute rhythmic, memorable, and fun songs — one for each phoneme. Children wake up singing them! Samples: ANNA-WARRIOR, BIG FISH-WARRIOR, BLACK BIRD. Full list coming soon.", tag:"orange", type:"Audio + Digital" },
   { cat:"Decodable Books", icon:"📖", audience:"parent", image:"/images/resources/poster-stories.jpg", title:"CHEETAH® Poster Stories — Level 1", desc:"9 Level 1 decodable books for early readers just beginning to decode. Large, poster-format stories ideal for classroom shared reading.", tag:"blue", type:"Physical Book" },
   { cat:"Decodable Books", icon:"📚", audience:"parent", image:"/images/resources/cder-books.jpg", title:"CHEETAH® Decodable & Early Readers — Level 2", desc:"70+ Level 2 decodable books for building decoding and fluency. Fiction and nonfiction titles across a range of topics.", tag:"green", type:"Physical Book" },
   { cat:"Charts & Visual Tools", icon:"📊", audience:"teacher", image:"/images/resources/phonics-charts.jpg", title:"27+ Interactive Charts", desc:"Multisensory reinforcement tools including phonics charts, word family charts, and classroom display resources.", tag:"orange", type:"Physical Resource" },
@@ -107,13 +107,13 @@ function FlipBook({ book }: { book: any }) {
             <div style={{ marginTop:16, paddingTop:12, borderTop:"1px solid rgba(0,0,0,0.08)", fontSize:10, color:"rgba(0,0,0,0.4)", lineHeight:1.6 }}>{book.pages[1].author}</div>
           </div>
         )}
-        {/* PAGE 3 — READ ONLINE */}
+        {/* PAGE 3 — LOCKED */}
         {page === 2 && (
           <div style={{ minHeight:320, display:"flex", flexDirection:"column", alignItems:"center", justifyContent:"center", gap:12, padding:32, textAlign:"center" }}>
-            <div style={{ width:56, height:56, borderRadius:"50%", background:"rgba(245,130,10,0.1)", display:"flex", alignItems:"center", justifyContent:"center", fontSize:28 }}>📖</div>
-            <div style={{ fontFamily:"'Nunito',sans-serif", fontWeight:900, fontSize:16, color:"#0C2340" }}>Read the Full Book Online</div>
-            <div style={{ fontSize:13, color:"#8A7A6A", lineHeight:1.7, maxWidth:220 }}>Access the full collection of CHEETAH® books at mycheetahinc.com</div>
-            <a href="https://mycheetahinc.com" target="_blank" rel="noopener noreferrer" style={{ background:"#F5820A", color:"white", textDecoration:"none", padding:"11px 24px", borderRadius:50, fontSize:13, fontWeight:700, fontFamily:"'Nunito',sans-serif", marginTop:4 }}>Read Online →</a>
+            <div style={{ width:56, height:56, borderRadius:"50%", background:"rgba(12,35,64,0.08)", display:"flex", alignItems:"center", justifyContent:"center", fontSize:28 }}>🔒</div>
+            <div style={{ fontFamily:"'Nunito',sans-serif", fontWeight:900, fontSize:16, color:"#0C2340" }}>Full Access Required</div>
+            <div style={{ fontSize:13, color:"#8A7A6A", lineHeight:1.7, maxWidth:220 }}>Get full access to read all pages of {book.title} — {book.vol}</div>
+            <a href={book.url || "/get-started"} target={book.url ? "_blank" : "_self"} rel="noopener noreferrer" style={{ background:"#F5820A", color:"white", textDecoration:"none", padding:"11px 24px", borderRadius:50, fontSize:13, fontWeight:700, fontFamily:"'Nunito',sans-serif", marginTop:4 }}>Read Full Book →</a>
           </div>
         )}
         {/* Page indicator dots */}
@@ -136,7 +136,7 @@ function FlipBook({ book }: { book: any }) {
         <div style={{ display:"flex", gap:8 }}>
           <button onClick={()=>setPage(p=>Math.max(0,p-1))} disabled={page===0} style={{ background:"#F5EEE4", border:"none", borderRadius:50, padding:"8px 14px", fontSize:12, cursor:page===0?"not-allowed":"pointer", color:page===0?"#C8B89A":"#5A5240", fontWeight:600, fontFamily:"'Nunito',sans-serif" }}>← Prev</button>
           <button onClick={()=>setPage(p=>Math.min(2,p+1))} disabled={page===2} style={{ flex:1, background: page===2?"#EDE0D0":"#F5820A", border:"none", borderRadius:50, padding:"8px 14px", fontSize:12, cursor:page===2?"not-allowed":"pointer", color:page===2?"#8A7A6A":"white", fontWeight:700, fontFamily:"'Nunito',sans-serif" }}>
-            {page===1?"Read Online →":"Next Page →"}
+            {page===1?"View Access Page →":"Next Page →"}
           </button>
         </div>
       </div>
@@ -148,6 +148,7 @@ export default function Resources() {
   const [activeDrawer, setActiveDrawer] = useState<string|null>(null);
   const [audience, setAudience] = useState<"all"|"teacher"|"parent">("all");
   const [lastClicked, setLastClicked] = useState<string|null>(null);
+  const [expandedImg, setExpandedImg] = useState<string|null>(null);
   const allResourcesRef = useRef<HTMLDivElement>(null);
   const [quoteOpen, setQuoteOpen] = useState(false);
   const [quoteStatus, setQuoteStatus] = useState<"idle"|"sending"|"sent"|"error">("idle");
@@ -167,6 +168,7 @@ export default function Resources() {
     <>
       <section className="section" style={{ background:"linear-gradient(135deg,#0C2340,#1A3A70)", padding:"80px 24px 60px", textAlign:"center" }}>
         <div className="container-sm">
+
           <div style={{ display:"inline-flex", background:"rgba(245,130,10,0.15)", border:"1px solid rgba(245,130,10,0.3)", color:"#FFB366", fontSize:11, fontWeight:700, letterSpacing:"1px", textTransform:"uppercase", padding:"6px 14px", borderRadius:50, marginBottom:20 }}>Resource Library</div>
           <h1 style={{ fontSize:"clamp(28px,5vw,46px)", fontWeight:900, color:"white", marginBottom:18 }}>Everything You Need to <span style={{ color:"#F5820A" }}>Teach & Learn</span></h1>
           <p style={{ fontSize:"clamp(14px,2vw,17px)", color:"rgba(255,255,255,0.8)", lineHeight:1.8 }}>Over 90 carefully designed resources spanning books, songs, technology, charts, and assessment tools — all aligned to the FastTrack Literacy™ system.</p>
@@ -200,7 +202,7 @@ export default function Resources() {
 
       {/* TEACHER RESOURCES */}
       {(audience==="teacher"||audience==="all") && (
-      <section className="section" style={{ background:"#F0FDF4", display: audience==="teacher"||audience==="all" ? "block" : "none" }}>
+      <section className="section" style={{ background:"#F0FDF4", display: audience==="teacher"||audience==="all" ? "block" : "none" }} id="educators">
         <div className="container">
           <div style={{ marginBottom:32 }}>
             <div className="section-chip" style={{ background:"rgba(22,163,74,0.1)", border:"1px solid rgba(22,163,74,0.25)", color:"#166534" }}>👩‍🏫 Teacher Resources</div>
@@ -210,7 +212,7 @@ export default function Resources() {
           <div style={{ display:"grid", gridTemplateColumns:"repeat(auto-fill,minmax(clamp(220px,26vw,280px),1fr))", gap:16 }}>
             {[
               { icon:"📋", image:"/images/resources/teachers-helper-combined.jpg", title:"Teacher's Helper Vol 1 & 2", desc:"Full 16-step instructional roadmap for every phoneme. Includes auditory stories, guided steps, and a suggested 65-minute lesson plan per letter." },
-              { icon:"📊", image:"/images/resources/phonics-charts.jpg", title:"FastTrack Phonics Chart", desc:"Official Ministry of Education approved phonics chart covering all 9 phoneme sets plus a bonus letter sound. Print-ready PDF.", free:true },
+              { icon:"📊", image:"/images/resources/phonics-chart-preview.jpg", title:"FastTrack Phonics Chart", desc:"Official Ministry of Education approved phonics chart covering all 9 phoneme sets plus a bonus letter sound. Print-ready PDF.", free:true },
               { icon:"📝", title:"Assessment & Progress Tools", desc:"CHEETAH® Poster Fluency Tests, self-assessment checklists, and progress tracking sheets. Measurable outcomes at every stage." },
               { icon:"🗂️", image:"/images/resources/phonics-charts.jpg", title:"27+ Interactive Charts", desc:"Multisensory reinforcement tools including phonics charts, word family charts, and classroom display resources." },
               { icon:"🎓", title:"Teacher Training Programme", desc:"Full implementation training for classroom teachers. Train-the-trainer model for school-wide rollout. Available in-person and digitally." },
@@ -239,7 +241,7 @@ export default function Resources() {
 
       {/* PARENT RESOURCES */}
       {(audience==="parent"||audience==="all") && (
-      <section className="section" style={{ background:"#EFF6FF" }}>
+      <section id="parents" className="section" style={{ background:"#EFF6FF" }}>
         <div className="container">
           <div style={{ marginBottom:32 }}>
             <div className="section-chip" style={{ background:"rgba(59,130,246,0.1)", border:"1px solid rgba(59,130,246,0.25)", color:"#1E40AF" }}>👨‍👩‍👧 Parent Resources</div>
@@ -277,7 +279,7 @@ export default function Resources() {
       )}
 
 
-      <section className="section" style={{ background:"#FFF9F4" }}>
+      <section id="icheetah" className="section" style={{ background:"#FFF9F4" }}>
         <div className="container">
           <div className="grid-2" style={{ marginBottom:48, gap:40, alignItems:"center" }}>
             <div>
@@ -307,7 +309,7 @@ export default function Resources() {
             <Image src="/images/jamder-books.png" alt="All JamDER and C-DER Books" width={400} height={600} style={{ width:"100%", height:"auto", borderRadius:16, boxShadow:"0 8px 32px rgba(0,0,0,0.1)" }} />
           </div>
 
-          <div ref={allResourcesRef} style={{ textAlign:"center", marginBottom:40 }}>
+          <div ref={allResourcesRef} id="all-resources" style={{ textAlign:"center", marginBottom:40 }}>
             <h2 style={{ fontSize:"clamp(22px,4vw,34px)", fontWeight:900, color:"#0C2340" }}>All Resources</h2>
             <p style={{ fontSize:14, color:"#5A5240", marginTop:8 }}>Click "Learn More" on any resource — it will be highlighted here.</p>
           </div>
@@ -315,8 +317,12 @@ export default function Resources() {
             {resources.filter(r => audience === "all" || r.audience === audience || r.audience === "both").map(r=>(
               <div key={r.title} style={{ background: lastClicked === r.title ? "#FFF0E0" : "white", border: lastClicked === r.title ? "2px solid #F5820A" : "1px solid #EDE0D0", borderRadius:16, overflow:"hidden", display:"flex", flexDirection:"column", transition:"all 0.3s ease", boxShadow: lastClicked === r.title ? "0 4px 20px rgba(245,130,10,0.15)" : "0 2px 8px rgba(0,0,0,0.04)" }}>
                 {(r as any).image && (
-                  <div style={{ width:"100%", height:180, background:"white", display:"flex", alignItems:"center", justifyContent:"center", borderBottom:"1px solid #EDE0D0", padding:12, boxSizing:"border-box" }}>
+                  <div
+                    onClick={() => setExpandedImg((r as any).image)}
+                    style={{ width:"100%", height:180, background:"white", display:"flex", alignItems:"center", justifyContent:"center", borderBottom:"1px solid #EDE0D0", padding:12, boxSizing:"border-box", cursor:"zoom-in", position:"relative" }}
+                  >
                     <img src={(r as any).image} alt={r.title} style={{ maxWidth:"100%", maxHeight:"100%", objectFit:"contain", display:"block" }} />
+                    <div style={{ position:"absolute", bottom:6, right:8, fontSize:10, color:"#A0927A", background:"rgba(255,255,255,0.85)", padding:"2px 7px", borderRadius:50, fontWeight:600 }}>🔍 Expand</div>
                   </div>
                 )}
                 <div style={{ padding:20, display:"flex", flexDirection:"column", gap:10, flex:1 }}>
@@ -330,6 +336,8 @@ export default function Resources() {
                     <span style={{ fontSize:11, color:"#A0927A", fontWeight:500 }}>{r.type}</span>
                     {(r as any).contactUs ? (
                       <a href="/contact" style={{ background:"#0C2340", color:"white", border:"none", borderRadius:50, padding:"7px 14px", fontSize:12, fontWeight:700, cursor:"pointer", textDecoration:"none", fontFamily:"'Nunito',sans-serif" }}>Contact Us →</a>
+                    ) : (r as any).downloadUrl ? (
+                      <a href={(r as any).downloadUrl} download style={{ background:"#DCFCE7", color:"#166534", border:"none", borderRadius:50, padding:"7px 14px", fontSize:12, fontWeight:700, cursor:"pointer", textDecoration:"none", fontFamily:"'Nunito',sans-serif" }}>↓ Download</a>
                     ) : (
                       <button onClick={()=>{
                           setActiveDrawer(r.title);
@@ -345,7 +353,7 @@ export default function Resources() {
       </section>
 
       {/* FREE DOWNLOADS */}
-      <section className="section" style={{ background:"white" }}>
+      <section className="section" style={{ background:"white" }} id="free-downloads">
         <div className="container">
           <div style={{ textAlign:"center", marginBottom:40 }}>
             <div className="section-chip">📥 Free Resources</div>
@@ -384,7 +392,7 @@ export default function Resources() {
       </section>
 
       {/* FLIP BOOKS */}
-      <section className="section" style={{ background:"#FFF0E0" }}>
+      <section className="section" style={{ background:"#FFF0E0" }} id="flipbooks">
         <div className="container">
           <div style={{ textAlign:"center", marginBottom:48 }}>
             <div className="section-chip">📖 JamDER™ Digital Books</div>
@@ -393,50 +401,48 @@ export default function Resources() {
           </div>
           <div style={{ display:"grid", gridTemplateColumns:"repeat(auto-fill,minmax(clamp(260px,28vw,340px),1fr))", gap:24 }}>
             {[
-              { title:"Teacher's Helper", vol:"Volume 1", cover:"/images/resources/teachers-helper-vol1.webp", color:"#DBEAFE", accent:"#1E40AF", pages:[
+              { title:"Teacher's Helper", vol:"Volume 1", cover:"/images/resources/teachers-helper-vol1.webp", url:"https://heyzine.com/flip-book/0a66e4e5a7.html", color:"#DBEAFE", accent:"#1E40AF", pages:[
                 { heading:"JamDER+™ — Jamaican Decodable & Early Readers", sub:"Teacher's Helper · Volume 1", body:"This resource provides structured lesson plans and teaching guides aligned to the FastTrack Literacy™ programme. Designed for classroom teachers and early literacy educators.", author:"Paulette Trowers, Juris Doctor · Kristina Jaz · Iain Taylor" },
                 { heading:"How to Use This Book", sub:"Teacher's Guide", body:"Each lesson follows the 16-step FastTrack structured format. Begin with the phoneme song, proceed through decoding activities, and close with the reading of the decodable text.", author:"Early Literacy Tool · CHEETAH® Purrrrrrr Publishing" },
               ]},
-              { title:"Teacher's Helper", vol:"Volume 2", cover:"/images/resources/teachers-helper-vol2.jpg", color:"#DCFCE7", accent:"#166534", pages:[
+              { title:"Teacher's Helper", vol:"Volume 2", cover:"/images/resources/teachers-helper-vol2.jpg", url:"https://heyzine.com/flip-book/01cc4943e4.html", color:"#DCFCE7", accent:"#166534", pages:[
                 { heading:"JamDER+™ — Jamaican Decodable & Early Readers", sub:"Teacher's Helper · Volume 2", body:"A continuation of the teacher's instructional guide series. Covers phoneme sets 4–6 with extended lesson activities, assessment tools, and differentiation strategies.", author:"Paulette Trowers, Juris Doctor · Kristina Jaz · Iain Taylor" },
                 { heading:"Phoneme Set Overview", sub:"Sets 4 — 6", body:"Set 4: l, b, short ŭ, soft g, long ā · Set 5: j, long ī, or, long ō, z · Set 6: ng, w/wh, short oo, long oo, v. Each set includes song activities and decodable text practice.", author:"Early Literacy Tool · Ministry of Education Aligned" },
               ]},
-              { title:"Pupil's Helper", vol:"Volume 1", cover:"/images/resources/pupils-helper-vol1.jpg", color:"#FEF3C7", accent:"#92400E", pages:[
+              { title:"Pupil's Helper", vol:"Volume 1", cover:"/images/resources/pupils-helper-vol1.jpg", url:"https://heyzine.com/flip-book/c3b25db878.html", color:"#FEF3C7", accent:"#92400E", pages:[
                 { heading:"JamDER+™ — Jamaican Decodable & Early Readers", sub:"Pupil's Helper · Volume 1", body:"A student workbook filled with phonics activities, letter-sound exercises, and early reading practice. Designed for children ages 3–6 beginning their literacy journey.", author:"Paulette Trowers, Juris Doctor · Kristina Jaz" },
                 { heading:"Welcome, Young Reader!", sub:"A Message to Students", body:"This book is for you! Every page will help you learn new sounds and words. You are going to be a great reader. Let's begin!", author:"CHEETAH® Purrrrrrr Publishing · fasttrackliteracy.com" },
               ]},
-              { title:"Pupil's Helper", vol:"Volume 2", cover:"/images/resources/pupils-helper-vol2.jpg", color:"#FCE7F3", accent:"#9D174D", pages:[
+              { title:"Pupil's Helper", vol:"Volume 2", cover:"/images/resources/pupils-helper-vol2.jpg", url:"https://heyzine.com/flip-book/16a9bc1676.html", color:"#FCE7F3", accent:"#9D174D", pages:[
                 { heading:"JamDER+™ — Jamaican Decodable & Early Readers", sub:"Pupil's Helper · Volume 2", body:"Building on Volume 1, this workbook introduces more complex phoneme combinations through engaging activities, rhymes, and culturally relevant Jamaican stories.", author:"Paulette Trowers, Juris Doctor · Kristina Jaz" },
                 { heading:"What You Will Learn", sub:"Phoneme Sets 4 — 6", body:"In this volume you will practise blending longer words, reading short sentences, and recognising tricky high-frequency words. Keep going — you are doing amazing!", author:"CHEETAH® Purrrrrrr Publishing · fasttrackliteracy.com" },
               ]},
-              { title:"Pupil's Helper", vol:"Volume 3", cover:"/images/resources/pupils-helper-vol3.jpg", color:"#EDE9FE", accent:"#5B21B6", pages:[
+              { title:"Pupil's Helper", vol:"Volume 3", cover:"/images/resources/pupils-helper-vol3.jpg", url:"https://heyzine.com/flip-book/639bcdbb20.html", color:"#EDE9FE", accent:"#5B21B6", pages:[
                 { heading:"JamDER+™ — Jamaican Decodable & Early Readers", sub:"Pupil's Helper · Volume 3", body:"The third volume in the Pupil's Helper series. Focuses on vowel digraphs, blends, and reading fluency through structured decodable passages and comprehension activities.", author:"Paulette Trowers, Juris Doctor · Kristina Jaz" },
                 { heading:"You're Almost There!", sub:"Advanced Phoneme Practice", body:"This volume covers the final phoneme sets — including digraphs, diphthongs, and longer word patterns. You are reading real sentences and short stories now. Well done!", author:"CHEETAH® Purrrrrrr Publishing · fasttrackliteracy.com" },
               ]},
-              { title:"JamDER™ Reader", vol:"Special Edition", cover:"/images/resources/cder-books.jpg", color:"#FFF0E0", accent:"#C05A00", pages:[
-                { heading:"JamDER+™ — Special Edition", sub:"Jamaican Decodable & Early Readers", body:"A special curated collection of JamDER™ stories — culturally authentic, fully decodable, and beautifully illustrated. Celebrating Jamaican heritage through the joy of reading.", author:"CHEETAH® Purrrrrrr Publishing · Paulette Trowers, Juris Doctor" },
-                { heading:"About This Collection", sub:"Stories from Our Culture", body:"These stories are set in Jamaica and feature characters, places, and experiences that Jamaican children know and love. Every word is decodable using the FastTrack phonics sequence.", author:"fasttrackliteracy.com · mycheetahinc.com" },
-              ]},
-              { title:"House Flood", vol:"C-DER Story Book", cover:"/images/resources/house-flood.png", color:"#DBEAFE", accent:"#1E40AF", pages:[
+              { title:"House Flood", vol:"C-DER Story Book", cover:"/images/resources/house-flood.png", url:"https://heyzine.com/flip-book/8e75d550bf.html", color:"#DBEAFE", accent:"#1E40AF", pages:[
                 { heading:"House Flood", sub:"CHEETAH® Purrrrrrr Publishing", body:"A decodable early reader story from the C-DER™ collection. Fully phonics-aligned and culturally authentic.", author:"Bernadette Vidal · Paulette Trowers, JD" },
                 { heading:"About This Book", sub:"Decodable & Early Reader", body:"House Flood is fully decodable and aligned to the FastTrack Literacy™ phonics sequence — building fluency and confidence through culturally authentic storytelling.", author:"CHEETAH® Purrrrrrr Publishing · fasttrackliteracy.com" },
               ]},
-              { title:"Mr. Pete Makes Friends", vol:"C-DER Story Book", cover:"/images/resources/mr-pete-makes-friends.png", color:"#DCFCE7", accent:"#166534", pages:[
+              { title:"Mr. Pete Makes Friends", vol:"C-DER Story Book", cover:"/images/resources/mr-pete-makes-friends.png", url:"https://heyzine.com/flip-book/b3e8251538.html", color:"#DCFCE7", accent:"#166534", pages:[
                 { heading:"Mr. Pete Makes Friends", sub:"CHEETAH® Purrrrrrr Publishing", body:"A decodable early reader story from the C-DER™ collection. Fully phonics-aligned and culturally authentic.", author:"Bernadette Vidal · Paulette Trowers, JD" },
                 { heading:"About This Book", sub:"Decodable & Early Reader", body:"Mr. Pete Makes Friends is fully decodable and aligned to the FastTrack Literacy™ phonics sequence — helping children build confidence through stories they love.", author:"CHEETAH® Purrrrrrr Publishing · fasttrackliteracy.com" },
               ]},
-              { title:"Meet My Family", vol:"C-DER Story Book", cover:"/images/resources/meet-my-family.png", color:"#FEF3C7", accent:"#92400E", pages:[
+              { title:"Meet My Family", vol:"C-DER Story Book", cover:"/images/resources/meet-my-family.png", url:"https://heyzine.com/flip-book/ff1ce15d36.html", color:"#FEF3C7", accent:"#92400E", pages:[
                 { heading:"Meet My Family", sub:"CHEETAH® Purrrrrrr Publishing", body:"A decodable early reader story from the C-DER™ collection. Fully phonics-aligned and culturally authentic.", author:"Bernadette Vidal · Paulette Trowers, JD" },
                 { heading:"About This Book", sub:"Decodable & Early Reader", body:"Meet My Family is a fully decodable story aligned to the FastTrack Literacy™ phonics sequence — building reading confidence through relatable, culturally rich narratives.", author:"CHEETAH® Purrrrrrr Publishing · fasttrackliteracy.com" },
               ]},
-              { title:"Grade 6 PEP Mathematics Workbook", vol:"Workbook", cover:"/images/resources/pep-math-workbook.png", color:"#EDE9FE", accent:"#5B21B6", pages:[
-                { heading:"Grade 6 PEP Mathematics Workbook", sub:"CHEETAH® Publishing", body:"A comprehensive mathematics workbook with answers and explanations. Designed to prepare Grade 6 students for PEP examinations.", author:"A Team of Educators · CHEETAH® Purrrrrrr Publishing" },
-                { heading:"What's Inside", sub:"Answers & Explanations", body:"This workbook provides detailed step-by-step answers to support independent study, classroom instruction, and exam preparation at the Grade 6 level.", author:"CHEETAH® Purrrrrrr Publishing · mycheetahinc.com" },
-              ]},
-              { title:"FastTrack Lesson Framework", vol:"Teacher Reference", cover:"/images/resources/fasttrack-lesson-framework.png", color:"#F0FDF4", accent:"#166534", pages:[
+              { title:"FastTrack Lesson Framework", vol:"Teacher Reference", cover:"/images/resources/fasttrack-lesson-framework.png", url:"https://heyzine.com/flip-book/2bee43b4b3.html", color:"#F0FDF4", accent:"#166634", pages:[
                 { heading:"FastTrack Literacy™ Lesson Framework", sub:"1-Hour Lesson Framework Overview", body:"The complete suggested timetable and instructional flow for delivering FastTrack Literacy™ lessons. Essential reference for all CHEETAH® educators.", author:"CHEETAH® FastTrack Literacy™ · Paulette Trowers, JD" },
                 { heading:"For Teacher Training Manual", sub:"Final Approved Version", body:"This framework outlines the 16-step instructional sequence within a structured 1-hour lesson — covering daily review, phonics drill, blending, fluency practice, and assessment.", author:"CHEETAH® FastTrack Literacy™ · fasttrackliteracy.com" },
               ]},
+,
+
+
+
+
+
             ].map((book, bookIdx) => (
               <FlipBook key={bookIdx} book={book} />
             ))}
@@ -559,6 +565,15 @@ export default function Resources() {
               </div>
             )}
           </div>
+        </div>
+      )}
+      {expandedImg && (
+        <div
+          onClick={() => setExpandedImg(null)}
+          style={{ position:"fixed", inset:0, zIndex:2000, background:"rgba(0,0,0,0.88)", display:"flex", alignItems:"center", justifyContent:"center", padding:24, cursor:"zoom-out" }}
+        >
+          <button onClick={() => setExpandedImg(null)} style={{ position:"absolute", top:20, right:24, background:"rgba(255,255,255,0.15)", border:"none", color:"white", fontSize:24, borderRadius:8, padding:"4px 12px", cursor:"pointer" }}>✕</button>
+          <img src={expandedImg} alt="Expanded resource" style={{ maxWidth:"90vw", maxHeight:"88vh", objectFit:"contain", borderRadius:12, boxShadow:"0 24px 80px rgba(0,0,0,0.6)" }} />
         </div>
       )}
     </>
