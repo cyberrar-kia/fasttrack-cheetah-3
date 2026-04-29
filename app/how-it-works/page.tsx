@@ -62,6 +62,7 @@ export default function HowItWorks() {
             <div className="section-chip" style={{ margin:"0 auto 16px" }}>🔬 Science of Reading</div>
             <h2 style={{ fontSize:"clamp(24px,4vw,36px)", fontWeight:900, color:"#0C2340" }}>The 5 Pillars in Every Lesson</h2>
           </div>
+          <Image src="/images/image3.png" alt="The Five Pillars of Literacy: Building Strong Readers" width={1400} height={700} style={{ width:"100%", height:"auto", borderRadius:16, boxShadow:"0 8px 32px rgba(0,0,0,0.08)", marginBottom:40 }} />
           <div className="grid-auto">
             {[
               { n:"1", icon:"👂", title:"Phonemic Awareness", desc:"Hearing, identifying and manipulating sounds in spoken words." },
