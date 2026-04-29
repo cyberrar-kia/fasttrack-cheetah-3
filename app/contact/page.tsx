@@ -21,7 +21,7 @@ export default function Contact() {
       <section className="section" style={{ background:"linear-gradient(135deg,#0C2340,#1A3A70)", padding:"80px 24px 60px", textAlign:"center" }}>
         <div className="container-sm">
           <div style={{ display:"flex", justifyContent:"center", marginBottom:20 }}>
-            <Image src="/images/fasttrack-literacy-logo.png" alt="FastTrack Literacy™" width={320} height={100} style={{ height:64, width:"auto", objectFit:"contain", filter:"brightness(0) invert(1)" }} />
+            <Image src="/images/fasttrack-literacy-logo.png" alt="FastTrack Literacy™" width={320} height={100} style={{ height:80, width:"auto", objectFit:"contain",  }} />
           </div>
 
 
