@@ -67,7 +67,7 @@ export default function About() {
         <div className="container">
           <div className="grid-2">
             <div>
-              <Image src="/images/paulette-uganda.jpg" alt="Paulette Trowers-Lawrence, JD — Founder & CEO, CHEETAH®" width={600} height={800} style={{ width:"100%", height:"auto", borderRadius:16, boxShadow:"0 8px 32px rgba(0,0,0,0.1)" }} />
+              <Image src="/images/image2.jpg" alt="Paulette Trowers-Lawrence — USA Presidential Lifetime Achievement Award 2024" width={600} height={800} style={{ width:"100%", height:"auto", borderRadius:16, boxShadow:"0 8px 32px rgba(0,0,0,0.1)" }} />
             </div>
             <div>
               <div className="section-chip">🌟 Who is Our Founder &amp; CEO</div>

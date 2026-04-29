@@ -7,6 +7,7 @@ export default function FastTrackPage() {
   const [whyOpen, setWhyOpen] = useState(false);
   const [whoOpen, setWhoOpen] = useState(false);
   const [diffOpen, setDiffOpen] = useState(false);
+  const [expandedImg, setExpandedImg] = useState<string|null>(null);
 
   return (
     <>
@@ -33,7 +34,10 @@ export default function FastTrackPage() {
               <p style={{ fontSize:15, color:"#5A5240", lineHeight:1.85, marginBottom:24 }}>Children are not just learners — they become <strong>active participants</strong> in their reading journey through child-led learning and guided practice.</p>
             </div>
             <div>
+              <div onClick={()=>setExpandedImg("/images/fasttrack-vision.png")} style={{ cursor:"zoom-in", position:"relative" }}>
               <Image src="/images/fasttrack-vision.png" alt="Building a Literate Nation: The Vision and Legacy of FastTrack Literacy" width={900} height={500} style={{ width:"100%", height:"auto", borderRadius:16, boxShadow:"0 8px 32px rgba(0,0,0,0.08)" }} />
+              <div style={{ position:"absolute", bottom:8, right:8, background:"rgba(0,0,0,0.5)", color:"white", fontSize:10, fontWeight:700, padding:"3px 8px", borderRadius:50 }}>🔍 Expand</div>
+            </div>
             </div>
           </div>
         </div>
@@ -57,7 +61,10 @@ export default function FastTrackPage() {
               <button onClick={() => setWhyOpen(true)} style={{ background:"#F5820A", color:"white", border:"none", borderRadius:50, padding:"11px 24px", fontSize:14, fontWeight:800, fontFamily:"'Nunito',sans-serif", cursor:"pointer" }}>Read More →</button>
             </div>
             <div>
+              <div onClick={()=>setExpandedImg("/images/image4.png")} style={{ cursor:"zoom-in", position:"relative" }}>
               <Image src="/images/image4.png" alt="The Global Literacy Crisis: A Foundation at Risk — 770 Million, 37% of Fourth Graders" width={900} height={500} style={{ width:"100%", height:"auto", borderRadius:16, boxShadow:"0 8px 32px rgba(0,0,0,0.08)" }} />
+              <div style={{ position:"absolute", bottom:8, right:8, background:"rgba(0,0,0,0.5)", color:"white", fontSize:10, fontWeight:700, padding:"3px 8px", borderRadius:50 }}>🔍 Expand</div>
+            </div>
             </div>
           </div>
         </div>
@@ -75,7 +82,10 @@ export default function FastTrackPage() {
               <button onClick={() => setWhoOpen(true)} style={{ background:"#F5820A", color:"white", border:"none", borderRadius:50, padding:"11px 24px", fontSize:14, fontWeight:800, fontFamily:"'Nunito',sans-serif", cursor:"pointer" }}>Read More →</button>
             </div>
             <div>
+              <div onClick={()=>setExpandedImg("/images/image5.png")} style={{ cursor:"zoom-in", position:"relative" }}>
               <Image src="/images/image5.png" alt="Empowering Young Readers: Who Is the Program For?" width={600} height={1100} style={{ width:"100%", height:"auto", borderRadius:16, boxShadow:"0 8px 32px rgba(0,0,0,0.08)" }} />
+              <div style={{ position:"absolute", bottom:8, right:8, background:"rgba(0,0,0,0.5)", color:"white", fontSize:10, fontWeight:700, padding:"3px 8px", borderRadius:50 }}>🔍 Expand</div>
+            </div>
             </div>
           </div>
         </div>
@@ -99,7 +109,10 @@ export default function FastTrackPage() {
               <button onClick={() => setDiffOpen(true)} style={{ background:"#F5820A", color:"white", border:"none", borderRadius:50, padding:"11px 24px", fontSize:14, fontWeight:800, fontFamily:"'Nunito',sans-serif", cursor:"pointer" }}>Read More →</button>
             </div>
             <div>
+              <div onClick={()=>setExpandedImg("/images/image8.png")} style={{ cursor:"zoom-in", position:"relative" }}>
               <Image src="/images/image8.png" alt="The FastTrack Literacy™ Difference — 16-Step Instructional Journey" width={600} height={1100} style={{ width:"100%", height:"auto", borderRadius:16, boxShadow:"0 8px 32px rgba(0,0,0,0.08)" }} />
+              <div style={{ position:"absolute", bottom:8, right:8, background:"rgba(0,0,0,0.5)", color:"white", fontSize:10, fontWeight:700, padding:"3px 8px", borderRadius:50 }}>🔍 Expand</div>
+            </div>
             </div>
           </div>
         </div>
@@ -118,8 +131,14 @@ export default function FastTrackPage() {
               <div key={f} style={{ background:"rgba(255,255,255,0.1)", border:"1px solid rgba(255,255,255,0.15)", borderRadius:12, padding:"12px 20px", fontSize:14, color:"rgba(255,255,255,0.9)", fontWeight:600 }}>{f}</div>
             ))}
           </div>
-          <Image src="/images/image11.png" alt="All Aboard the FastTrack Phonics© Train!" width={1400} height={600} style={{ width:"100%", height:"auto", borderRadius:16, boxShadow:"0 8px 32px rgba(0,0,0,0.3)", marginBottom:32 }} />
-          <Image src="/images/train-poster.png" alt="The FastTrack Literacy™ Train — Speeding Reading and Writing Success" width={1200} height={600} style={{ width:"100%", height:"auto", borderRadius:16, boxShadow:"0 8px 32px rgba(0,0,0,0.3)" }} />
+          <div onClick={()=>setExpandedImg("/images/image11.png")} style={{ cursor:"zoom-in", position:"relative" }}>
+              <Image src="/images/image11.png" alt="All Aboard the FastTrack Phonics© Train!" width={1400} height={600} style={{ width:"100%", height:"auto", borderRadius:16, boxShadow:"0 8px 32px rgba(0,0,0,0.3)", marginBottom:32 }} />
+              <div style={{ position:"absolute", bottom:8, right:8, background:"rgba(0,0,0,0.5)", color:"white", fontSize:10, fontWeight:700, padding:"3px 8px", borderRadius:50 }}>🔍 Expand</div>
+            </div>
+          <div onClick={()=>setExpandedImg("/images/train-poster.png")} style={{ cursor:"zoom-in", position:"relative" }}>
+              <Image src="/images/train-poster.png" alt="The FastTrack Literacy™ Train — Speeding Reading and Writing Success" width={1200} height={600} style={{ width:"100%", height:"auto", borderRadius:16, boxShadow:"0 8px 32px rgba(0,0,0,0.3)" }} />
+              <div style={{ position:"absolute", bottom:8, right:8, background:"rgba(0,0,0,0.5)", color:"white", fontSize:10, fontWeight:700, padding:"3px 8px", borderRadius:50 }}>🔍 Expand</div>
+            </div>
         </div>
       </section>
 
@@ -292,6 +311,12 @@ export default function FastTrackPage() {
               <button onClick={() => setDiffOpen(false)} style={{ width:"100%", background:"#0C2340", color:"white", border:"none", borderRadius:50, padding:14, fontSize:14, fontWeight:800, fontFamily:"'Nunito',sans-serif", cursor:"pointer" }}>Close</button>
             </div>
           </div>
+        </div>
+      )}
+      {expandedImg && (
+        <div onClick={() => setExpandedImg(null)} style={{ position:"fixed", inset:0, zIndex:2000, background:"rgba(0,0,0,0.88)", display:"flex", alignItems:"center", justifyContent:"center", padding:24, cursor:"zoom-out" }}>
+          <button onClick={() => setExpandedImg(null)} style={{ position:"absolute", top:20, right:24, background:"rgba(255,255,255,0.15)", border:"none", color:"white", fontSize:24, borderRadius:8, padding:"4px 12px", cursor:"pointer" }}>✕</button>
+          <img src={expandedImg} alt="Expanded" style={{ maxWidth:"90vw", maxHeight:"88vh", objectFit:"contain", borderRadius:12, boxShadow:"0 24px 80px rgba(0,0,0,0.6)" }} />
         </div>
       )}
     </>
