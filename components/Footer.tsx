@@ -15,8 +15,8 @@ export default function Footer() {
     try {
       const res = await fetch(FORMSPREE_NEWSLETTER, {
         method: "POST",
-        headers: { "Accept": "application/json" },
-        body: (() => { const fd = new FormData(); fd.append("email", email); return fd; })(),
+        headers: { "Accept": "application/json", "Content-Type": "application/json" },
+        body: JSON.stringify({ email, _replyto: email, _subject: "New Subscriber — FastTrack Literacy™ Newsletter" }),
       });
       setStatus(res.ok ? "sent" : "error");
     } catch {
@@ -33,7 +33,7 @@ export default function Footer() {
               <Image src="/images/fasttrack-literacy-logo.png" alt="FastTrack Literacy Program" width={180} height={56} style={{ height:52, width:"auto", objectFit:"contain" }} />
               <Image src="/images/cheetah-logo.png" alt="CHEETAH®" width={120} height={56} style={{ height:44, width:"auto", objectFit:"contain", mixBlendMode:"screen", marginTop:8 }} />
             </div>
-            <p style={{ fontSize:13, lineHeight:1.7, maxWidth:240, marginBottom:16 }}>Every child can read. Every child must read. — Paulette Trowers-Lawrence, JD</p>
+            <p style={{ fontSize:13, lineHeight:1.7, maxWidth:240, marginBottom:16 }}>FastTrack Literacy™ — accelerating reading and writing success at school and at home.</p>
             <div style={{ display:"flex", gap:8 }}>
               {[
               {label:"f",url:"https://facebook.com/mycheetahinc/"},
