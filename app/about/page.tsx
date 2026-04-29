@@ -1,8 +1,10 @@
 "use client";
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function About() {
+  const [expandedImg, setExpandedImg] = useState<string|null>(null);
   return (
     <>
       <section className="section" style={{ background:"linear-gradient(135deg,#0C2340,#1A3A70)", padding:"80px 24px 60px", textAlign:"center" }}>
@@ -47,7 +49,10 @@ export default function About() {
             <h2 style={{ fontSize:"clamp(24px,4vw,38px)", fontWeight:900, color:"#0C2340" }}>The CHEETAH® Literacy Ecosystem</h2>
             <p style={{ fontSize:15, color:"#5A5240", maxWidth:600, margin:"12px auto 24px", lineHeight:1.7 }}>A comprehensive framework combining educational resources, technological innovations, and extensive training to improve reading outcomes at scale — across Kenya, Uganda, Jamaica, the USA, and beyond.</p>
           </div>
-          <Image src="/images/image13.png" alt="The CHEETAH Literacy Ecosystem — A Global Framework" width={1200} height={680} style={{ width:"100%", height:"auto", borderRadius:16, boxShadow:"0 8px 32px rgba(0,0,0,0.08)", marginBottom:32 }} />
+          <div onClick={()=>setExpandedImg("/images/image13.png")} style={{ cursor:"zoom-in", position:"relative" }}>
+              <Image src="/images/image13.png" alt="The CHEETAH Literacy Ecosystem — A Global Framework" width={1200} height={680} style={{ width:"100%", height:"auto", borderRadius:16, boxShadow:"0 8px 32px rgba(0,0,0,0.08)", marginBottom:32 }} />
+              <div style={{ position:"absolute", bottom:8, right:8, background:"rgba(0,0,0,0.5)", color:"white", fontSize:10, fontWeight:700, padding:"3px 8px", borderRadius:50 }}>🔍 Expand</div>
+            </div>
         </div>
       </section>
 
@@ -58,7 +63,10 @@ export default function About() {
             <h2 style={{ fontSize:"clamp(22px,3.5vw,34px)", fontWeight:900, color:"#0C2340", marginBottom:12 }}>A Complete Literacy System</h2>
             <p style={{ fontSize:15, color:"#5A5240", maxWidth:560, margin:"0 auto", lineHeight:1.7 }}>A comprehensive, Science of Reading–aligned system combining decodable books, reggae-inspired phoneme songs, AI-powered technology, flashcards, and structured learning tools.</p>
           </div>
-          <Image src="/images/jamder-books.png" alt="FastTrack Literacy™ — JamDER and C-DER Books Collection" width={1400} height={800} style={{ width:"100%", height:"auto", borderRadius:16, boxShadow:"0 8px 32px rgba(0,0,0,0.08)" }} />
+          <div onClick={()=>setExpandedImg("/images/jamder-books.png")} style={{ cursor:"zoom-in", position:"relative" }}>
+              <Image src="/images/jamder-books.png" alt="FastTrack Literacy™ — JamDER and C-DER Books Collection" width={1400} height={800} style={{ width:"100%", height:"auto", borderRadius:16, boxShadow:"0 8px 32px rgba(0,0,0,0.08)" }} />
+              <div style={{ position:"absolute", bottom:8, right:8, background:"rgba(0,0,0,0.5)", color:"white", fontSize:10, fontWeight:700, padding:"3px 8px", borderRadius:50 }}>🔍 Expand</div>
+            </div>
           <p style={{ textAlign:"center", marginTop:20, fontSize:14, color:"#5A5240", lineHeight:1.7 }}>Founded by <strong>Paulette Trowers-Lawrence, JD</strong>, CHEETAH® is driven by one mission: <strong>every child can learn to read and write, and every child must be given the resources to succeed.</strong></p>
         </div>
       </section>
@@ -67,7 +75,10 @@ export default function About() {
         <div className="container">
           <div className="grid-2">
             <div>
+              <div onClick={()=>setExpandedImg("/images/image2.jpg")} style={{ cursor:"zoom-in", position:"relative" }}>
               <Image src="/images/image2.jpg" alt="Paulette Trowers-Lawrence — USA Presidential Lifetime Achievement Award 2024" width={600} height={800} style={{ width:"100%", height:"auto", borderRadius:16, boxShadow:"0 8px 32px rgba(0,0,0,0.1)" }} />
+              <div style={{ position:"absolute", bottom:8, right:8, background:"rgba(0,0,0,0.5)", color:"white", fontSize:10, fontWeight:700, padding:"3px 8px", borderRadius:50 }}>🔍 Expand</div>
+            </div>
             </div>
             <div>
               <div className="section-chip">🌟 Who is Our Founder &amp; CEO</div>
@@ -131,10 +142,19 @@ export default function About() {
           <div className="section-chip" style={{ margin:"0 auto 16px" }}>🤝 How to Partner with Us</div>
           <h2 style={{ fontSize:"clamp(20px,3vw,30px)", fontWeight:900, color:"#0C2340", marginBottom:14 }}>Want to Partner With CHEETAH®?</h2>
           <p style={{ fontSize:15, color:"#5A5240", marginBottom:32, maxWidth:480, margin:"0 auto 32px" }}>Whether you run a school, an NGO, or a government literacy programme — we want to hear from you. We work with Ministries of Education, community organisations, and private sector partners to expand literacy access worldwide.</p>
-          <Image src="/images/team-partners.png" alt="Stronger Together — Collaborating Today for a Better Tomorrow" width={900} height={560} style={{ width:"100%", height:"auto", borderRadius:16, boxShadow:"0 8px 32px rgba(0,0,0,0.08)", marginBottom:32 }} />
+          <div onClick={()=>setExpandedImg("/images/team-partners.png")} style={{ cursor:"zoom-in", position:"relative" }}>
+              <Image src="/images/team-partners.png" alt="Stronger Together — Collaborating Today for a Better Tomorrow" width={900} height={560} style={{ width:"100%", height:"auto", borderRadius:16, boxShadow:"0 8px 32px rgba(0,0,0,0.08)", marginBottom:32 }} />
+              <div style={{ position:"absolute", bottom:8, right:8, background:"rgba(0,0,0,0.5)", color:"white", fontSize:10, fontWeight:700, padding:"3px 8px", borderRadius:50 }}>🔍 Expand</div>
+            </div>
           <Link href="/contact" className="btn-orange">Get In Touch →</Link>
         </div>
       </section>
+      {expandedImg && (
+        <div onClick={() => setExpandedImg(null)} style={{ position:"fixed", inset:0, zIndex:2000, background:"rgba(0,0,0,0.88)", display:"flex", alignItems:"center", justifyContent:"center", padding:24, cursor:"zoom-out" }}>
+          <button onClick={() => setExpandedImg(null)} style={{ position:"absolute", top:20, right:24, background:"rgba(255,255,255,0.15)", border:"none", color:"white", fontSize:24, borderRadius:8, padding:"4px 12px", cursor:"pointer" }}>✕</button>
+          <img src={expandedImg} alt="Expanded" style={{ maxWidth:"90vw", maxHeight:"88vh", objectFit:"contain", borderRadius:12, boxShadow:"0 24px 80px rgba(0,0,0,0.6)" }} />
+        </div>
+      )}
     </>
   );
 }
