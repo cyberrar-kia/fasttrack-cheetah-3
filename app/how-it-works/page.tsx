@@ -24,6 +24,10 @@ export default function HowItWorks() {
     <>
       <section className="section" style={{ background:"linear-gradient(135deg,#0C2340,#1A3A70)", padding:"80px 24px 60px", textAlign:"center" }}>
         <div className="container-sm">
+          <div style={{ display:"flex", justifyContent:"center", marginBottom:20 }}>
+            <Image src="/images/fasttrack-literacy-logo.png" alt="FastTrack Literacy™" width={320} height={100} style={{ height:64, width:"auto", objectFit:"contain", filter:"brightness(0) invert(1)" }} />
+          </div>
+
 
           <div style={{ display:"inline-flex", background:"rgba(245,130,10,0.15)", border:"1px solid rgba(245,130,10,0.3)", color:"#FFB366", fontSize:11, fontWeight:700, letterSpacing:"1px", textTransform:"uppercase", padding:"6px 14px", borderRadius:50, marginBottom:20 }}>The Method</div>
           <h1 style={{ fontSize:"clamp(28px,5vw,48px)", fontWeight:900, color:"white", marginBottom:20 }}>How FastTrack Literacy™ <span style={{ color:"#F5820A" }}>Works</span></h1>

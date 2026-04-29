@@ -81,6 +81,9 @@ export default function Home() {
         <div className="container" style={{ position:"relative", zIndex:2, padding:"clamp(100px,14vh,140px) 24px clamp(80px,10vh,100px)" }}>
           <div className="grid-2">
             <div>
+              <div style={{ marginBottom:16 }}>
+                <Image src="/images/fasttrack-literacy-logo.png" alt="FastTrack Literacy™" width={360} height={110} style={{ height:68, width:"auto", objectFit:"contain", filter:"brightness(0) invert(1)" }} />
+              </div>
               <div style={{ display:"inline-flex", alignItems:"center", gap:8, marginBottom:20, background:"rgba(245,130,10,0.15)", border:"1px solid rgba(245,130,10,0.3)", padding:"6px 16px", borderRadius:50, fontSize:12, fontWeight:700, color:"#FFB366" }}>🚂 FastTrack Literacy™ by CHEETAH®</div>
               <h1 style={{ fontSize:"clamp(28px,4.5vw,52px)", fontWeight:900, color:"white", marginBottom:16, lineHeight:1.15 }}>
                 Accelerating the ability to read, write, understand, and apply information.

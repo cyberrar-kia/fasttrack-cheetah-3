@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import { useState } from "react";
 import Link from "next/link";
 
@@ -123,6 +124,10 @@ export default function Careers() {
       <section className="section" style={{ background:"linear-gradient(135deg,#0C2340 0%,#1A3A70 55%,#0C4A6E 100%)", padding:"80px 24px 64px", textAlign:"center", position:"relative", overflow:"hidden" }}>
         <div style={{ position:"absolute", top:-80, right:-80, width:400, height:400, borderRadius:"50%", background:"rgba(245,130,10,0.07)", pointerEvents:"none" }} />
         <div className="container-sm">
+          <div style={{ display:"flex", justifyContent:"center", marginBottom:20 }}>
+            <Image src="/images/fasttrack-literacy-logo.png" alt="FastTrack Literacy™" width={320} height={100} style={{ height:64, width:"auto", objectFit:"contain", filter:"brightness(0) invert(1)" }} />
+          </div>
+
           <div style={{ display:"inline-flex", background:"rgba(245,130,10,0.15)", border:"1px solid rgba(245,130,10,0.3)", color:"#FFB366", fontSize:11, fontWeight:700, letterSpacing:"1px", textTransform:"uppercase", padding:"6px 14px", borderRadius:50, marginBottom:20 }}>🐆 Join the Team</div>
           <h1 style={{ fontFamily:"'Nunito',sans-serif", fontSize:"clamp(28px,5vw,48px)", fontWeight:900, color:"white", marginBottom:18, lineHeight:1.1 }}>
             Build the Future of<br/><span style={{ color:"#F5820A" }}>Literacy Together</span>
