@@ -105,24 +105,25 @@ export default function FastTrackPage() {
         </div>
       </section>
 
-      {/* THE TRAIN */}
-      <section className="section" style={{ background:"linear-gradient(135deg,#0C2340,#1A3A70)" }}>
+      {/* THE BRAND EXPERIENCE — MERGED */}
+      <section id="brand-experience" className="section" style={{ background:"linear-gradient(135deg,#0C2340,#1A3A70)" }}>
         <div className="container">
           <div style={{ textAlign:"center", marginBottom:32 }}>
             <div className="section-chip" style={{ margin:"0 auto 16px", background:"rgba(245,130,10,0.15)", border:"1px solid rgba(245,130,10,0.3)", color:"#FFB366" }}>🚂 The Brand Experience</div>
-            <h2 style={{ fontSize:"clamp(22px,4vw,36px)", fontWeight:900, color:"white", marginBottom:12 }}>The FastTrack Literacy© Train</h2>
-            <p style={{ fontSize:15, color:"rgba(255,255,255,0.8)", lineHeight:1.7, maxWidth:520, margin:"0 auto 12px" }}>It is more than a mascot! It is a mission on wheels. It:</p>
+            <h2 style={{ fontSize:"clamp(22px,4vw,36px)", fontWeight:900, color:"white", marginBottom:12 }}>The FastTrack Literacy™ Train</h2>
+            <p style={{ fontSize:15, color:"rgba(255,255,255,0.8)", lineHeight:1.7, maxWidth:560, margin:"0 auto 12px" }}>It is more than a mascot! It is a mission on wheels — a symbol of momentum, structure, and the journey every child takes from their first sound to confident, independent reading.</p>
           </div>
-          <div style={{ display:"flex", justifyContent:"center", gap:"clamp(16px,4vw,48px)", flexWrap:"wrap", marginBottom:36 }}>
+          <div style={{ display:"flex", justifyContent:"center", gap:"clamp(16px,4vw,48px)", flexWrap:"wrap", marginBottom:40 }}>
             {["🎵 Carries letters, sounds, and songs","🕺 Engages children through movement and rhythm","🎉 Builds excitement around learning"].map(f=>(
               <div key={f} style={{ background:"rgba(255,255,255,0.1)", border:"1px solid rgba(255,255,255,0.15)", borderRadius:12, padding:"12px 20px", fontSize:14, color:"rgba(255,255,255,0.9)", fontWeight:600 }}>{f}</div>
             ))}
           </div>
-          <Image src="/images/image11.png" alt="All Aboard the FastTrack Phonics© Train!" width={1400} height={600} style={{ width:"100%", height:"auto", borderRadius:16, boxShadow:"0 8px 32px rgba(0,0,0,0.3)" }} />
+          <Image src="/images/image11.png" alt="All Aboard the FastTrack Phonics© Train!" width={1400} height={600} style={{ width:"100%", height:"auto", borderRadius:16, boxShadow:"0 8px 32px rgba(0,0,0,0.3)", marginBottom:32 }} />
+          <Image src="/images/train-poster.png" alt="The FastTrack Literacy™ Train — Speeding Reading and Writing Success" width={1200} height={600} style={{ width:"100%", height:"auto", borderRadius:16, boxShadow:"0 8px 32px rgba(0,0,0,0.3)" }} />
         </div>
       </section>
 
-      {/* COMPARISON TABLE — moved from How It Works */}
+
       <section className="section" style={{ background:"white" }} id="comparison">
         <div className="container">
           <div style={{ textAlign:"center", marginBottom:40 }}>
@@ -166,17 +167,6 @@ export default function FastTrackPage() {
         </div>
       </section>
 
-      {/* THE BRAND EXPERIENCE — THE FASTTRACK LITERACY TRAIN */}
-      <section id="brand-experience" className="section" style={{ background:"#FFF0E0" }}>
-        <div className="container">
-          <div style={{ textAlign:"center", marginBottom:40 }}>
-            <div className="section-chip" style={{ margin:"0 auto 16px" }}>🚂 The Brand Experience</div>
-            <h2 style={{ fontSize:"clamp(22px,4vw,36px)", fontWeight:900, color:"#0C2340", marginBottom:12 }}>The FastTrack Literacy™ Train</h2>
-            <p style={{ fontSize:15, color:"#5A5240", maxWidth:560, margin:"0 auto 32px", lineHeight:1.7 }}>The Train is the heart of the FastTrack Literacy™ brand — a symbol of momentum, structure, and the journey every child takes from their first sound to confident, independent reading.</p>
-          </div>
-          <Image src="/images/train-poster.png" alt="The FastTrack Literacy™ Train — Speeding Reading and Writing Success" width={1200} height={600} style={{ width:"100%", height:"auto", borderRadius:16, boxShadow:"0 8px 32px rgba(0,0,0,0.08)" }} />
-        </div>
-      </section>
 
       {/* WHY CHOOSE FASTTRACK LITERACY */}
       <section className="section" style={{ background:"white" }} id="why-choose">

@@ -30,8 +30,8 @@ export default function Footer() {
         <div style={{ display:"grid", gridTemplateColumns:"repeat(auto-fit,minmax(200px,1fr))", gap:40, marginBottom:48 }}>
           <div>
             <div style={{ display:"flex", alignItems:"center", gap:14, marginBottom:14 }}>
-              <Image src="/images/fasttrack-literacy-logo.png" alt="FastTrack Literacy Program" width={180} height={56} style={{ height:52, width:"auto", objectFit:"contain" }} />
-              <Image src="/images/cheetah-logo.png" alt="CHEETAH®" width={120} height={56} style={{ height:44, width:"auto", objectFit:"contain", mixBlendMode:"screen", marginTop:8 }} />
+              <Image src="/images/fasttrack-literacy-logo.png" alt="FastTrack Literacy Program" width={260} height={80} style={{ height:72, width:"auto", objectFit:"contain" }} />
+              <Image src="/images/cheetah-logo.png" alt="CHEETAH®" width={160} height={72} style={{ height:64, width:"auto", objectFit:"contain", mixBlendMode:"screen", marginTop:4 }} />
             </div>
             <p style={{ fontSize:13, lineHeight:1.7, maxWidth:240, marginBottom:16 }}>FastTrack Literacy™ — accelerating reading and writing success at school and at home.</p>
             <div style={{ display:"flex", gap:8 }}>

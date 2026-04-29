@@ -398,7 +398,6 @@ export default function Resources() {
           <div style={{ textAlign:"center", marginBottom:48 }}>
             <div className="section-chip">📖 Read Excerpts of Our Books Online</div>
             <h2 style={{ fontFamily:"'Nunito',sans-serif", fontWeight:900, fontSize:"clamp(24px,4vw,36px)", color:"#0C2340", marginBottom:12 }}>Read Excerpts of Our Books Online</h2>
-            <p style={{ fontSize:"clamp(13px,1.5vw,16px)", color:"#8A7A6A", maxWidth:500, margin:"0 auto" }}>Preview the first 2 pages of each book. Visit mycheetahinc.com to read the full books online.</p>
           </div>
           <div style={{ display:"grid", gridTemplateColumns:"repeat(auto-fill,minmax(clamp(260px,28vw,340px),1fr))", gap:24 }}>
             {[
